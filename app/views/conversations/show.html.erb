@@ -1,5 +1,5 @@
 <% @conversation.ordered_messages.each do |message| %>
-	<div class="message">
+	<div class="message <%= 'first' if @counter == 0 %>">
 		<div class="message-header">
 			<% user = @conversation.other_user(current_user.id) %>
 			<div class="message-name">
@@ -8,8 +8,15 @@
 			<% if @counter == 0 %>
 				<div class="message-tagline">
 					<%= user.tagline %>
-					<%= image_tag user.profile_pic_url, :class => "message-pic" %>
 				</div>
+				<%= image_tag user.profile_pic_url, :class => "message-pic" %>
+				<div class="message-actions">
+					<%= image_tag 'reply.svg', :class => "reply-svg message-svg", id: @conversation.id %>
+					<%= link_to trash_path(@conversation), :class => "trash-link", data: {confirm: "This will send the entire conversation to the trash. Proceed?"}, remote: true do %>
+						<%= image_tag 'trash.svg', :class => "trash-svg message-svg",id: @conversation.id %>
+					<% end %>
+				</div>
+
 			<% end %>
 		</div>
 		<div class="message-body">

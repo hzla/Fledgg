@@ -27,12 +27,14 @@
 	 		<div class="result-actions-container">
 	 			<%= image_tag "downsearch.svg", :class => "result-svg" %>
 	 			<div class="result-actions">
-	 				<div class="result-action follow">
+	 				<div class="result-action follow-action">
 	 					+ FOLLOW
 	 				</div>
-	 				<div class="result-action message">
-	 					MESSAGE
-	 				</div>
+	 				<%= link_to conversations_path(send_to: user.id) do %>
+		 				<div class="result-action message-action">
+		 					MESSAGE
+		 				</div>
+		 			<% end %>
 	 			</div>
  			</div>
  			<div class="result-meeting-request">

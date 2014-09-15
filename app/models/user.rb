@@ -73,6 +73,10 @@ class User < ActiveRecord::Base
 			end			
 	end
 
+	def ordered_conversations
+		conversations.order('updated_at desc')
+	end
+
 	private
 
 	def self.name_search name_list #returns a list of user_ids from an array of names
@@ -99,5 +103,6 @@ class User < ActiveRecord::Base
 		end
 		users_hash
 	end
+
 
 end

@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :skills, only: [:create, :destroy]
   resources :needed_skills, only: [:create, :destroy]
 
-  resources :conversations do
-  	resources :messages
-  end
+  resources :conversations 
+  get '/conversations/:id/trash', to: 'conversations#trash', as: 'trash'
+  resources :messages
 end

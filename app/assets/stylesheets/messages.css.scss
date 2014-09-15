@@ -21,6 +21,23 @@
 		height: 40px;
 		border-radius: 100px;
 	}
+	.message-actions {
+		position: absolute;
+		bottom: 10px;
+		right: 0;
+
+	}
+	.message-svg {
+		height: 20px;
+		width: 20px;
+		margin-left: 10px;
+		float: left;
+		cursor: pointer;
+	}
+}
+
+.message.first {
+	padding-bottom: 40px;
 }
 
 .message-header {
@@ -36,4 +53,49 @@
 .message-tagline {
 	color: $light-gray;
 	font-size: 14px;
+}
+
+
+
+//////////////////////////////
+
+
+#new-message-container {
+	width: 100%;
+	height: 100%;
+	float: left;
+	input, textarea, #message-recipient {
+		border: none;
+		width: 100%;
+		float: left;
+		border-bottom: 1px solid $light-gray;
+		height: 40px;
+		font-size: 16px;
+		line-height: 40px;
+	}
+	#submit-message {
+		height: 40px;
+		width: 150px;
+		background: $light-green;
+		border-radius: 5px;
+		float: right;
+		color: white;
+		line-height: 35px;
+		cursor: pointer;
+	}
+	#submit-message:hover {
+		color: $light-green;
+		background: white;
+		border: 1px solid green;
+	}
+	textarea {
+		height: calc(100% - 132px);
+	}
+	#message-body {
+		border: none;
+	}
+
+	#new_message {
+		height: 100%;
+	}
 }

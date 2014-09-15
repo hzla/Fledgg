@@ -4,7 +4,7 @@ class Conversation < ActiveRecord::Base
 	has_many :connections
 
 
-	attr_accessible :name, :title, :creator, :meeting_id
+	attr_accessible :name, :title, :creator, :meeting_id, :trashed
 
 	def other_user user_id
 		id = name.gsub(user_id.to_s, "").split("-").last.to_i

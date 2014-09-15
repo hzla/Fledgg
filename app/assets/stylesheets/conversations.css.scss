@@ -10,10 +10,25 @@
 	cursor: pointer;
 }
 
+.new-message-section {
+	float: right;
+	color: white;
+	height: 60px;
+	line-height: 60px;
+	cursor: pointer;
+}
+
 .bar-section.active {
 	color: white;
 	border-bottom: 4px solid white;
 	height: 57px;
+}
+
+.new-message-svg {
+	height: 20px;
+	float: left;
+	margin-right: 10px;
+	margin-top: 20px;
 }
 
 #green-bar-content {
@@ -37,6 +52,7 @@
 	top: 120px;
 	height: calc(100% - 120px);
 	overflow-y:	scroll; 
+	overflow-x: hidden;
 }
 
 #conversation-title {
