@@ -24,19 +24,17 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'jquery-fileupload-rails'
 gem 'rack-cors'
+gem 'omniauth'
 gem 'omniauth-linkedin'
 gem 'dotenv'
 gem 'will_paginate'
 gem 'browser'
+gem 'linkedin'
+gem 'best_in_place', github: 'bernat/best_in_place'
 
 # These gems allow us to apply css to html emails
 gem 'premailer-rails'
 gem 'ancestry'
-
-
-group :production do
-
-end
 
 group :development, :test do
 	gem 'rspec-rails'

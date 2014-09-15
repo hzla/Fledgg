@@ -1,0 +1,291 @@
+@import 'variables';
+
+$top-bar-height: 60px;
+$svg-height: $top-bar-height - 24px;
+$top-bar-element-spacing: 15px;
+
+.top-form {
+	float: left;
+	input {
+		background-color: rgba(255,255,255,.3);
+		border: none;
+		border-radius: 10px;
+		height: $svg-height;
+		margin-top: 10px;
+		color: $dark-green;
+		font-family: $proxima;
+		font-size: $h4;
+		padding-left: 15px;
+	}
+	::-webkit-input-placeholder {
+   color: $green;
+	}
+}
+
+.profile-circle-pic {
+	height: 40px;
+	width: 40px;
+	border-radius: 100px;
+}
+
+#user-top-bar {
+	height: $top-bar-height;
+	width: 100%;
+	position: fixed;
+	background: $light-green;
+	z-index: 5;
+	#people-search-form {
+		position: relative;
+	}
+	.search-svg {
+		height: 30px;
+		position: absolute;
+		top: 13px;
+		right: 5px;
+	}
+	#user-top-bar-content {
+		width: 960px;
+		margin: 0 auto;
+		height: 100%;
+		.fledgg-svg {
+		height: $svg-height;
+		width: $svg-height;
+		margin-top: 10px;
+		float: left;
+		}
+		div, img {
+			cursor: pointer;
+		}
+		#fledgg-text {
+			font-size: $h3;
+			float: left;
+			color: white;
+			font-family: $proxima;
+			height: 100%;
+			line-height: $top-bar-height;
+			margin-left: $top-bar-element-spacing;
+		}
+		#name-search {
+			width: 125px;
+			margin-left: $top-bar-element-spacing;
+		}
+		#skill-search {
+			width: 295px;
+			margin-left: $top-bar-element-spacing;
+		}
+		.profile-circle-pic {
+		float: right;
+		margin-right: $top-bar-element-spacing;
+		margin-top: 10px;
+		}
+		.svg {
+		height: 25px;
+		float: right;
+		margin-right: $top-bar-element-spacing;
+		margin-top: 17.5px;
+		}
+	}	
+}
+
+$profile-pic-size: 125px;
+$profile-left-margin: 50px;
+
+#profile-content {
+	width: 100%;
+	float: left;
+	position: relative;
+	margin-top: $top-bar-height;
+	#profile-cover {
+		width: 100%;
+		height: 200px;
+		background: $dark-gray;
+		position: relative;
+		div, img {
+			position: absolute;
+		}
+		.profile-main-pic {
+			width: $profile-pic-size;
+			height: $profile-pic-size;
+			left: $profile-left-margin;
+			bottom: 0;
+		}
+		.profile-text-box {
+			left: $profile-pic-size + $profile-left-margin + 30px;
+			width: calc(100% - #{$profile-pic-size + $profile-left-margin + 30px}); 
+			height: $profile-pic-size;
+			bottom: 0;
+			color: white;
+			.profile-text {
+				float: left;
+				clear: left;
+				width: 100%;
+				position: static;
+			}
+			#name {
+				font-size: $h2;
+				font-weight: 300;
+			}
+			#tagline {
+				font-size: $h5;
+				font-weight: 700;
+				margin-top: 10px;
+			}
+			#location {
+				font-size: $h4;
+				font-weight: 300;
+			}
+
+		}	
+	}
+
+
+	.field-header {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	font-size: $h2-small;
+	float: left;
+	clear: left;
+	width: 100%;
+	}
+	.field-header.availability {
+		padding-top: 40px;
+		border-top: 1px solid $light-gray;
+	}
+	.field-row {
+		width: 100%;
+		font-size: $st;
+		color: $gray;
+		float: left; 
+		clear: left;
+	}
+	.field-row.availability {
+		margin-bottom: 20px;
+	}
+	.field-row.misc {
+		padding-top: 40px;
+		border-top: 1px solid $light-gray;
+		margin-top: 20px;
+	}
+	.misc-field {
+		width: 45%;
+		float: left;
+		margin-top: 10px;
+		height: 20px;
+	}
+	.misc-field:nth-child(2n) {
+		margin-left: 5%;
+	}
+	.field-label {
+		color: $dark-gray;
+		font-weight: 500;
+		float: left;
+	}
+	.field-value {
+		float: right;
+	}
+}
+
+.best_in_place {
+	cursor: pointer;
+}
+.form_in_place {
+	width: 100%;
+	input {
+		height: 40px;
+		border: none;
+		width: 100%;
+		font-size: $h4;
+		border: 1px solid $light-gray;
+		border-radius: 10px;
+	}
+}
+
+.misc .form_in_place {
+	input {
+		height: 16px;
+		float: right;
+		width: 100px;
+		text-align: right;
+		margin: 0;
+	}
+}
+
+
+
+#profile-cover .form_in_place input {
+	width: 90%;
+}
+
+#content-left {
+	position: absolute;
+	left: calc(50% - 480px);
+	width: 620px;
+	top: 0;
+	min-height: 100vh;
+}
+
+#content-right {
+	position: absolute;
+	right: calc(50% - 480px);
+	width: 320px;
+	top: 0;
+	min-height: 100vh;
+	#helpfulness-label {
+		width: 100%;
+		text-align: center;
+		color: $gray;
+		margin-top: 20px;
+	}
+	#star-container {
+		width: 280px;
+		margin: 0 auto;
+		margin-top: 20px;
+
+	}
+	.star {
+		float: left;
+		margin-right: 20px;
+		height: 40px;
+		width: 40px;
+		cursor: pointer;
+	}
+	.star:nth-child(5n) {
+		margin-right: 0;
+	}
+	.edit-svg {
+		height: 16px;
+		width: 16px;
+		display: inline;
+		cursor: pointer;
+	}
+	#meetings-count-box {
+		width: 100%;
+		border-radius: 10px;
+		color: white;
+		background-color: $light-green;
+		float: left;
+		margin-top: 20px;
+		text-align: center;
+		line-height: 40px;
+		font-size: $h4;
+		cursor: pointer;
+	}
+	.time-block {
+		margin-top: 20px;
+	}
+	.skill {
+		float: left;
+		cursor: image-url("tc.jpeg"), auto;
+	}
+	.skill:hover {
+		color: $red;	
+	}
+	.skill-name {
+		width: 100%;
+		height: 40px;
+		border: 1px solid $light-gray;
+		border-radius: 10px;
+		margin-bottom: 20px;
+		font-size: 16px;
+	}
+}

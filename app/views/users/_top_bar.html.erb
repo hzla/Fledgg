@@ -1,0 +1,15 @@
+<div id="user-top-bar">
+	<div id="user-top-bar-content">
+		<%= image_tag "fledgg.svg", :class => "fledgg-svg" %>
+		<div id="fledgg-text">FLEDGG</div>
+		<%= form_tag search_path, id: "people-search-form", :class => "top-form" do %>
+			<%= text_field_tag :name_search, nil, :id => "name-search", placeholder: "Search by name" %>
+			<%= text_field_tag :skill_search, nil, :id => "skill-search", placeholder: "or by Expertise" %>
+			<%= image_tag 'searchdarkgreen.svg', :class => "search-svg" %>
+		<% end %>
+
+		<%= image_tag "downsettings.svg", :class => "down-svg svg" %>
+		<%= image_tag current_user.profile_pic_url, :class => "profile-circle-pic" %>
+		<%= image_tag "messagesdarkgreen.svg", :class => "messages-svg svg" %>
+	</div>
+</div>

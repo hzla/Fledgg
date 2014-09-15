@@ -1,0 +1,119 @@
+@import 'variables';
+
+.bar-section {
+	float: left;
+	color: rgba(255,255,255,.7);
+	height: 100%;
+	width: auto;
+	line-height: 60px;
+	margin-right: 20px;
+	cursor: pointer;
+}
+
+.bar-section.active {
+	color: white;
+	border-bottom: 4px solid white;
+	height: 57px;
+}
+
+#green-bar-content {
+	width: 960px;
+	margin: 0 auto;
+}
+
+#content-left-small {
+	position: fixed;
+	left: calc(50% - 510px);
+	width: 350px;
+	top: 120px;
+	height: calc(100% - 120px);
+	overflow-y:	scroll; 
+}
+
+#content-right-large {
+	position: fixed;
+	right: calc(50% - 480px);
+	width: 620px;
+	top: 120px;
+	height: calc(100% - 120px);
+	overflow-y:	scroll; 
+}
+
+#conversation-title {
+	color: $gray;
+	width: 100%;
+	float: right;
+	margin-top: 20px;
+	font-size: 20px;
+	font-weight: 600;
+}
+
+#conversations {
+	width: 100%;
+	margin-top: 20px;
+	float: right;
+	.conversation.active {
+		.convoarrow-svg {
+			display: block;
+		}
+	}
+
+	.conversation {
+		width: 100%;
+		float: right;
+		height: 80px;
+		cursor: pointer;
+		position: relative;
+		overflow-x: visible;
+		border-bottom: 1px solid $light-gray;
+		.border-hider {
+			width: 20px;
+			height: 20px;
+			position: absolute;
+			bottom: -1px;
+			background: white;
+		}
+		.convoarrow-svg {
+			position: absolute;
+			height: 20px;
+			left: 0;
+			top: 20px;
+			display: none;
+		}
+		.convo-pic {
+			height: 40px;
+			width: 40px;
+			float: left;
+			border-radius: 100px;
+			margin-right: 20px;
+			margin-top: 10px;
+			margin-left: 30px;
+		}
+		.convo-details {
+			width: calc(100% - 90px);
+			float: left;
+			height: 100%;
+			margin-top: 10px;
+			color: $dark-gray;
+			div {
+				float: left;
+				clear: left;
+			}
+			.convo-name {
+				font-weight: 700;
+			}
+			.convo-date {
+				float: right;
+				clear: none;
+				color: $light-gray;
+				font-size: 12px;
+			}
+			.convo-subject {
+				font-weight: 700;
+				color: $light-green;
+			}
+		}
+	}
+}
+
+

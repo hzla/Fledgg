@@ -1,0 +1,97 @@
+<%= render partial: 'top_bar' %>
+<div id="profile-content">
+	<div id="content-left">
+		<div id="profile-cover">
+			<%= image_tag @user.profile_pic_url, :class => "profile-main-pic" %>
+			<div class="profile-text-box">
+				<div id="name" class="profile-text"><%= @user.name %></div>
+				<div id="tagline" class="profile-text"><%= @user.tagline %></div>
+				<div id="location" class="profile-text"><%= @user.location %></div>
+			</div>
+		</div>
+		<div class="field-header">
+			Bio
+		</div>
+		<div class="field-row">
+			<%= @user.bio %> 
+		</div>
+		<div class="field-header">
+			Info
+		</div>
+		<div class="field-row">
+			<%= @user.info %> 
+		</div>
+		<div class="field-row misc">
+			<div class="misc-field">
+				<div class="field-label">Birthday</div>
+				<div class="field-value"><%= @user.birthday %></div>
+			</div>
+			<div class="misc-field">
+				<div class="field-label">Interests</div>
+				<div class="field-value"><%= @user.interests %></div>
+			</div>
+			<div class="misc-field">
+				<div class="field-label">Star Sign</div>
+				<div class="field-value"><%= @user.star_sign %></div>
+			</div>
+			<div class="misc-field">
+				<div class="field-label">Personality Type</div>
+				<div class="field-value"><%= @user.personality %></div>
+			</div>
+			<div class="misc-field">
+				<div class="field-label">Favorite Book</div>
+				<div class="field-value"><%= @user.favorite_book %></div>
+			</div>
+			<div class="misc-field">
+				<div class="field-label">Favorite Book</div>
+				<div class="field-value"><%= @user.favorite_movie %></div>
+			</div>
+			<div class="misc-field">
+				<div class="field-label">Education</div>
+				<div class="field-value"><%= @user.education %></div>
+			</div>
+		</div>
+
+	</div>
+	<div id="content-right">
+		<div id="helpfulness-label">HELPFULNESS RATING</div>
+		<div id="star-container">
+			<% @user.helpfulness.times do %>
+				<%= image_tag 'stargreen.svg', :class => "star" %> 
+			<% end %>
+			<% (5 - @user.helpfulness).times do %>
+				<%= image_tag 'stargray.svg', :class => "star" %> 
+			<% end %>
+		</div>
+		<div id="meetings-count-box">
+			4 Upcoming Meetings
+		</div>
+		<div class="field-header">
+			Expertise
+		</div>
+		<div class="field-row">
+			asdf asdf asdf
+		</div>
+		<div class="field-header">
+			Looking for help with
+		</div>
+		<div class="field-row">
+			asdf asdf sadf asdf asdf asdf asdf asdf adf asdf asdf asdfa sdfa 
+		</div>
+		<div class="field-header availability">
+			Availability
+		</div>
+		
+		<div class="field-row availability">
+			<% ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"].each do |day| %>
+				<div class="time-block <%= 'hidden' if !@user.send(day[0..2].downcase.to_sym) %>">
+					<div class="day"><%= day %></div>
+					<div class="time-value"><%= @user.send(day[0..2].downcase.to_sym) %></div>
+				</div>
+			<% end %>
+		</div>
+
+	</div>
+
+</div>
+

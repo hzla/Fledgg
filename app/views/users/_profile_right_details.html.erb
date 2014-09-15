@@ -1,0 +1,38 @@
+<div id="profile-content" class="other">
+		<div id="profile-cover">
+			<%= image_tag user.profile_pic_url, :class => "profile-main-pic" %>
+			<div class="profile-text-box">
+				<div id="name" class="profile-text"><%= user.name %></div>
+				<div id="tagline" class="profile-text"><%= user.tagline[0..40] %></div>
+				<div id="location" class="profile-text"><%= user.location %></div>
+			</div>
+		</div>
+		<div class="field-header">
+			Expertise
+		</div>
+		<div class="field-row">
+			<% user.skills.each do |skill| %>
+				<div class="skill have" id="<%= "s-#{skill.id}" %>"><%= skill.name %>,&nbsp</div>
+			<% end %>
+		</div>
+		<div class="field-header">
+			Looking for help with
+		</div>
+		<div class="field-row">
+			<% user.needed_skills.each do |skill| %>
+				<div class="skill needed" id="<%= "s-#{skill.id}" %>"><%= skill.name %>,&nbsp</div>
+			<% end %>
+		</div>
+		<div class="field-header availability">
+			Availability
+		</div>
+		
+		<div class="field-row availability">
+			<% ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"].each do |day| %>
+				<div class="time-block <%= 'hidden' if !user.send(day[0..2].downcase.to_sym) %>">
+					<div class="day"><%= day %></div>
+					<div class="time-value"><%= user.send(day[0..2].downcase.to_sym) %></div>
+				</div>
+			<% end %>
+		</div>
+	</div>

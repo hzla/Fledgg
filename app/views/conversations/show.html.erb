@@ -1,0 +1,20 @@
+<% @conversation.ordered_messages.each do |message| %>
+	<div class="message">
+		<div class="message-header">
+			<% user = @conversation.other_user(current_user.id) %>
+			<div class="message-name">
+				<span class="bold"><%= user.name %></span> on <%= message.full_date %>
+			</div>
+			<% if @counter == 0 %>
+				<div class="message-tagline">
+					<%= user.tagline %>
+					<%= image_tag user.profile_pic_url, :class => "message-pic" %>
+				</div>
+			<% end %>
+		</div>
+		<div class="message-body">
+			<%= message.body %>
+		</div>
+	</div>
+	<% @counter += 1 %>
+<% end %>

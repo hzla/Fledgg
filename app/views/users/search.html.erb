@@ -1,0 +1,47 @@
+<%= render partial: 'top_bar' %>
+<div id="green-bar">
+	<div id="results-text"><%= @users.length %> results for <%= @searched_terms %></div>
+</div>
+
+<div id="content-left" class="results">
+	<% @users.each do |user| %>
+ 		<div class="result" id="<%= "u-#{user.id}"%>">
+ 			<%= image_tag user.profile_pic_url, :class => "result-pic" %>
+ 			<div class="result-info">
+ 				<div class="result-name">
+ 					<%= user.name %>
+ 				</div>
+ 				<div class="result-tagline">
+ 					<%= user.tagline %>
+ 				</div>
+ 			</div>
+ 			<div class="result-star-container">
+ 				<% user.helpfulness.times do %>
+					<%= image_tag 'stargreen.svg', :class => "result-star" %> 
+				<% end %>
+				<% (5 - user.helpfulness).times do %>
+					<%= image_tag 'stargray.svg', :class => "result-star" %> 
+				<% end %>
+ 			</div>
+
+	 		<div class="result-actions-container">
+	 			<%= image_tag "downsearch.svg", :class => "result-svg" %>
+	 			<div class="result-actions">
+	 				<div class="result-action follow">
+	 					+ FOLLOW
+	 				</div>
+	 				<div class="result-action message">
+	 					MESSAGE
+	 				</div>
+	 			</div>
+ 			</div>
+ 			<div class="result-meeting-request">
+ 				REQUEST MEETING
+ 			</div>
+ 			
+ 		</div>
+ 	<% end %>
+</div>
+
+<div id="content-right" class="result-details">
+</div>
