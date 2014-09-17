@@ -101,9 +101,9 @@
 
 <div class="landing-section six">
 	<%= form_tag feedback_path, id: "feedback-form" do %>
-		<%= text_field_tag :title,nil,id: "feedback-title" %>
-		<%= text_field_tag :email ,nil,id: "feedback-email"%>
-		<%= text_area_tag :body,nil,id: "feedback-body" %>
+		<%= text_field_tag :title,nil,id: "feedback-title", placeholder: "Name" %>
+		<%= text_field_tag :email ,nil,id: "feedback-email", placeholder: "Email" %>
+		<%= text_area_tag :body,nil,id: "feedback-body", placeholder: "Feedback" %>
 		<%= submit_tag "SEND", id: "send-feedback" %>
 	<% end %>
 	<div id="site-copy-container">
