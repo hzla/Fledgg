@@ -131,8 +131,14 @@
 
 .landing-section.four {
 	height: 540px;
-	background-image: image-url('people.jpg');
+	position: relative;
 	background-size: cover;
+	.people-image {
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		z-index: -1;
+	}
 	.section-block:nth-child(2n) {
 		margin-left: 60px;
 		margin-right: 60px;
