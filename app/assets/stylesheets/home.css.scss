@@ -25,27 +25,32 @@
 }
 
 #landing-logo {
-	width: 200px;
-	height: 200px;
+	width: 100px;
+	height: 125px;
 	display: block;
 	margin: 0 auto;
 	padding-top: 20vh;
 }
 
 #logo-title {
-	font-size: $h1;
+	font-size: $h2;
 	width: 250px;
 	margin: 0 auto;
 	margin-top: 20px;
+    letter-spacing: 3px;
+    font-weight: 700;
 	text-align: center;
+    font-family: $proxima,sans-serif;
 }
 
 #logo-text {
 	margin: 0 auto;
-	width: 300px;
-	font-size: $h4;
+	width: 260px;
+	font-size: $h3;
 	text-align: center;
-	margin-top: 20px;
+	margin-top: 10px;
+    font-family: $proxima,sans-serif;
+    font-weight: 300;
 }
 
 .linkedin-svg {
@@ -68,6 +73,7 @@
 		height: 64px;
 		line-height: 64px;
 		margin-right: 30px;
+        font-family: $proxima,sans-serif;
 	}
 }
 
@@ -86,6 +92,7 @@
 	width: 100%;
 	text-align: center;
 	padding-top: 40px;
+    font-family: $proxima,sans-serif;
 }
 
 .section-block {
@@ -93,6 +100,7 @@
 	float: left;
 	height: 300px;
 	color: $light-green;
+    font-family: $proxima,sans-serif;
 	.block-text {
 		font-size: $h1;
 		width: 100%;
@@ -127,18 +135,23 @@
 	font-size: 42px;
 	line-height: 160px;
 	background: $dark-gray;
+    font-family: $proxima,sans-serif;
 }
 
 .landing-section.four {
 	height: 540px;
 	position: relative;
 	background-size: cover;
+<<<<<<< HEAD
+    font-family: $proxima,sans-serif;
+=======
 	.people-image {
 		height: 100%;
 		width: 100%;
 		position: absolute;
 		z-index: -1;
 	}
+>>>>>>> 4b4070a54c12477a25c560c10fed82ef03315abc
 	.section-block:nth-child(2n) {
 		margin-left: 60px;
 		margin-right: 60px;
@@ -158,6 +171,7 @@
 	height: 700px;
 	margin-top: -40px;
 	background: white;
+    font-family: $proxima,sans-serif;
 	.team-container {
 		width: 600px;
 		height: 600px;
@@ -200,6 +214,7 @@
 	margin-left: 200px;
 	width: 300px;
 	margin-top: 80px;
+    font-family: $proxima,sans-serif;
 	input, textarea {
 		width: 100%;
 		height: 40px;
@@ -208,20 +223,24 @@
 		border-radius: 5px;
 		clear: left;
 		font-size: 16px;
+        font-family: $proxima,sans-serif;
 	}
 	#feedback-body {
 		height: 100px;
+        font-family: $proxima,sans-serif;
 	}
 	#send-feedback {
 		border: none;
 		background: $light-green;
 		color: white;
 		cursor: pointer;
+        font-family: $proxima,sans-serif;
 	}
 	#send-feedback:hover {
 		color: $light-green;
 		background: white;
 		border: 1px solid $light-green;
+        font-family: $proxima,sans-serif;
 
 	}
 }
@@ -230,6 +249,7 @@
 	float: right;
 	margin-right: 200px;
 	margin-top: 80px;
+    font-family: $proxima,sans-serif;
 	.copy-link {
 		float: right;
 		color: $light-gray;
