@@ -1,0 +1,43 @@
+<div class="message meeting">
+	<div class="message-header">
+		<% user = @meeting.other_user(current_user.id) %>
+		<div class="message-name bold">
+			<%= user.name %>
+		</div>
+		<div class="message-tagline">
+			<%= user.tagline %>
+		</div>
+		<%= image_tag user.profile_pic_url, :class => "message-pic" %>
+	</div>
+	<div class="meeting-request-details">
+		<span class="bold">Meeting Request for:</span><br>
+		<%= @meeting.date %>
+	</div>
+	<div class="message-body meeting-message">
+		<%= @meeting.message %>
+	</div>
+
+	<% if @meeting.status(current_user) == "unaccepted" %>
+		<div class="meeting-actions">
+			<%= link_to accept_path(@meeting) do %>	
+				<div class="meeting-action accept-meeting">
+					<%= image_tag 'acceptwhite.svg', :class => "meeting-action-svg" %>
+					Accept
+				</div>
+			<% end %>
+
+			<%= link_to conversations_path(send_to: current_user.id) do %>
+				<div class="meeting-action reply-meeting">
+					<%= image_tag 'replywhite.svg', :class => "meeting-action-svg" %>
+					Reply
+				</div>
+			<% end %>
+			<%= link_to decline_path(@meeting) do %>
+				<div class="meeting-action decline-meeting">
+					<%= image_tag 'declinewhite.svg', :class => "meeting-action-svg" %>
+					Decline
+				</div>
+			<% end %>
+		</div>
+	<% end %>
+</div>

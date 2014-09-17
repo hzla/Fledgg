@@ -1,0 +1,28 @@
+<%= render partial: 'top_bar' %>
+
+<div id="content-left" class="settings-section">
+	<%= form_for current_user, remote: true do |f| %>
+	<div class="notification-header">
+		Send me Notifications for
+	</div>
+
+	<div class="settings-group">
+		<div class="input-label">Email: </div>
+		<%= f.text_field :email %>
+	</div>
+	<div class="settings-group">
+		<%= f.check_box :notify_meetings %>
+		<div class="check-label">Meeting Requests</div>
+	</div>
+
+
+	<div class="settings-group">
+		<%= f.check_box :notify_messages %>
+		<div class="check-label">New Messages</div>
+	</div>
+
+	<div class="settings-group">
+		<%= f.submit "Save", id: "save-user" %>
+	</div>
+	<% end %>
+<div>

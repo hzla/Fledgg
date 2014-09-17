@@ -9,7 +9,9 @@ class User < ActiveRecord::Base
 	has_many :meetings, through: :appointments
 	has_many :appointments
 	has_many :messages
-	attr_accessible :education, :interests, :name, :email, :profile_pic_url, :li_token, :birthday, :star_sign, :personality, :favorite_book, :favorite_movie, :mon, :tues, :wed, :thurs, :fri, :sat, :sun, :bio, :info, :helpfulness, :location, :tagline
+	has_many :statuses
+	has_many :comments
+	attr_accessible :rate_count, :notify_messages, :notify_meetings, :message_count, :meeting_count, :education, :interests, :name, :email, :profile_pic_url, :li_token, :birthday, :star_sign, :personality, :favorite_book, :favorite_movie, :mon, :tues, :wed, :thurs, :fri, :sat, :sun, :bio, :info, :helpfulness, :location, :tagline, :follow_list
 
 	def self.create_with_linkedin auth_hash
 		profile = auth_hash['info']
@@ -19,7 +21,16 @@ class User < ActiveRecord::Base
     user.authorizations.build :uid => auth_hash["uid"]
     user if user.save
     Skill.add skill_list, user
+    user.follow_self
     user
+	end
+
+	def follow_self
+		update_attributes follow_list: "#{id},"
+	end
+
+	def rating
+		(helpfulness / rate_count).round
 	end
 
 	def thu
@@ -30,6 +41,9 @@ class User < ActiveRecord::Base
 		tues
 	end
 
+	def followed_by user
+		user.follow_list.split(",").include? id.to_s
+	end
 	# returns a list of users based on an array of names, and array of skill names
 	#first get user_ids of name matches if there's a name list
 	#then get the user skill hash of there's a skill list
@@ -77,6 +91,16 @@ class User < ActiveRecord::Base
 		conversations.order('updated_at desc')
 	end
 
+	def following
+		Status.where('user_id in (?)', follow_list.split(",")).order('created_at desc')
+	end
+
+	def upcoming_meetings
+		meetings.where('start_time > (?)', Time.now).order(:start_time).select {|m| m.accepted? }
+	end
+
+
+
 	private
 
 	def self.name_search name_list #returns a list of user_ids from an array of names
@@ -103,6 +127,8 @@ class User < ActiveRecord::Base
 		end
 		users_hash
 	end
+
+
 
 
 end

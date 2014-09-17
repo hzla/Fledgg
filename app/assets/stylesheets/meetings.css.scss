@@ -1,0 +1,146 @@
+@import 'variables';
+
+
+.message.meeting {
+	border-bottom: none;
+}
+
+
+.meeting-text {
+	color: $light-green;
+	font-weight: 500;
+	float: left;
+	clear: left;
+}
+
+.meeting-request-details {
+	margin-top: 20px;
+	float: left;
+	padding-top: 20px;
+	border-top: 1px solid $light-gray;
+	width: 100%;
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid $light-gray;
+}
+
+
+.message {
+	.message-body.meeting-message {
+		margin-left: 0px;
+	}
+}
+
+.meeting-actions {
+	width: 240px;
+	float: right;
+	height: 40px;
+	margin-top: 20px;
+}
+.meeting-action {
+	height: 60px;
+	width: 60px;
+	float: left;
+	margin-left: 20px;
+	border-radius: 100px;
+	text-align: center;
+	color: white;
+	line-height: 85px;
+	cursor: pointer;
+	position: relative;
+	font-size: 12px;
+	font-weight: 300;
+}
+
+.accept-meeting {
+	background: $light-green;
+}
+
+.reply-meeting {
+	background: $dark-blue;
+}
+
+.decline-meeting {
+	background: $red;
+}
+
+.meeting-action-svg {
+	position: absolute;
+	height: 30px;
+	width: 100%;
+	left: 0;
+	top: 5px;
+}
+
+
+#current-meeting {
+	width: 300px;
+	height: 250px;
+	position: fixed;
+	top: 65px;
+	right: calc(50% - 480px);
+	z-index: 10;
+	background: rgba(0,0,0,.8);
+	color: white;
+	text-align: center;
+	border-radius: 5px;
+	font-weight: 300;
+	div {
+		width: 100%;
+	}
+	.current-meeting-header {
+		margin-top: 20px;
+	}
+	.current-meeting-name {
+		font-weight: 700;
+	}
+	.current-meeting-btn {
+		float: none;
+		width: 80px;
+		margin: 0 auto;
+		height: 40px;
+		background: $light-green;
+		border-radius: 5px;
+		margin-top: 20px;
+		cursor: pointer;
+		line-height: 40px;
+	}
+	.current-meeting-pic {
+		margin: 10px 0px;
+		width: 60px;
+		height: 60px;
+		border-radius: 100px;
+	}
+}
+
+#submit-rating {
+	width: 100px;
+	float: left;
+	height: 40px;
+	color: white;
+	background: $light-green;
+	border-radius: 5px;
+	border: none;
+	cursor: pointer;
+	margin-top: 20px;
+	font-size: 16px;
+}
+#submit-rating:hover {
+	background: white;
+	border: 1px solid $light-green;
+	color: $light-green;
+}
+
+.star-rating-container {
+	margin-top: 20px;
+	height: 30px;
+	.star {
+		width: 30px;
+		height: 30px;
+		float: left;
+		margin-right: 20px;
+		cursor: pointer;
+	}
+}
+
+

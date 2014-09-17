@@ -4,12 +4,58 @@ $top-bar-height: 60px;
 $svg-height: $top-bar-height - 24px;
 $top-bar-element-spacing: 15px;
 
+
+.user-actions-container{
+	position: relative;
+	float: right;
+	.result-actions-container {
+		position: absolute;
+		width: 200px;
+		bottom: 0px;
+		z-index: 12;
+		display: none;
+		right: 0;
+		.result-actions {
+			display: block;
+			bottom: -80px;
+			right: 0px;
+		}
+		.logout {
+			border-top:	1px solid $light-gray;
+		}
+	}
+}
+
+.user-actions-container:hover {
+	.result-actions-container {
+		display: block;
+	}
+}
+
+
+#message-link {
+	position: relative;
+}
+.counter {
+	position: absolute;
+	background: $red;
+	color: white;
+	width: 20px;
+	height: 20px;
+	font-size: 12px;
+	line-height: 20px;
+	text-align: center;
+	left: 205px;
+	top: 10px;
+	border-radius: 50px;
+}
+
 .top-form {
 	float: left;
 	input {
 		background-color: rgba(255,255,255,.3);
 		border: none;
-		border-radius: 10px;
+		border-radius: 5px;
 		height: $svg-height;
 		margin-top: 10px;
 		color: $dark-green;
@@ -196,7 +242,7 @@ $profile-left-margin: 50px;
 		width: 100%;
 		font-size: $h4;
 		border: 1px solid $light-gray;
-		border-radius: 10px;
+		border-radius: 5px;
 	}
 }
 
@@ -205,7 +251,7 @@ $profile-left-margin: 50px;
 		height: 16px;
 		float: right;
 		width: 100px;
-		text-align: right;
+		text-align: left;
 		margin: 0;
 	}
 }
@@ -226,10 +272,20 @@ $profile-left-margin: 50px;
 
 #content-right {
 	position: absolute;
-	right: calc(50% - 480px);
+	padding-right: calc(50% - 480px);
+	right: 0;
 	width: 320px;
 	top: 0;
 	min-height: 100vh;
+	.user-action {
+		width: 50%;
+		float: left;
+		text-align: center;
+		margin-top: 20px;
+		font-weight: 700;
+		color: $dark-gray;
+		cursor: pointer;
+	}
 	#helpfulness-label {
 		width: 100%;
 		text-align: center;

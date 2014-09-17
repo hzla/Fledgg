@@ -3,6 +3,14 @@ UserProfile =
 		$('body').on 'click', '.edit-svg', @showEditField
 		$('body').on 'ajax:success', '#skill-form, #needed-skill-form', @addSkill
 		$('body').on 'click', '.skill', @deleteSkill
+		$('body').on 'ajax:success', '.edit_user', @saveSettings
+
+	saveSettings: ->
+		$('#save-user').val('Saved!')
+		setTimeout ->
+			$('#save-user').val('Save')
+		, 2000
+
 
 	deleteSkill: ->
 		return if $('.other').length > 0

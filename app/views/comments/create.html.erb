@@ -1,0 +1,15 @@
+<% user = @comment.user %>
+<div class="comment">
+	<%= image_tag user.profile_pic_url, :class => "status-bar-pic" %>
+	<div class="result-info">
+			<div class="result-name">
+				<%= user.name %>
+			</div>
+			<div class="result-tagline">
+				<%= user.tagline %>
+			</div>
+	</div>
+	<div class="status-body">
+		<%= @comment.body %>
+	</div>
+</div>

@@ -1,0 +1,23 @@
+<div id="meeting-modal-container" class="hidden">
+	<div id="meeting-modal-content">
+		<%= form_for meeting, remote: true do |f| %>
+			<%= f.hidden_field :creator, value: current_user.id %>
+			<%= f.hidden_field :recipient, value: user.id %>
+			<div class="form-row">
+				<div class="form-label">
+					Time:
+				</div>
+				<%= f.text_field :start_time, :class => "form-input" %>
+			</div>
+			<div class="form-row">
+				<div class="form-label">
+					Message:
+				</div>
+				<%= f.text_area :message , :class => "form-input" %>
+			</div>
+			<div class="form-row">
+				<%= f.submit "SEND REQUEST", id: "send-meeting" %>
+			</div>
+		<% end %>
+	</div>
+</div>

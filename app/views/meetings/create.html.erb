@@ -1,0 +1,16 @@
+<div id="current-meeting">
+	<div class="current-meeting-header">
+		You are meeting with
+	</div>
+	<% user = @current_meeting.other_user(current_user.id) %>
+	<%= image_tag user.profile_pic_url, :class => "current-meeting-pic" %>
+	<div class="current-meeting-name">
+		<%= user.name %>
+	</div>
+	<div class="current-meeting-date">
+		on <%= @current_meeting.date %>
+	</div>
+	<div class="current-meeting-btn">
+		Okay
+	</div>
+</div>

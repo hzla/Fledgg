@@ -2,7 +2,11 @@ Search =
 	init: ->
 		$('body').on 'click', '.search-svg', @submitSearch
 		$('body').on 'keypress', '#people-search-form input', @submitOnEnter
+		$('body').on 'click', '.follow-link', @showFollowed
 		$('.result').hoverIntent @displayResultInfo, @doNothing
+
+	showFollowed: ->
+		$(@).find('div').text('FOLLOWED')
 
 	doNothing: -> 
 		return

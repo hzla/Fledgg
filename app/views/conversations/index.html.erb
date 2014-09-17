@@ -1,54 +1,70 @@
 <%= render partial: 'users/top_bar' %>
 <div id="green-bar">
-	<div id="green-bar-content">
-		<div class="bar-section active">
-			Messages
-		</div>
-		<div class="bar-section">
-			Meetings
-		</div>
-		<div class="bar-section">
-			Trash
-		</div>
+	<div class="green-bar-content">
+		<%= link_to conversations_path do %>
+			<div class="bar-section active" id="messages-section">
+				Messages
+				<%= "(#{current_user.message_count})" if current_user.message_count > 0 %>
+
+			</div>
+		<% end %>
+		<%= link_to meetings_path, remote: true, id: "meetings-link" do %>
+			<div class="bar-section" id="meetings-section">
+				Meetings
+				<%= "(#{current_user.meeting_count})" if current_user.meeting_count > 0 %>
+			</div>
+		<% end %>
+		<%= link_to trashed_path, id: 'trashed-link' do %>
+			<div class="bar-section" id="trash-section">
+				Trash
+			</div>
+		<% end %>
 	</div>
 </div>
-<div id="content-left-small">
-	<div id="conversation-title">CONVERSATIONS</div>
-	<div id="conversations">
-		<% @conversations.each do |convo| %>
-			<% user = convo.other_user(current_user.id) %>
-			<%= link_to conversation_path(convo), remote: true, :class => "convo-link" do %>
-				<div class="conversation" id='<%= "u-#{user.id}" %>'>
-					<div class="border-hider"></div>
-					<%= image_tag "conversearrow.svg", :class => "convoarrow-svg" %>
-					<%= image_tag user.profile_pic_url, :class => "convo-pic" %>
-					<div class="convo-details">
-						<div class="convo-name"><%= user.name %></div>
-						<div class="convo-date"><%= convo.last_message.date %></div>
-						<div class="convo-subject"><%= convo.last_message.subject %></div>
-						<div class="convo-last-message"><%= convo.last_message.short_body %></div>
+<div id="content">
+	<div id="content-left-small">
+		<div id="conversation-title">CONVERSATIONS</div>
+		<div id="conversations">
+			<% @conversations.each do |convo| %>
+				<% user = convo.other_user(current_user.id) %>
+				<%= link_to conversation_path(convo), remote: true, :class => "convo-link" do %>
+					<div class="conversation" id='<%= "u-#{user.id}" %>'>
+						<div class="border-hider"></div>
+						<%= image_tag "conversearrow.svg", :class => "convoarrow-svg" %>
+						<%= image_tag user.profile_pic_url, :class => "convo-pic" %>
+						<div class="convo-details">
+							<div class="convo-name"><%= user.name %></div>
+							<div class="convo-date"><%= convo.last_message.date %></div>
+							<div class="convo-subject"><%= convo.last_message.subject %></div>
+							<div class="convo-last-message"><%= convo.last_message.short_body %></div>
+						</div>
 					</div>
-				</div>
+				<% end %>
 			<% end %>
-		<% end %>
+		</div>
 	</div>
-</div>
 
-<div id="content-right-large">
-	<div id="new-message-container" class="hidden">
-		<%= form_for @message, id: "message-form", remote: true do |f| %>
-			<%= f.hidden_field :conversation_id %>
-			<%= f.hidden_field :user_id, value: current_user.id %>
-			<%= hidden_field_tag :other_user_id %>
-			<div id="message-recipient"></div>
-			<%= f.text_field :subject, id: "message-subject", placeholder: "Subject:" %>
-			<%= f.text_area :body, id: "message-body", placeholder: "Message Body:" %>
-			<%= f.submit "Send Message", id: "submit-message" %>
-		<% end %>
+	<div id="content-right-large">
+		<div id="new-message-container" class="hidden">
+			<%= form_for @message, id: "message-form", remote: true do |f| %>
+				<%= f.hidden_field :conversation_id %>
+				<%= f.hidden_field :user_id, value: current_user.id %>
+				<%= hidden_field_tag :other_user_id %>
+				<div id="message-recipient"></div>
+				<%= f.text_field :subject, id: "message-subject", placeholder: "Subject:" %>
+				<%= f.text_area :body, id: "message-body", placeholder: "Message Body:" %>
+				<%= f.submit "Send Message", id: "submit-message" %>
+			<% end %>
+		</div>
 	</div>
-</div>
 
-<% if @send_to %>
-	<div id="send-to" class="hidden"><%= @send_to %></div>
-	<div id="send-name" class="hidden"><%= @name %></div>
-<% end %>
+	<% if @send_to %>
+		<div id="send-to" class="hidden"><%= @send_to %></div>
+		<div id="send-name" class="hidden"><%= @name %></div>
+	<% end %>
+
+	<% if @meetings %>
+		<div id="go-meetings" class="hidden"></div>
+
+	<% end %>
+</div>

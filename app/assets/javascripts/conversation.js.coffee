@@ -1,11 +1,31 @@
 Conversation = 
 	init: ->
 		$('body').on 'click', '.conversation', @selectConvo
-		@startPage()
 		$('body').on 'click', '.reply-svg', @reply
 		$('body').on 'ajax:success', '.convo-link', @displayConvo
 		$('body').on 'ajax:success', '#new_message', @showMessages
+		$('body').on 'ajax:beforeSend', '#new_message', @checkMessage
 		$('body').on 'ajax:success', '.trash-link', @trashConversation
+		$('body').on 'click', '.bar-section', @changeTab
+		$('body').on 'ajax:success', '#meetings-link', @showMeetings
+		@startPage()
+
+	showMeetings: (event, data) ->
+		$('#content').html(data) 
+		$('.conversation').first().click()
+
+
+	changeTab: ->
+		$('.bar-section').removeClass('active')
+		$(@).addClass('active')
+
+	checkMessage: ->
+		if $('#message-body').val() == ""
+			$('#message-body').css 'border', '2px solid red'
+			$('#message-body').css 'width', '-=8px'
+			$('#message-body').css 'height', '-=2px'
+
+			return false
 
 	trashConversation: ->
 		$('.conversation.active').remove()
@@ -16,6 +36,9 @@ Conversation =
 			$('#new-message-container').show()
 			$('#other_user_id').val $('#send-to').text()
 			$('#message-recipient').text $('#send-name').text()
+		else if $('#go-meetings').length > 0
+			$('#meetings-section').click()
+
 		else
 			$('.conversation').first().click()
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140915035448) do
+ActiveRecord::Schema.define(version: 20140917063335) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 20140915035448) do
     t.integer "user_id"
     t.boolean "accepted"
     t.boolean "declined"
+    t.boolean "dismissed"
+    t.boolean "rater"
   end
 
   add_index "appointments", ["user_id", "meeting_id"], name: "index_appointments_on_user_id_and_meeting_id", using: :btree
@@ -29,6 +31,14 @@ ActiveRecord::Schema.define(version: 20140915035448) do
     t.string   "provider",   default: "linkedin"
     t.string   "uid"
     t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "comments", force: true do |t|
+    t.text     "body"
+    t.integer  "user_id"
+    t.integer  "status_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -66,6 +76,9 @@ ActiveRecord::Schema.define(version: 20140915035448) do
     t.integer  "receiver"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "url"
+    t.datetime "start_time"
+    t.text     "message"
   end
 
   create_table "messages", force: true do |t|
@@ -89,11 +102,20 @@ ActiveRecord::Schema.define(version: 20140915035448) do
     t.datetime "updated_at"
   end
 
+  create_table "statuses", force: true do |t|
+    t.text     "body"
+    t.integer  "like_count",    default: 0
+    t.integer  "user_id"
+    t.integer  "comment_count", default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "location"
     t.string   "tagline"
-    t.integer  "helpfulness",     default: 3
+    t.float    "helpfulness",     default: 5.0
     t.string   "email"
     t.string   "interests"
     t.string   "profile_pic_url"
@@ -115,6 +137,12 @@ ActiveRecord::Schema.define(version: 20140915035448) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "education"
+    t.text     "follow_list",     default: ""
+    t.integer  "message_count",   default: 0
+    t.integer  "meeting_count",   default: 0
+    t.boolean  "notify_messages", default: true
+    t.boolean  "notify_meetings", default: true
+    t.integer  "rate_count",      default: 1
   end
 
   create_table "wants", force: true do |t|

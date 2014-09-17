@@ -1,0 +1,50 @@
+<div id="content-left-small">
+	<div id="conversation-title">Meetings</div>
+	<div id="conversations">
+		<% @ratings.each do |rating| %>
+			<% meeting = rating.meeting %>
+			<% user = meeting.other_user(current_user.id) %>
+			<%= link_to rate_path(meeting), remote: true, :class => "meeting-link" do %>
+				<div class="conversation" id='<%= "u-#{user.id}" %>'>
+					<div class="border-hider"></div>
+					<%= image_tag "conversearrow.svg", :class => "convoarrow-svg" %>
+					<%= image_tag user.profile_pic_url, :class => "convo-pic" %>
+					<% status = meeting.status(current_user) %>
+					<div class="convo-details">
+						<div class="meeting-text">Please rate your meeting with</div>
+						<div class="convo-name"><%= user.name %></div>
+						<div class="meeting-text">on <%= meeting.date %></div>
+					</div>
+				</div>
+			<% end %>
+
+		<% end %>
+		<% @meetings.each do |meeting| %>
+			<% user = meeting.other_user(current_user.id) %>
+			<%= link_to meeting_path(meeting), remote: true, :class => "meeting-link" do %>
+				<div class="conversation" id='<%= "u-#{user.id}" %>'>
+					<div class="border-hider"></div>
+					<%= image_tag "conversearrow.svg", :class => "convoarrow-svg" %>
+					<%= image_tag user.profile_pic_url, :class => "convo-pic" %>
+					<% status = meeting.status(current_user) %>
+					<div class="convo-details">
+						<% if status == "unaccepted" %>
+							<div class="meeting-text">You have a meeting request from</div>
+						<% end %>
+						<% if status == "pending" %>
+							<div class="meeting-text">You sent a pending request to</div>
+						<% end %>
+						<div class="convo-name"><%= user.name %></div>
+						<% if status == "accepted" %>
+							<div class="meeting-text">on <%= meeting.date %></div>
+						<% end %>
+					</div>
+				</div>
+			<% end %>
+		<% end %>
+	</div>
+</div>
+
+<div id="content-right-large">
+</div>
+

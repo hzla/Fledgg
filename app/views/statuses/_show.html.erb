@@ -1,0 +1,63 @@
+<% user = status.user %>
+<div class="status">
+	<%= link_to user_path(user) do %>
+		<%= image_tag user.profile_pic_url, :class => "status-bar-pic" %>
+	
+		<div class="result-info">
+				<div class="result-name">
+					<%= user.name %>
+				</div>
+				<div class="result-tagline">
+					<%= user.tagline %>
+				</div>
+		</div>
+	<% end %>
+
+	<div class="status-body">
+		<%= status.body %>
+	</div>
+	<div class="status-actions">
+		<%= link_to like_path(status), remote: true do %>
+			<%= image_tag "likegray.svg", :class =>"status-action-svg like" %>
+			<div class="action-stat like_count"><%= status.like_count %></div>
+		<% end %>
+		<%= image_tag "commentbubble.svg", :class =>"status-action-svg" %>
+		<div class="action-stat comment_count"><%= status.comment_count %></div>
+	</div>
+	<div class="comments">
+		<% status.comments.each do |comment| %>
+				<% user = comment.user %>
+				
+				<div class="comment">
+					<%= link_to user_path(user) do %>
+					<%= image_tag user.profile_pic_url, :class => "status-bar-pic" %>
+						<div class="result-info">
+			 				<div class="result-name">
+			 					<%= user.name %>
+			 				</div>
+			 				<div class="result-tagline">
+			 					<%= user.tagline %>
+			 				</div>
+						</div>
+					<% end %>
+					<div class="status-body">
+						<%= comment.body %>
+					</div>
+				</div>
+		<% end %>
+		<div class="comment">
+			<%= image_tag current_user.profile_pic_url, :class => "status-bar-pic" %>
+			<div class="result-info">
+				<%= form_for Comment.new, remote: true do |f| %>
+					<%= f.text_field :body, placeholder: "Comment on #{user.name}'s update..." %>
+					<%= f.hidden_field :status_id, value: status.id %>
+					<%= f.submit "Submit", :class => "hidden" %>
+					<div class="comment-submit">
+						<%= image_tag "likewhite.svg", :class => "like-svg" %>
+					</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+		
+</div>

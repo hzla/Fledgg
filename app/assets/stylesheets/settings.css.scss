@@ -1,0 +1,56 @@
+
+@import 'variables';
+
+#content-left.settings-section  {
+	top: 60px;
+
+}
+
+
+.notification-header {
+	font-size: 24px;
+	margin-top: 40px;
+}
+.settings-group {
+	float: left;
+	clear: left;
+	font-size: 16px;
+	margin-top: 20px;
+	.input-label {
+		float: left;
+		margin-right: 20px;
+		margin-top: 12px;
+	}
+	input {
+		font-size: 16px;
+		float: left; 
+		padding-left: 10px;
+	}
+	#user_email {
+		width: 300px;
+		border: none;
+		background: $light-gray;
+		border-radius: 5px;
+		height: 40px;
+	}
+	#save-user {
+		width: 100px;
+		float: left;
+		height: 40px;
+		color: white;
+		background: $light-green;
+		border-radius: 5px;
+		border: none;
+		cursor: pointer;
+	}
+	#save-user:hover {
+		background: white;
+		border: 1px solid $light-green;
+		color: $light-green;
+	}
+}
+
+.check-label {
+	float: right;
+
+}

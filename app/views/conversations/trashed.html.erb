@@ -1,0 +1,50 @@
+<%= render partial: 'users/top_bar' %>
+<div id="green-bar">
+	<div class="green-bar-content">
+		<%= link_to conversations_path do %>
+			<div class="bar-section" id="messages-section">
+				Messages
+				<%= "(#{current_user.message_count})" if current_user.message_count > 0 %>
+
+			</div>
+		<% end %>
+		<%= link_to meetings_path, remote: true, id: "meetings-link" do %>
+			<div class="bar-section" id="meetings-section">
+				Meetings
+				<%= "(#{current_user.meeting_count})" if current_user.meeting_count > 0 %>
+			</div>
+		<% end %>
+		<%= link_to trashed_path id: 'trashed-link' do %>
+			<div class="bar-section active" id="trash-section">
+				Trash
+			</div>
+		<% end %>
+	</div>
+</div>
+<div id="content">
+	<div id="content-left-small">
+		<div id="conversation-title">CONVERSATIONS</div>
+		<div id="conversations">
+			<% @conversations.each do |convo| %>
+				<% user = convo.other_user(current_user.id) %>
+				<%= link_to conversation_path(convo), remote: true, :class => "convo-link" do %>
+					<div class="conversation" id='<%= "u-#{user.id}" %>'>
+						<div class="border-hider"></div>
+						<%= image_tag "conversearrow.svg", :class => "convoarrow-svg" %>
+						<%= image_tag user.profile_pic_url, :class => "convo-pic" %>
+						<div class="convo-details">
+							<div class="convo-name"><%= user.name %></div>
+							<div class="convo-date"><%= convo.last_message.date %></div>
+							<div class="convo-subject"><%= convo.last_message.subject %></div>
+							<div class="convo-last-message"><%= convo.last_message.short_body %></div>
+						</div>
+					</div>
+				<% end %>
+			<% end %>
+		</div>
+	</div>
+
+	<div id="content-right-large">
+	
+	</div>
+</div>

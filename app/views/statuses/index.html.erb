@@ -1,0 +1,68 @@
+<%= render partial: 'users/top_bar' %>
+<div id="green-bar">
+	<div class="green-bar-content">
+		<div id="status-header">
+			Activity
+		</div>
+	</div>
+</div>
+
+<div id="status-bar">
+	<div class="green-bar-content">
+		<%= image_tag current_user.profile_pic_url, :class => "status-bar-pic" %>
+
+		<%= form_for @status, remote: true do |f| %>
+			<%= f.text_field :body, placeholder: "Share an update..." %>
+			<%= f.submit "Post", id: "submit-status" %>
+		<% end %>
+	</div>
+</div>
+
+<div id="content" class="status-section">
+	<div id="content-left">
+		<div id="statuses">
+			<% @statuses.each do |status| %>
+				<%= render partial: 'show', locals: {status: status} %>
+			<% end %>
+		</div>
+		
+	</div>
+
+	<div id="content-right">
+		<div id="conversation-title">Meetings</div>
+		<div id="conversations">
+			<% @meetings.each do |meeting| %>
+				<% user = meeting.other_user(current_user.id) %>
+					<div class="conversation" id='<%= "u-#{user.id}" %>'>
+						<div class="border-hider"></div>
+						<%= image_tag user.profile_pic_url, :class => "convo-pic" %>
+						<div class="convo-details">
+							<div class="convo-name"><%= user.name %></div>
+							<div class="result-tagline">
+			 					<%= user.tagline %>
+			 				</div>
+								<div class="meeting-text"><%= meeting.date %></div>
+						</div>
+					</div>
+			<% end %>
+		</div>
+		<div id="feedback"> 
+			Send Feedback
+		</div>
+		<div id="site-info-box">
+			<div class="site-info">
+				Support
+			</div>
+			<div class="site-info">
+				Privacy
+			</div>
+			<div class="site-info">
+				Terms
+			</div>
+			<div class="site-info last">
+				2014 Fledgg
+			</div>
+		</div>
+		
+	</div>
+</div>

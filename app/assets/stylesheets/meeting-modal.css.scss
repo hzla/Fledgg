@@ -1,0 +1,59 @@
+@import 'variables';
+
+#meeting-modal-container {
+	position: fixed;
+	height: 100%;
+	left: 0;
+	top: 40px;
+	width: calc(50% + 140px);
+	background-color: rgba(0,0,0,.8);
+}
+
+#meeting-modal-content {
+	height: 300px;
+	width: 300px;
+	float: right;
+	margin-right: 120px;
+	margin-top: 120px;
+	.form-row {
+		width: 100%;
+		margin-top: 20px;
+		float: left;
+		clear: left;
+	}
+	.form-input {
+		height: 40px;
+		width: 200px;
+		float: right;
+		border: none;
+		font-size: 16px;
+		border-radius: 5px;
+	}
+	#meeting_message {
+		height: 140px;
+	}
+	.form-label {
+		color: white;
+		float: left;
+		width: 70px;
+	}
+	#send-meeting {
+		width: 100%;
+		text-align: center;
+		color: white;
+		background: $light-green;
+		font-weight: 700;
+		height: 40px;
+		margin-top: 20px;
+		border: none;
+		border-radius: 5px;
+		font-size: 16px;
+		cursor: pointer;
+		line-height: 35px;
+	}
+	#send-meeting:hover {
+		color: $light-green;
+		background: white;
+		border: 1px solid $light-green;
+	}
+}

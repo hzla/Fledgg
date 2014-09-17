@@ -56,27 +56,51 @@
 	<div id="content-right">
 		<div id="helpfulness-label">HELPFULNESS RATING</div>
 		<div id="star-container">
-			<% @user.helpfulness.times do %>
+			<% @user.rating.times do %>
 				<%= image_tag 'stargreen.svg', :class => "star" %> 
 			<% end %>
-			<% (5 - @user.helpfulness).times do %>
+			<% (5 - @user.rating).times do %>
 				<%= image_tag 'stargray.svg', :class => "star" %> 
 			<% end %>
 		</div>
-		<div id="meetings-count-box">
-			4 Upcoming Meetings
+
+		<% if @user.followed_by current_user %>
+			<div class="user-action">
+				FOLLOWED
+			</div>
+		<% else %>
+			<%= link_to follow_path(@user), :class => "follow-link", remote: true do %>
+			<div class="user-action">
+				+ FOLLOW
+			</div>
+			<% end %>
+		<% end %>
+		
+		<%= link_to conversations_path(send_to: @user.id ) do %>
+			<div class="user-action">
+				MESSAGE
+			</div>
+		<% end %>
+
+
+		<div id="meetings-count-box" class="meeting-request">
+			REQUEST A MEETING
 		</div>
 		<div class="field-header">
 			Expertise
 		</div>
 		<div class="field-row">
-			asdf asdf asdf
+			<% @skills.each do |skill| %>
+				<div class="skill have" id="<%= "s-#{skill.id}" %>"><%= skill.name %>,&nbsp</div>
+			<% end %>
 		</div>
 		<div class="field-header">
 			Looking for help with
 		</div>
 		<div class="field-row">
-			asdf asdf sadf asdf asdf asdf asdf asdf adf asdf asdf asdfa sdfa 
+			<% @needed_skills.each do |skill| %>
+				<div class="skill needed" id="<%= "s-#{skill.id}" %>"><%= skill.name %>,&nbsp</div>
+			<% end %>
 		</div>
 		<div class="field-header availability">
 			Availability
@@ -90,8 +114,7 @@
 				</div>
 			<% end %>
 		</div>
-
 	</div>
-
 </div>
 
+<%= render partial: "meetings/meetings_modal.html.erb", locals: {user: @user, meeting: @meeting} %>

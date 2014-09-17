@@ -10,7 +10,7 @@ gem 'protected_attributes', '~> 1.0.5'
 gem 'turbolinks'
 gem "thin"
 gem 'faker'
-gem 'faye'
+gem 'zoomus'
 gem 'rails_admin'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
