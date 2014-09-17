@@ -3,7 +3,7 @@ class Connection < ActiveRecord::Base
 	belongs_to :conversation
 
 
-	attr_accessible :user_id, :meeting_id
+	attr_accessible :user_id, :conversation_id
 
 
 end
