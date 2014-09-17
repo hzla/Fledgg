@@ -1,0 +1,19 @@
+development:
+  :address: smtp.gmail.com
+  :port: 587
+  :authentication: plain
+  :user_name: vicky@fledgg.com
+  :password: Fledgg.983052
+  :enable_starttls_auto: true
+production:
+  :address: smtp.gmail.com
+  :port: 587
+  :authentication: plain
+  :user_name: vicky@fledgg.com
+  :password: FLedgg.983052
+  :enable_starttls_auto: true
+
+
+
+
+

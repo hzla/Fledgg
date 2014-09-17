@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>Hi <%= @user.first_name%>,</p>
+    <p>
+        You have a new messages on Fledgg. Click <%= url_for conversations_path %> to view.
+    </p>
+    <p>-Cliq</p>
+  </body>
+</html>

@@ -1,5 +1,6 @@
 class MeetingsController < ApplicationController
 	include SessionsHelper
+	skip_before_filter :require_login, :only => :check
 
 	def index
 		@meetings = current_user.meetings.where('start_time > (?)', Time.now - 7.hours)
@@ -20,7 +21,9 @@ class MeetingsController < ApplicationController
 			other_user.meetings << meeting
 			meeting.create_zoom_meeting
 			@current_meeting = meeting
+			NotificationMailer.meeting_notification(other_user, current_user).deliver if other_user.notify_meetings
 		end
+
 		render layout: false
 	end
 

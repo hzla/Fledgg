@@ -1,7 +1,7 @@
 <%= image_tag "fledgg.jpg", id: "landing-image" %>
 <div id="landing-overlay"></div>
 
-<div class="landing-section white">
+<div class="landing-section white main">
 	<%= image_tag "logo.png", id: "landing-logo" %>
 	<div id="logo-title">FLEDGG</div>
 	<div id="logo-text">Connect with Entrepreneurs and Mentors globally.</div>
@@ -12,5 +12,111 @@
 			</div>
 		</div>
 	</a>
+</div>
 
+<div class="landing-section two">
+	<div class="section-header">ANYONE, ANYTIME, ANYWHERE</div>
+	<div class="section-content">
+		
+		<div class="section-block">
+			<div class="block-text">Match</div>
+			<%= image_tag "match.png", :class => "block-image" %>
+			<div class="block-info">
+				Find or become a mentor, give back to the entrepreneurial community.
+			</div>
+		</div>
+		<div class="section-block">
+			<div class="block-text">Connect</div>
+			<%= image_tag "connect.png", :class => "block-image" %>
+			<div class="block-info">
+				Stay connected with people you have mentored and been mentored by. Grow together.
+			</div>
+		</div>
+		<div class="section-block">
+			<div class="block-text">Share</div>
+			<%= image_tag "share.png", :class => "block-image" %>
+			<div class="block-info">
+				Keep people updated, share your idea, knowledge, passion, inspiration, and progress.
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="landing-section three">
+	THE BEST TOOL FOR CONNECTING WITH MENTORS EVER
+</div>
+
+<div class="landing-section four">
+	<div class="section-header">WHY FLEDGG?</div>
+	<div class="section-content">
+		
+		<div class="section-block">
+			<div class="block-text">ACCESSIBILITY</div>
+			<div class="block-info">
+				Anyone can join anytime no threshold for entrepreneurs or mentors.
+			</div>
+		</div>
+		<div class="section-block">
+			<div class="block-text">TRANSPARENCY</div>
+			<div class="block-info">
+				Anyone can contact anyone else and know the latest information about each other.
+			</div>
+		</div>
+		<div class="section-block">
+			<div class="block-text">TRUSTWORTHINESS</div>
+			<div class="block-info">
+				Build trust and credibility over time through a rating system. Help peolple stay connected and informed.
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="landing-section five">
+	<div class="section-content">
+		<div class="team-container">
+			<div class="member">
+				<%= image_tag "vicky.jpg", :class => "member-pic" %>
+				<div class="member-name">Vicky</div>
+				<div class="member-title">Founder/CEO</div>
+			</div>
+			<div class="member">
+				<%= image_tag "adam.jpg", :class => "member-pic" %>
+				<div class="member-name">Adam</div>
+				<div class="member-title">Founder/CEO</div>
+			</div>
+			<div class="member">
+				<%= image_tag "tim.jpg", :class => "member-pic" %>
+				<div class="member-name">Tim Draper</div>
+				<div class="member-title">Founder/CEO</div>
+			</div>
+			<div class="member">
+				<%= image_tag "tom.jpg", :class => "member-pic" %>
+				<div class="member-name">Tom</div>
+				<div class="member-title">Founder/CEO</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="landing-section six">
+	<%= form_tag feedback_path, id: "feedback-form" do %>
+		<%= text_field_tag :title,nil,id: "feedback-title" %>
+		<%= text_field_tag :email ,nil,id: "feedback-email"%>
+		<%= text_area_tag :body,nil,id: "feedback-body" %>
+		<%= submit_tag "SEND", id: "send-feedback" %>
+	<% end %>
+	<div id="site-copy-container">
+		<div class="copy-link">
+			About
+		</div>
+		<div class="copy-link">
+			Terms & Privacy
+		</div>
+		<div class="copy-link">
+			Contact
+		</div>
+		<div class="copy-link">
+			Help
+		</div>
+	</div>
 </div>

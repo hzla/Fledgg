@@ -17,8 +17,11 @@
 
 .landing-section {
 	width: 100%;
-	height: 100%;
 	font-family: $proxima;
+}
+
+.landing-section.main {
+	height: 100%;
 }
 
 #landing-logo {
@@ -34,6 +37,7 @@
 	width: 250px;
 	margin: 0 auto;
 	margin-top: 20px;
+	text-align: center;
 }
 
 #logo-text {
@@ -56,5 +60,168 @@
 		height: 64px;
 		line-height: 64px;
 		margin-right: 30px;
+	}
+}
+
+.two {
+	background: white;
+	color: $dark-gray;
+	height: 540px;
+	.section-block:nth-child(2n) {
+		margin-left: 60px;
+		margin-right: 60px;
+	}
+}
+
+.section-header {
+	font-size: $h1;
+	width: 100%;
+	text-align: center;
+	padding-top: 40px;
+}
+
+.section-block {
+	width: 280px;
+	float: left;
+	height: 300px;
+	color: $light-green;
+	.block-text {
+		font-size: $h1;
+		width: 100%;
+		text-align: center;
+	}
+	.block-image {
+		width: 200px;
+		height: 200px;
+		margin: 0 auto;
+		margin-top: 20px;
+		display: block;
+	}
+	.block-info {
+		text-align: center;
+		font-size: 20px;
+		margin-top: 20px;
+	}
+}
+
+
+
+.section-content {
+	width: 960px;
+	margin: 0 auto;
+	margin-top: 40px;
+}
+
+.landing-section.three {
+	height: 160px;
+	color: white;
+	text-align: center;
+	font-size: $h1;
+	line-height: 160px;
+	background: $dark-gray;
+}
+
+.landing-section.four {
+	height: 540px;
+	background-image: image_url('people.jpg');
+	background-size: cover;
+	.section-block:nth-child(2n) {
+		margin-left: 60px;
+		margin-right: 60px;
+	}
+	.section-block {
+		color: black;
+		font-size: 20px;
+		margin-top: 160px;
+		font-weight: 300;
+	}
+	.block-text {
+		font-size: 20px;
+	}
+}
+
+.landing-section.five {
+	height: 700px;
+	margin-top: -40px;
+	background: white;
+	.team-container {
+		width: 600px;
+		height: 600px;
+		margin: 0 auto;
+		.member {
+			width: 50%;
+			height: 50%;
+			float: left;
+		}
+		.member-pic {
+			width: 150px;
+			height: 150px;
+			border-radius: 200px;
+			margin: 0 auto;
+			display: block;
+			margin-top: 40px;
+			margin-bottom: 20px;
+		}
+		.member-name {
+			width: 100%;
+			text-align: center;
+		}
+		.member-title {
+			width: 100%;
+			text-align: center;
+			color: $gray;
+		}
+
+	}
+}
+
+.landing-section.six {
+	height: 500px;
+	background: $dark-gray;
+}
+
+
+#feedback-form {
+	float: left;
+	margin-left: 200px;
+	width: 300px;
+	margin-top: 80px;
+	input, textarea {
+		width: 100%;
+		height: 40px;
+		margin-top: 20px;
+		float: left;
+		border-radius: 5px;
+		clear: left;
+		font-size: 16px;
+	}
+	#feedback-body {
+		height: 100px;
+	}
+	#send-feedback {
+		border: none;
+		background: $light-green;
+		color: white;
+		cursor: pointer;
+	}
+	#send-feedback:hover {
+		color: $light-green;
+		background: white;
+		border: 1px solid $light-green;
+
+	}
+}
+
+#site-copy-container {
+	float: right;
+	margin-right: 200px;
+	margin-top: 80px;
+	.copy-link {
+		float: right;
+		color: $light-gray;
+		margin-bottom: 20px;
+		font-size: 20px;
+		clear: right;
+		cursor: pointer;
 	}
 }
