@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140917063335) do
+ActiveRecord::Schema.define(version: 20140917072244) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -143,6 +143,7 @@ ActiveRecord::Schema.define(version: 20140917063335) do
     t.boolean  "notify_messages", default: true
     t.boolean  "notify_meetings", default: true
     t.integer  "rate_count",      default: 1
+    t.string   "role"
   end
 
   create_table "wants", force: true do |t|

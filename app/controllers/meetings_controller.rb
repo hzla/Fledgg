@@ -2,7 +2,7 @@ class MeetingsController < ApplicationController
 	include SessionsHelper
 
 	def index
-		@meetings = current_user.meetings.where('start_time > (?)', Time.now)
+		@meetings = current_user.meetings.where('start_time > (?)', Time.now - 7.hours)
 		@ratings = current_user.appointments.where(rater: true)
 		current_user.update_attributes meeting_count: 0
 		render layout: false
@@ -49,17 +49,17 @@ class MeetingsController < ApplicationController
   		appointments = current_user.appointments.where( accepted: true, dismissed: nil ).map(&:meeting_id)
       p appointments
       if appointments
-        meetings = Meeting.where('id in (?)', appointments).where('start_time < (?)', Time.now ).select {|meeting| meeting.accepted? }
+        meetings = Meeting.where('id in (?)', appointments).where('start_time < (?)', Time.now - 7.hours ).select {|meeting| meeting.accepted? }
         p meetings
         if !meetings.empty? 
-          appointment_ids = meetings.select {|meeting| meeting.start_time < Time.now - 15.minutes }.map(&:appointments)
+          appointment_ids = meetings.select {|meeting| meeting.start_time < Time.now - 15.minutes - 7.hours }.map(&:appointments)
       	  p appointment_ids
           if appointment_ids
             appointment_ids = appointment_ids.flatten.map(&:id) 
             Appointment.where('id in (?)', appointment_ids).update_all dismissed: true
-            p meetings.select {|n| n.start_time > Time.now - 15.minutes}.sort_by {|n| n.start_time}.reverse.first
+            p meetings.select {|n| n.start_time > Time.now - 15.minutes - 7.hours }.sort_by {|n| n.start_time}.reverse.first
             puts "\n%" * 50
-            @current_meeting =  meetings.select {|n| n.start_time > Time.now - 15.minutes}.sort_by {|n| n.start_time}.reverse.first
+            @current_meeting =  meetings.select {|n| n.start_time > Time.now - 15.minutes - 7.hours}.sort_by {|n| n.start_time}.reverse.first
           end
         end
       else
@@ -71,7 +71,7 @@ class MeetingsController < ApplicationController
 
   def join
   	meeting = Meeting.find params[:id]
-  	meeting.appointments.update_all dismissed: true, rater: true
+  	meeting.appointments.where(user_id: current_user.id).update_all dismissed: true, rater: true
   	redirect_to meeting.url
   end
 
