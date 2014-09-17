@@ -1,17 +1,17 @@
-<%= image_tag "fledgg.jpg", id: "landing-image" %>
-<div id="landing-overlay"></div>
-
+<%= video_tag "green.webm", id: "landing-video", autoplay: true, :loop => true, muted: true %>
 <div class="landing-section white main">
 	<%= image_tag "logo.svg", id: "landing-logo" %>
 	<div id="logo-title">FLEDGG</div>
 	<div id="logo-text">Connect with Entrepreneurs and Mentors globally.</div>
-	<a href="/auth/linkedin">
 		<div class="sign-up-box">
-			<div class="li-sign-up-btn">	
-				<div class="sign-up-text">SIGN UP WITH LINKEDIN</div>
-			</div>
+			<a href="/auth/linkedin">
+				<%= image_tag "linkedin.svg", :class => "linkedin-svg" %>
+				<div class="li-sign-up-btn">	
+					<div class="sign-up-text">SIGN UP WITH LINKEDIN</div>
+				</div>
+			</a>
 		</div>
-	</a>
+	
 </div>
 
 <div class="landing-section two">
@@ -47,6 +47,7 @@
 </div>
 
 <div class="landing-section four">
+	<%= image_tag 'people.jpg', :class => "people-image" %>
 	<div class="section-header">WHY FLEDGG?</div>
 	<div class="section-content">
 		
@@ -100,9 +101,9 @@
 
 <div class="landing-section six">
 	<%= form_tag feedback_path, id: "feedback-form" do %>
-		<%= text_field_tag :title,nil,id: "feedback-title" %>
-		<%= text_field_tag :email ,nil,id: "feedback-email"%>
-		<%= text_area_tag :body,nil,id: "feedback-body" %>
+		<%= text_field_tag :title,nil,id: "feedback-title", placeholder: "Name" %>
+		<%= text_field_tag :email ,nil,id: "feedback-email", placeholder: "Email" %>
+		<%= text_area_tag :body,nil,id: "feedback-body", placeholder: "Feedback" %>
 		<%= submit_tag "SEND", id: "send-feedback" %>
 	<% end %>
 	<div id="site-copy-container">

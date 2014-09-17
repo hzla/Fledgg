@@ -1,9 +1,14 @@
 Status = 
 	init: ->
 		$('body').on 'ajax:success', '#new_status', @addStatus
-		$('body').on 'click', '.like-svg', @submitComment
+		$('body').on 'click', '.like-svg', @likeStatus
 		$('body').on 'ajax:success', '#new_comment', @addComment
 		$('body').on 'ajax:beforeSend', '#new_comment', @checkBody
+		$('.like').on 'click', @like
+
+	like: ->
+		newCount = parseInt($(@).next().text()) + 1
+		$(@).next().text newCount
 
 	checkBody: ->
 		body = $(@).find('#comment_body').val()
@@ -17,8 +22,8 @@ Status =
 		$('.status').first().addClass('animated fadeIn')
 		$(@)[0].reset()
 
-	submitComment: ->
-		$(@).parents('form').submit()
+	likeStatus: ->
+		$(@).parents('.status').find('.like').click()
 		
 
 	addComment: (event, data) ->

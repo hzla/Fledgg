@@ -88,7 +88,7 @@ class User < ActiveRecord::Base
 	end
 
 	def ordered_conversations
-		conversations.order('updated_at desc')
+		conversations.order('updated_at desc').uniq
 	end
 
 	def following
