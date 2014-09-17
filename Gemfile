@@ -12,6 +12,7 @@ gem "thin"
 gem 'faker'
 gem 'zoomus'
 gem 'rails_admin'
+gem 'rails_12factor'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem "pg"
