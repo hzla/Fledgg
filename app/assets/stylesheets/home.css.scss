@@ -1,7 +1,7 @@
 @import 'variables';
 
 #landing-video {
-	position: fixed; right: 0; bottom: 0;
+	position: absolute; right: 0; bottom: 0;
 	min-width: 100%; min-height: 100%;
 	width: auto; height: auto; z-index: -100;
 	background-size: cover;width: 100%;
@@ -131,7 +131,7 @@
 
 .landing-section.four {
 	height: 540px;
-	background-image: image_url('people.jpg');
+	background-image: image-url('people.jpg');
 	background-size: cover;
 	.section-block:nth-child(2n) {
 		margin-left: 60px;
