@@ -27,19 +27,22 @@
 		<div id="conversations">
 			<% @conversations.each do |convo| %>
 				<% user = convo.other_user(current_user.id) %>
-				<%= link_to conversation_path(convo), remote: true, :class => "convo-link" do %>
 					<div class="conversation" id='<%= "u-#{user.id}" %>'>
 						<div class="border-hider"></div>
 						<%= image_tag "conversearrow.svg", :class => "convoarrow-svg" %>
-						<%= image_tag user.profile_pic_url, :class => "convo-pic" %>
-						<div class="convo-details">
-							<div class="convo-name"><%= user.name %></div>
-							<div class="convo-date"><%= convo.last_message.date %></div>
-							<div class="convo-subject"><%= convo.last_message.subject %></div>
-							<div class="convo-last-message"><%= convo.last_message.short_body %></div>
-						</div>
+						<%= link_to user_path(user) do %>
+							<%= image_tag user.profile_pic_url, :class => "convo-pic" %>
+						<% end %>
+						<%= link_to conversation_path(convo), remote: true, :class => "convo-link" do %>
+							<div class="convo-details">
+								<div class="convo-name"><%= user.name %></div>
+								<div class="convo-date"><%= convo.last_message.date %></div>
+								<div class="convo-subject"><%= convo.last_message.subject %></div>
+								<div class="convo-last-message"><%= convo.last_message.short_body %></div>
+							</div>
+						<% end %>
 					</div>
-				<% end %>
+				
 			<% end %>
 		</div>
 	</div>

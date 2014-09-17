@@ -35,14 +35,19 @@
 				<% user = meeting.other_user(current_user.id) %>
 					<div class="conversation" id='<%= "u-#{user.id}" %>'>
 						<div class="border-hider"></div>
-						<%= image_tag user.profile_pic_url, :class => "convo-pic" %>
-						<div class="convo-details">
-							<div class="convo-name"><%= user.name %></div>
-							<div class="result-tagline">
-			 					<%= user.tagline %>
-			 				</div>
-								<div class="meeting-text"><%= meeting.date %></div>
-						</div>
+						<%= link_to user_path(user) do  %>
+							<%= image_tag user.profile_pic_url, :class => "convo-pic" %>
+						<% end %>
+
+						<%= link_to conversations_path(meetings: true) do %>
+							<div class="convo-details">
+								<div class="convo-name"><%= user.name %></div>
+								<div class="result-tagline">
+				 					<%= user.tagline %>
+				 				</div>
+									<div class="meeting-text"><%= meeting.date %></div>
+							</div>
+						<% end %>
 					</div>
 			<% end %>
 		</div>

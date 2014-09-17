@@ -142,6 +142,10 @@
 	margin-top: 5px;
 }
 
+.comment-submit:hover {
+	border: 1px solid $light-green;
+}
+
 .status-section {
 	#conversations {
 		max-height: calc(100% - 160px);
