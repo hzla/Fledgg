@@ -56,12 +56,13 @@ $top-bar-element-spacing: 15px;
 		background-color: rgba(255,255,255,.3);
 		border: none;
 		border-radius: 5px;
-		height: $svg-height;
+		height: 40px;
 		margin-top: 10px;
 		color: $dark-green;
 		font-family: $proxima;
 		font-size: $h4;
-		padding-left: 15px;
+		padding: 0 15px;
+        box-sizing: border-box;
 	}
 	::-webkit-input-placeholder {
    color: $green;
@@ -84,51 +85,54 @@ $top-bar-element-spacing: 15px;
 		position: relative;
 	}
 	.search-svg {
-		height: 30px;
+		height: 15px;
 		position: absolute;
-		top: 13px;
-		right: 5px;
+		top: 22px;
+		right: 12px;
 	}
 	#user-top-bar-content {
 		width: 960px;
 		margin: 0 auto;
 		height: 100%;
+        box-sizing: border-box;
 		.fledgg-svg {
-		height: $svg-height;
-		width: $svg-height;
-		margin-top: 10px;
+		height: 30px;
+		width: 30px;
+		margin-top: 15px;
 		float: left;
 		}
 		div, img {
 			cursor: pointer;
 		}
 		#fledgg-text {
-			font-size: $h3;
+			font-size: 19px;
 			float: left;
 			color: white;
 			font-family: $proxima;
 			height: 100%;
 			line-height: $top-bar-height;
 			margin-left: $top-bar-element-spacing;
+            letter-spacing: 1.5px;
+            font-weight: 600;
 		}
 		#name-search {
-			width: 125px;
+			width: auto;
 			margin-left: $top-bar-element-spacing;
 		}
 		#skill-search {
 			width: 295px;
-			margin-left: $top-bar-element-spacing;
+			margin-left: 5px;
 		}
 		.profile-circle-pic {
 		float: right;
-		margin-right: $top-bar-element-spacing;
+		margin-right: 30px;
 		margin-top: 10px;
+        margin-left: 30px;
 		}
 		.svg {
-		height: 25px;
+		height: 13px;
 		float: right;
-		margin-right: $top-bar-element-spacing;
-		margin-top: 17.5px;
+		margin-top: 23.5px;
 		}
 	}	
 }

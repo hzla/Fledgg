@@ -29,7 +29,7 @@
 	</div>
 
 	<div id="content-right">
-		<div id="conversation-title">Meetings</div>
+		<div id="conversation-title">PENDING MEETINGS</div>
 		<div id="conversations">
 			<% @meetings.each do |meeting| %>
 				<% user = meeting.other_user(current_user.id) %>
