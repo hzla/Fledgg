@@ -1,11 +1,12 @@
 @import 'variables';
 
 #status-header {
-	font-size: 32px;
+	font-size: $h2;
 	margin-left: 60px;
 	color: white;
 	height: 60px;
-	line-height: 60px;
+	line-height: 80px;
+    font-weight: 600;
 }
 
 #status-bar {
@@ -35,22 +36,22 @@
 		border-radius: 5px;
 		margin-top: 10px;
 		font-size: 16px;
+        box-sizing: border-box;
+        font-family: $proxima;
 	}
 	#status_body {
 		width: 440px;
-		padding-left: 20px;
+		padding-left: 15px;
 	}
 	#submit-status {
 		width: 80px;
-		margin-left: 20px;
+		margin-left: 10px;
 		color: rgba(255,255,255,.5);
 		background: rgba(0,0,0,.5);
 		cursor: pointer;
 	}
 	#submit-status:hover {
-		background: white;
-		border: 1px solid $dark-green;
-		color: $dark-green;
+		background: $dark-green;
 	}
 }
 
@@ -83,7 +84,7 @@
 
 .status-body {
 	float: left;
-	margin-top: 20px;
+	margin-top: 10px;
 }
 
 .comment {
@@ -109,19 +110,23 @@
 		width: 14px;
 		height: 14px;
 		margin-right: 10px;
+        margin-top: 1px;
 	}
 	.action-stat {
-		color: $light-gray;
+		color: $gray;
 	}
 }
 
 #comment_body {
-	width: calc(100% - 60px);
+	width: calc(100% - 50px);
 	height: 40px;
 	margin-top: 10px;
 	border: 1px solid $light-gray;
 	border-radius: 5px;
 	font-size: 16px;
+    box-sizing: border-box;
+    font-family: $proxima;
+    padding-left: 15px;
 }
 
 .comment-submit {
@@ -143,7 +148,7 @@
 }
 
 .comment-submit:hover {
-	border: 1px solid $light-green;
+	background-color: #26ab5f;
 }
 
 .status-section {
@@ -183,8 +188,9 @@
 #site-info-box {
 	width: 320px;
 	position: absolute;
-	color: $light-gray;
+	color: $gray;
 	bottom: 10px;
+    font-size: 14px;
 	.site-info {
 		float: left;
 		margin-right: 20px;
