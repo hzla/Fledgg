@@ -6,8 +6,10 @@
 	height: 100%;
 	width: auto;
 	line-height: 60px;
-	margin-right: 20px;
+	margin-right: 50px;
 	cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 .new-message-section {
@@ -20,8 +22,10 @@
 
 .bar-section.active {
 	color: white;
-	border-bottom: 4px solid white;
-	height: 57px;
+	border-bottom: 5px solid white;
+	height: 55px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 .new-message-svg {
@@ -34,6 +38,7 @@
 .green-bar-content {
 	width: 960px;
 	margin: 0 auto;
+    height: auto;
 }
 
 #content-left-small {
@@ -56,17 +61,19 @@
 }
 
 #conversation-title {
-	color: $gray;
-	width: 100%;
-	float: right;
-	margin-top: 20px;
-	font-size: 20px;
-	font-weight: 600;
+	color: #242424;
+    width: auto;
+    float: left;
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-left: 30px;
 }
 
 #conversations {
 	width: 100%;
-	margin-top: 20px;
+	margin-top: 10px;
 	float: right;
 	.conversation.active {
 		.convoarrow-svg {
@@ -83,7 +90,7 @@
 		overflow-x: visible;
 		border-bottom: 1px solid $light-gray;
 		.border-hider {
-			width: 20px;
+			width: 30px;
 			height: 20px;
 			position: absolute;
 			bottom: -1px;
