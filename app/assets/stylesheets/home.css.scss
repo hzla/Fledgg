@@ -257,3 +257,57 @@
 		cursor: pointer;
 	}
 }
+
+
+@media(max-width: 1023px) {
+	body {
+		.landing-section.white.main {
+			background-image: image-url('treebeard.jpg') 
+		}
+		.section-content {
+			width: 100%;
+		}
+		#landing-logo {
+			padding-top: 20px;
+		}
+		.two, .three, .landing-section.four, .landing-section.five {
+			height: auto;
+			float: left;
+			.section-block:nth-child(2n) {
+				float: left;
+				margin-left: calc(50% - 140px);
+				margin-top: 90px;
+			}
+			.section-block.first {
+				margin-top: 0px;
+			}
+		}
+		.landing-section.three {
+			font-size: 30px;
+			line-height: 55px;
+
+		}
+		.landing-section.four {
+			background: $light-green;
+			color: white;
+			background-size: 100px 100%;
+		}
+		.landing-section.five {
+			.team-container {
+				width: 100%;
+			}
+		}
+
+		.landing-section.six {
+			display: none;
+		}
+		.section-block {
+			float: left;
+			margin-left: calc(50% - 140px);
+			margin-top: 60px;
+			clear: left;
+		}
+		
+	}
+	
+}
