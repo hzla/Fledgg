@@ -9,7 +9,7 @@
 
 <div id="status-bar">
 	<div class="green-bar-content">
-		<%= image_tag current_user.profile_pic_url, :class => "status-bar-pic" %>
+		<%= image_tag current_user.profile_pic_url, :class => "status-bar-pic main" %>
 
 		<%= form_for @status, remote: true do |f| %>
 			<%= f.text_field :body, placeholder: "Share an update..." %>

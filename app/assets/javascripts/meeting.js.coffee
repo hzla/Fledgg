@@ -16,6 +16,7 @@ Meeting =
 		$('body').on 'mouseleave', '.star-rating-container .star', @unhighlightStar
 		$('body').on 'click', '.star-rating-container .star', @rate
 		$('body').on 'ajax:success', '#rating-form', @thankUser
+		$('body').on 'click', '#meeting-cancel', @hideMeetingForm
 		Meeting.canRate = true
 		@checkMeetings();
 
@@ -33,7 +34,6 @@ Meeting =
 		, 300
 
 	unhighlightStar: ->
-
 		$('.star').find('polygon').css('fill', '#2ecc71') if !Meeting.rated && Meeting.canRate
 		Meeting.rated = false
 	
@@ -56,7 +56,8 @@ Meeting =
 		$('#current-meeting').addClass('animated fadeInDown')
 
 	showMeeting: (event, data) ->
-		$('#content-right-large').html(data)
+		$('#content-left-small').hide() if $('.mobile').length > 0
+		$('#content-right-large').show().html(data)
 		$('.message').addClass('animated fadeIn')
 		
 
@@ -74,6 +75,11 @@ Meeting =
 			if btn.hasClass('result-meeting-request')
 				$('#meeting_recipient').val id
 		, 10
+		$('#meeting-modal-container, #meeting-modal-content').swipe	
+			swipe: (event, direction, distance, duration, fingerCount) ->
+				if direction == "left"
+					Meeting.hideMeetingForm()
+				threshold: 100 
 
 
 		

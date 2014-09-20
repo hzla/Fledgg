@@ -1,0 +1,199 @@
+@import 'variables';
+
+
+$top-bar-height: 60px;
+$svg-height: $top-bar-height - 24px;
+$top-bar-element-spacing: 15px;
+
+.top-nav-content {
+	background: white;
+	height: 100%;
+	width: 80%;
+	left: 0;
+	position: fixed;
+	z-index: 100;
+}
+
+.top-nav-content .icon-label {
+	opacity: 1;
+	color: $light-green;
+}
+
+.top-form {
+	float: left;
+	input {
+		background-color: rgba(255,255,255,.3);
+		border: none;
+		border-radius: 5px;
+		height: 40px;
+		margin-top: 10px;
+		color: $dark-green;
+		font-family: $proxima;
+		font-size: $h4;
+		padding: 0 15px;
+        box-sizing: border-box;
+	}
+	::-webkit-input-placeholder {
+   color: $green;
+	}
+}
+
+#user-top-bar {
+	height: $top-bar-height;
+	width: 100%;
+	position: fixed;
+	background: $light-green;
+	z-index: 5;
+	#people-search-form {
+		position: relative;
+	}
+	.search-svg {
+		height: 15px;
+		position: absolute;
+		top: 22px;
+		right: 12px;
+	}
+	#user-top-bar-content {
+		width: 960px;
+		margin: 0 auto;
+		height: 100%;
+        box-sizing: border-box;
+		.fledgg-svg {
+		height: 30px;
+		width: 30px;
+		margin-top: 15px;
+		float: left;
+		}
+		.mobile-menu-icon {
+			display: none;
+		}
+		div, img {
+			cursor: pointer;
+		}
+		#fledgg-text {
+			font-size: 19px;
+			float: left;
+			color: white;
+			font-family: $proxima;
+			height: 100%;
+			line-height: $top-bar-height;
+			margin-left: $top-bar-element-spacing;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+		}
+		#name-search {
+			width: auto;
+			margin-left: $top-bar-element-spacing;
+		}
+		#skill-search {
+			width: 295px;
+			margin-left: 5px;
+		}
+		.profile-circle-pic {
+		float: right;
+		margin-right: 30px;
+		margin-top: 10px;
+        margin-left: 30px;
+		}
+		.svg {
+		height: 13px;
+		float: right;
+		margin-top: 23.5px;
+		}
+	}	
+}
+
+#green-bar, #status-bar {
+	position: absolute;
+}
+
+@media(max-width: 1023px) {
+	
+
+	body {
+		#meeting-modal-container {
+			width: 100%;
+			overflow-y: scroll;
+			left: 0;
+			#meeting-modal-content {
+				width: calc(100% - 20px);
+				margin-left: 10px;
+				margin-top: 10px;
+				margin-right: 10px;
+				height: 100%;
+				overflow-y: scroll;
+				#send-meeting {
+					width: calc(50% - 5px);
+					float: right;
+					padding-left: 5px;
+				}
+				#meeting-cancel {
+					display: block;
+					width: calc(50% - 5px);
+					float: left;
+					text-align: center;
+					color: white;
+					background: $red;
+					font-weight: 700;
+					height: 40px;
+					margin-top: 20px;
+					margin-right: 10px;
+					border: none;
+					border-radius: 5px;
+					font-size: 16px;
+					cursor: pointer;
+					line-height: 40px;
+				}
+
+			}
+		}
+
+		#green-bar {
+			width: 100%;
+			.green-bar-content {
+				width: 100%;
+			}
+			.bar-section {
+				width: 33.33%;
+				text-align: center;
+				margin-right: 0px;
+			}
+			.bar-section.active {
+				border-bottom: 7px solid white;
+			}
+		}
+		#user-top-bar {
+			#user-top-bar-content {
+				width: 100%;
+				#people-search-form {
+					width: 100%;
+				}
+				img, #fledgg-text, svg  {
+					display: none;
+				}
+				#name-search {
+					width: calc(50% - 30px);
+					padding: 0px 5px;
+					margin-left: 0px;
+				}
+				#skill-search {
+					width: calc(50% - 30px);
+					margin-left: 5px;
+					padding: 0px 5px;
+				}
+				.mobile-menu-icon {
+					display: block;
+					height: 20px;
+					width: 20px;
+					float: left;
+					margin: 0;
+					padding: 20px 10px;
+					path {
+						fill: $dark-green;
+					}
+				}
+			}		
+		}
+		
+	}
+}

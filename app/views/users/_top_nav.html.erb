@@ -1,49 +1,3 @@
-<div id="user-top-bar">
-	<div id="user-top-bar-content">
-		<%= link_to statuses_path  do %>
-		<%= image_tag "fledgg.svg", :class => "fledgg-svg" %>
-		<div id="fledgg-text">FLEDGG</div>
-		<% end %>
-		<%= form_tag search_path, id: "people-search-form", :class => "top-form" do %>
-			<%= image_tag 'mobile-menu.svg', :class => "mobile-menu-icon svg" %>
-			<%= text_field_tag :name_search, nil, :id => "name-search", placeholder: "Search by name" %>
-			<%= text_field_tag :skill_search, nil, :id => "skill-search", placeholder: "or by Expertise" %>
-			<%= image_tag 'searchdarkgreen.svg', :class => "search-svg" %>
-		<% end %>
-
-		<div class="user-actions-container">
-			<%= image_tag "downsettings.svg", :class => "down-svg svg" %>
-				<div class="result-actions-container">
-	 			<%= image_tag "downsearch.svg", :class => "result-svg" %>
-	 			<div class="result-actions">
-	 				<%= link_to settings_path do %>
-		 				<div class="result-action">
-		 					Settings
-		 				</div>
-	 				<% end %>
-	 				<%= link_to logout_path do %>
-		 				<div class="result-action logout">
-		 					Logout
-		 				</div>
-		 			<% end %>
-	 			</div>
- 			</div>
-		</div>
-		<%= link_to user_path(current_user) do %>
-			<%= image_tag current_user.profile_pic_url, :class => "profile-circle-pic" %>
-		<% end %>
-		<%= link_to conversations_path, id: "message-link" do %>
-			<%= image_tag "messagesdarkgreen.svg", :class => "messages-svg svg" %>
-			<% if current_user.message_count + current_user.meeting_count > 0 %>
-				<div class="counter">
-					<%= current_user.message_count + current_user.meeting_count %>
-				</div>
-			<% end %>
-
-		<% end %>
-	</div>
-</div>
-
 <div class="top-nav-content hidden mobile">
 		<%= link_to statuses_path, :class => 'tab', id: "status-tab" do %>
 			<div class="mob-nav search side-icon">
@@ -111,3 +65,4 @@
     }, 'xml');
   });
 </script>
+

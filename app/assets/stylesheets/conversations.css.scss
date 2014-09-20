@@ -140,3 +140,48 @@
 }
 
 
+@media(max-width: 1023px) {
+	body {
+		#content.messages {
+			#content-right-large, #conversation-title, .border-hider {
+				display: none;
+			}
+			#conversations {
+				.conversation.active .convoarrow-svg {
+				display: none;
+				}
+				.conversation {
+					.convo-pic {
+						margin-left: 10px;
+					}
+				}
+			}
+			#content-right-large {
+				position: absolute;
+				width: 100%;
+				left: 0;
+				.message {
+					.message-pic {
+						left: 10px;
+					}
+					.message-actions { 
+						right: 10px;
+					}
+					.meeting-request-details, .meeting-message {
+						margin-left: 10px;
+					}
+				}
+				#new-message-container #submit-message {
+					margin-right: 10px;
+					margin-bottom: 10px;
+				}
+			}
+
+			#content-left-small {
+				position: absolute;
+				width: 100%;
+				left: 0;
+			}
+		}
+	}
+}

@@ -1,0 +1,37 @@
+@import 'variables';
+
+
+
+.mobile {
+	.mob-nav {
+		height: 60px;
+		border-bottom: 1px solid $super-light-gray;
+        box-sizing: border-box;
+        padding: 20px;
+		.nav-icon {
+			height: 24px;
+			width: 24px;
+            margin: 0px;
+		}
+		.icon-label.main {
+			width: 80%;
+			font-size: 16px;
+			font-family: $proxima;
+			float: right;
+		}
+	}
+	.settings.side-icon {
+		margin-left: 0px;
+		position: absolute;
+		width: 100%;
+		.icon-label.main {
+			width: 170px;
+		}
+	}
+	.profile-icon {
+		border-radius: 100px;
+	}
+	.svg path {
+		fill: $dark-green;
+	}
+}

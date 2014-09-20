@@ -50,91 +50,12 @@ $top-bar-element-spacing: 15px;
 	border-radius: 50px;
 }
 
-.top-form {
-	float: left;
-	input {
-		background-color: rgba(255,255,255,.3);
-		border: none;
-		border-radius: 5px;
-		height: 40px;
-		margin-top: 10px;
-		color: $dark-green;
-		font-family: $proxima;
-		font-size: $h4;
-		padding: 0 15px;
-        box-sizing: border-box;
-	}
-	::-webkit-input-placeholder {
-   color: $green;
-	}
-}
+
 
 .profile-circle-pic {
 	height: 40px;
 	width: 40px;
 	border-radius: 100px;
-}
-
-#user-top-bar {
-	height: $top-bar-height;
-	width: 100%;
-	position: fixed;
-	background: $light-green;
-	z-index: 5;
-	#people-search-form {
-		position: relative;
-	}
-	.search-svg {
-		height: 15px;
-		position: absolute;
-		top: 22px;
-		right: 12px;
-	}
-	#user-top-bar-content {
-		width: 960px;
-		margin: 0 auto;
-		height: 100%;
-        box-sizing: border-box;
-		.fledgg-svg {
-		height: 30px;
-		width: 30px;
-		margin-top: 15px;
-		float: left;
-		}
-		div, img {
-			cursor: pointer;
-		}
-		#fledgg-text {
-			font-size: 19px;
-			float: left;
-			color: white;
-			font-family: $proxima;
-			height: 100%;
-			line-height: $top-bar-height;
-			margin-left: $top-bar-element-spacing;
-            letter-spacing: 1.5px;
-            font-weight: 600;
-		}
-		#name-search {
-			width: auto;
-			margin-left: $top-bar-element-spacing;
-		}
-		#skill-search {
-			width: 295px;
-			margin-left: 5px;
-		}
-		.profile-circle-pic {
-		float: right;
-		margin-right: 30px;
-		margin-top: 10px;
-        margin-left: 30px;
-		}
-		.svg {
-		height: 13px;
-		float: right;
-		margin-top: 23.5px;
-		}
-	}	
 }
 
 $profile-pic-size: 125px;
@@ -347,5 +268,47 @@ $profile-left-margin: 50px;
 		border-radius: 10px;
 		margin-bottom: 20px;
 		font-size: 16px;
+	}
+}
+
+@media(max-width: 1023px) {
+	body {
+		#profile-content {
+			#content-left {
+				float: left;
+				position: static; 
+				.field-header, .field-row {
+					width: calc(100% - 20px);
+					margin-left: 10px;
+				}
+			}
+			#content-right {
+				float: left;
+				display: block;
+				width: calc(100% - 20px);
+				margin-left: 10px;
+				position: static;
+				clear: left;
+
+			}
+			#profile-cover {
+				.profile-main-pic {
+					left: 0;
+				}
+				.profile-text-box {
+					left: 145px;
+					width: calc(100% - 155px);
+				}
+			} 
+			
+			.misc-field {
+				clear: left;
+				width: calc(100% - 20px);
+				margin-left: 10px;
+			}
+			.misc-field:nth-child(2n) {
+				margin-left: 10px;
+			}
+		}
 	}
 }

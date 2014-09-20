@@ -1,4 +1,6 @@
-<%= video_tag "green.webm", id: "landing-video", autoplay: true, :loop => true, muted: true %>
+<% if !@mobile  %>
+	<%= video_tag "green.webm", id: "landing-video", autoplay: true, :loop => true, muted: true %>
+<% end %>
 <div class="landing-section white main">
 	<%= image_tag "logo.svg", id: "landing-logo" %>
 	<div id="logo-title">FLEDGG</div>

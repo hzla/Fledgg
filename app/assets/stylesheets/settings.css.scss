@@ -52,5 +52,15 @@
 
 .check-label {
 	float: right;
+}
 
+@media(max-width: 1023px) {
+	body {
+		.edit_user > div {
+			margin-left: 10px;
+		}
+		.settings-group #user_email {
+			width: 290px;
+		}
+	}
 }

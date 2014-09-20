@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_action :require_login
+  before_action :set_device_type
   
   include SessionsHelper
 
@@ -14,6 +15,10 @@ private
 	  unless user
 	    redirect_to root_path and return
 	  end
+	end
+
+  def set_device_type
+  	@mobile = browser.mobile?
 	end
 
 

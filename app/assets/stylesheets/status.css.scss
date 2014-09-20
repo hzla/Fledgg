@@ -201,3 +201,64 @@
 	}
 }
 
+
+@media(max-width: 1023px) {
+	body {
+		#content-right {
+			display: none;
+		}
+		#content-left {
+			position: absolute;
+			width: 100%;
+			left: 0;
+			.status {
+				margin-left: 10px;
+				.status-bar-pic {
+					margin-right: 10px;
+				}
+				.status-body {
+					clear: left;
+					margin-left: 50px;
+					width: calc(100% - 70px);
+				}
+				.comment {
+					width: calc(100% - 80px);
+				}
+				.comment-body {
+					width: 240px;
+				}
+				.comment.comment-form-box {
+					margin-left: 10px;
+					.result-info {
+						width: 300px
+					}
+					.comment-submit {
+						margin-right: 10px;
+					}
+				}
+
+			}
+		}
+		.status-bar-pic.main, .comment-pic {
+			display: none;
+		}
+		.green-bar-content {
+			width: 100%;
+		}
+		#new_status {
+			width: 100%;
+			#status_body {
+				width: 285px;
+				margin-left: 10px;
+				float: none;
+			}
+			#submit-status {
+				display: none;
+			}
+		}
+		
+		#content.status-section {
+
+		}
+	}
+}

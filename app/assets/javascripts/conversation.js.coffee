@@ -12,7 +12,7 @@ Conversation =
 
 	showMeetings: (event, data) ->
 		$('#content').html(data) 
-		$('.conversation').first().click()
+		$('.conversation').first().click() if $('.mobile').length < 1
 
 
 	changeTab: ->
@@ -29,18 +29,21 @@ Conversation =
 
 	trashConversation: ->
 		$('.conversation.active').remove()
-		$('.conversation').first().click() 
+		$('#messages-section').click() if $('.mobile').length > 0
+
 
 	startPage: ->
 		if $('#send-to').length > 0
 			$('#new-message-container').show()
 			$('#other_user_id').val $('#send-to').text()
 			$('#message-recipient').text $('#send-name').text()
+			if $('.mobile').length > 0
+				$('#content-left-small').hide()
+				$('#content-right-large').show()
 		else if $('#go-meetings').length > 0
 			$('#meetings-section').click()
-
 		else
-			$('.conversation').first().click()
+			$('.convo-link').first().click() if $('.mobile').length < 1
 
 	showMessages: ->
 		if $('#send-to').length > 0
@@ -50,7 +53,8 @@ Conversation =
 		$('.conversation.active').find('.convo-subject').text $('#message-subject').val().slice(0,25)
 		$('.conversation.active').find('.convo-last-message').text $('#message-body').val().slice(0,25)
 		$(@)[0].reset()
-		$('.conversation.active').click()
+		$('.conversation.active .convo-link').click()
+		$('#new-message-container').hide()
 
 
 	selectConvo: ->
@@ -68,7 +72,8 @@ Conversation =
 	displayConvo: (event, data) ->
 		$('.message').remove()
 		$('#new-message-container').hide()
-		$('#content-right-large').append(data)
+		$('#content-left-small').hide() if $('.mobile').length > 0
+		$('#content-right-large').show().append(data)
 		$('.message').addClass('animated fadeIn')
 
 

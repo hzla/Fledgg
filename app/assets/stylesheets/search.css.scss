@@ -176,3 +176,59 @@
 		}
 	}
 }
+
+@media(max-width: 1023px) {
+	body {
+		.result:hover {
+			.result-star-container {
+				display: block;
+			}
+			.result-meeting-request {
+				display: none;
+			}	
+			.result-svg {
+				display: none;
+			}
+		}
+		.result-actions-container:hover {
+			.result-actions {
+				display: none;
+			}
+		}
+		#results-text {
+				text-align: center;
+				width: 100%;
+				font-size: 24px;
+			}
+		#content.results-section {
+			#content-right {
+				display: none;
+			}
+			#content-left {
+				position: absolute;
+				left: 0;
+				width: 100%;
+				.result {
+					height: auto;
+					padding-bottom: 10px;
+					float: left;
+					border-bottom: 1px solid $super-light-gray;
+					.result-info {
+						width: calc(100% - 70px);
+						margin-bottom: 10px;
+						margin-left: 10px;
+					}
+					.result-pic {
+						clear: left;
+						margin-left: 10px;
+					}
+					.result-star-container {
+						float: left;
+						margin-left: 50px;
+						margin-top: 0px;
+					}
+				}
+			}
+		}
+	}
+}
