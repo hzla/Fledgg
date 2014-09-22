@@ -8,10 +8,11 @@ $top-bar-element-spacing: 15px;
 .user-actions-container{
 	position: relative;
 	float: right;
+	padding-left: 15px;
 	.result-actions-container {
 		position: absolute;
 		width: 200px;
-		bottom: 0px;
+		bottom: 2px;
 		z-index: 12;
 		display: none;
 		right: 0;

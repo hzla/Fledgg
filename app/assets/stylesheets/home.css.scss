@@ -63,12 +63,13 @@
 }
 
 .sign-up-box {
-	margin: 0 auto;
 	background: #007bb6;
 	width: 300px;
 	height: 64px;
 	border-radius: 10px;
 	margin-top: 20px;
+	display: inline-block;
+	margin-left: calc(50% - 150px);
 	.sign-up-text {
 		float: right;
 		height: 64px;

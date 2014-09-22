@@ -10,6 +10,9 @@ input {
 .hidden {
 	display: none;
 }
+div, input {
+	-webkit-transition: background .5s;
+}
 
 .bold {
 	font-weight: 700;
