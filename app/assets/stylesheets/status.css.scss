@@ -211,18 +211,24 @@
 			position: absolute;
 			width: 100%;
 			left: 0;
+            font-size: 14px;
 			.status {
 				margin-left: 10px;
 				.status-bar-pic {
 					margin-right: 10px;
 				}
+                .result-tagline {
+                    font-size: 12px;
+                }
 				.status-body {
 					clear: left;
 					margin-left: 50px;
 					width: calc(100% - 70px);
+                    margin-top: 5px;    
 				}
 				.comment {
-					width: calc(100% - 80px);
+					width: calc(100% - 40px);
+                    margin-left: 30px;
 				}
 				.comment-body {
 					width: 240px;

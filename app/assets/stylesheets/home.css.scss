@@ -90,7 +90,19 @@
 }
 
 .section-header {
-	font-size: $h1;
+	font-size: $h2;
+    font-weight: 700;
+    letter-spacing: 2px;
+	width: 100%;
+	text-align: center;
+	padding-top: 120px;
+    font-family: $proxima,sans-serif;
+}
+   
+.section-header2 {
+	font-size: $h2;
+    font-weight: 700;
+    letter-spacing: 2px;
 	width: 100%;
 	text-align: center;
 	padding-top: 40px;
@@ -104,7 +116,9 @@
 	color: $light-green;
     font-family: $proxima,sans-serif;
 	.block-text {
-		font-size: $h1;
+		font-size: $h2;
+        font-weight: 700;
+        letter-spacing: 2px;
 		width: 100%;
 		text-align: center;
 	}
@@ -119,6 +133,8 @@
 		text-align: center;
 		font-size: 20px;
 		margin-top: 20px;
+        font-size: $h3;
+        font-weight: 300;
 	}
 }
 
@@ -134,10 +150,12 @@
 	height: 160px;
 	color: white;
 	text-align: center;
-	font-size: 42px;
 	line-height: 160px;
 	background: $dark-gray;
     font-family: $proxima,sans-serif;
+    font-size: $h2;
+    font-weight: 700;
+    letter-spacing: 2px;
 }
 
 .landing-section.four {
@@ -158,7 +176,7 @@
 	.section-block {
 		color: black;
 		font-size: 20px;
-		margin-top: 160px;
+		margin-top: 60px;
 		font-weight: 300;
 	}
 	.block-text {
@@ -192,6 +210,7 @@
 		.member-name {
 			width: 100%;
 			text-align: center;
+            font-weight: 600;
 		}
 		.member-title {
 			width: 100%;
@@ -211,7 +230,7 @@
 #feedback-form {
 	float: left;
 	margin-left: 200px;
-	width: 300px;
+	width: 380px;
 	margin-top: 80px;
     font-family: $proxima,sans-serif;
 	input, textarea {
@@ -223,10 +242,15 @@
 		clear: left;
 		font-size: 16px;
         font-family: $proxima,sans-serif;
+        border: 0px;
+        padding: 0px 15px;
+        box-sizing: border-box;
 	}
 	#feedback-body {
 		height: 100px;
         font-family: $proxima,sans-serif;
+        box-sizing: border-box;
+        padding: 10px 15px;
 	}
 	#send-feedback {
 		border: none;
@@ -234,6 +258,8 @@
 		color: white;
 		cursor: pointer;
         font-family: $proxima,sans-serif;
+        padding: 0px 15px;
+        box-sizing: border-box;
 	}
 	#send-feedback:hover {
 		color: $light-green;
@@ -242,6 +268,10 @@
         font-family: $proxima,sans-serif;
 
 	}
+    .feedback-title{
+        color: white; 
+        text-align: center;
+    }
 }
 
 #site-copy-container {
@@ -263,7 +293,10 @@
 @media(max-width: 1023px) {
 	body {
 		.landing-section.white.main {
-			background-image: image-url('treebeard.jpg') 
+			background-image: image-url('mobilelandingbg.png'); 
+            background-size: cover;
+            padding: 15vh 0px;
+            box-sizing: border-box;
 		}
 		.section-content {
 			width: 100%;
@@ -283,19 +316,50 @@
 				margin-top: 0px;
 			}
 		}
+        .landing-section.two {
+			font-size: 28px;
+            height: 1340px;
+            .section-block {
+                margin-top: 20px;
+            }
+		}
 		.landing-section.three {
-			font-size: 30px;
-			line-height: 55px;
+			font-size: 28px;
+            line-height: 1.2;
+            padding: 5vh 0px;
+            box-sizing: border-box;
 
 		}
 		.landing-section.four {
 			background: $light-green;
 			color: white;
 			background-size: 100px 100%;
+            .section-header {
+                padding: 40px 0px;
+            }
+            .section-content {
+                margin-top: 0px;  
+                .block-info {
+                    margin-top: 0px;
+                    margin-bottom: 40px;
+                }
+                .section-block {
+                    margin-top: 0px;   
+                }
+            }
+            
 		}
 		.landing-section.five {
 			.team-container {
 				width: 100%;
+                height: auto;
+                .member-pic {
+                    height: 100px;
+                    width: 100px;
+                }
+                .member {
+                    margin-bottom: 40px;
+                }
 			}
 		}
 
@@ -307,6 +371,7 @@
 			margin-left: calc(50% - 140px);
 			margin-top: 60px;
 			clear: left;
+            height: auto;
 		}
 		
 	}

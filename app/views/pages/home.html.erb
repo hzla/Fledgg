@@ -17,28 +17,28 @@
 </div>
 
 <div class="landing-section two">
-	<div class="section-header">ANYONE, ANYTIME, ANYWHERE</div>
+	<div class="section-header2">ANYONE, ANYTIME, ANYWHERE</div>
 	<div class="section-content">
 		
 		<div class="section-block first">
-			<div class="block-text">Match</div>
+			<div class="block-text">MATCH</div>
 			<%= image_tag "match.png", :class => "block-image" %>
 			<div class="block-info">
 				Find or become a mentor, give back to the entrepreneurial community.
 			</div>
 		</div>
 		<div class="section-block">
-			<div class="block-text">Connect</div>
+			<div class="block-text">CONNECT</div>
 			<%= image_tag "connect.png", :class => "block-image" %>
 			<div class="block-info">
-				Stay connected with people you have mentored and been mentored by. Grow together.
+				Stay connected with people you have mentored and havebeen mentored by. Grow together.
 			</div>
 		</div>
 		<div class="section-block">
-			<div class="block-text">Share</div>
+			<div class="block-text">SHARE</div>
 			<%= image_tag "share.png", :class => "block-image" %>
 			<div class="block-info">
-				Keep people updated, share your idea, knowledge, passion, inspiration, and progress.
+				Keep people updated, share your ideas, knowledge, passion, inspiration, and progress.
 			</div>
 		</div>
 	</div>
@@ -56,7 +56,7 @@
 		<div class="section-block">
 			<div class="block-text">ACCESSIBILITY</div>
 			<div class="block-info">
-				Anyone can join anytime no threshold for entrepreneurs or mentors.
+				Anyone can join anytime with no threshold for entrepreneurs or mentors.
 			</div>
 		</div>
 		<div class="section-block">
@@ -68,7 +68,7 @@
 		<div class="section-block">
 			<div class="block-text">TRUSTWORTHINESS</div>
 			<div class="block-info">
-				Build trust and credibility over time through a rating system. Help peolple stay connected and informed.
+				Build trust and credibility over time through our rating system. Help peolple stay connected and informed.
 			</div>
 		</div>
 	</div>
@@ -77,25 +77,26 @@
 <div class="landing-section five">
 	<div class="section-content">
 		<div class="team-container">
+            <div class="section-header2">MEET THE TEAM</div>
 			<div class="member">
 				<%= image_tag "vicky.jpg", :class => "member-pic" %>
 				<div class="member-name">Vicky</div>
-				<div class="member-title">Founder/CEO</div>
+				<div class="member-title">Founder and CEO</div>
 			</div>
 			<div class="member">
 				<%= image_tag "adam.jpg", :class => "member-pic" %>
-				<div class="member-name">Adam</div>
-				<div class="member-title">Founder/CEO</div>
+				<div class="member-name">Adam Bruce</div>
+				<div class="member-title">Advisory CTO</div>
 			</div>
 			<div class="member">
 				<%= image_tag "tim.jpg", :class => "member-pic" %>
 				<div class="member-name">Tim Draper</div>
-				<div class="member-title">Founder/CEO</div>
+				<div class="member-title">Investor</div>
 			</div>
 			<div class="member">
 				<%= image_tag "tom.jpg", :class => "member-pic" %>
 				<div class="member-name">Tom</div>
-				<div class="member-title">Founder/CEO</div>
+				<div class="member-title">Advisory CMO</div>
 			</div>
 		</div>
 	</div>
@@ -103,10 +104,13 @@
 
 <div class="landing-section six">
 	<%= form_tag feedback_path, id: "feedback-form" do %>
+        <div class="feedback-title">
+			Have any feedback? We'd love to hear from you!
+		</div>
 		<%= text_field_tag :title,nil,id: "feedback-title", placeholder: "Name" %>
 		<%= text_field_tag :email ,nil,id: "feedback-email", placeholder: "Email" %>
 		<%= text_area_tag :body,nil,id: "feedback-body", placeholder: "Feedback" %>
-		<%= submit_tag "SEND", id: "send-feedback" %>
+		<%= submit_tag "Submit", id: "send-feedback" %>
 	<% end %>
 	<div id="site-copy-container">
 		<div class="copy-link">

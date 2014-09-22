@@ -49,7 +49,7 @@
 			<%= image_tag current_user.profile_pic_url, :class => "status-bar-pic comment-pic" %>
 			<div class="result-info">
 				<%= form_for Comment.new, remote: true do |f| %>
-					<%= f.text_field :body, :class => "comment-body", placeholder: "Comment on #{user.name}'s update..." %>
+					<%= f.text_field :body, :class => "comment-body", placeholder: "Leave a comment..." %>
 					<%= f.hidden_field :status_id, value: status.id %>
 					<%= f.submit "Submit", :class => "hidden" %>
 					<div class="comment-submit">
