@@ -292,7 +292,10 @@
 @media(max-width: 1023px) {
 	body {
 		.landing-section.white.main {
-			background-image: image-url('treebeard.jpg') 
+			background-image: image-url('mobilelandingbg.png'); 
+            background-size: cover;
+            padding: 15vh 0px;
+            box-sizing: border-box;
 		}
 		.section-content {
 			width: 100%;
@@ -312,19 +315,50 @@
 				margin-top: 0px;
 			}
 		}
+        .landing-section.two {
+			font-size: 28px;
+            height: 1340px;
+            .section-block {
+                margin-top: 20px;
+            }
+		}
 		.landing-section.three {
-			font-size: 30px;
-			line-height: 55px;
+			font-size: 28px;
+            line-height: 1.2;
+            padding: 5vh 0px;
+            box-sizing: border-box;
 
 		}
 		.landing-section.four {
 			background: $light-green;
 			color: white;
 			background-size: 100px 100%;
+            .section-header {
+                padding: 40px 0px;
+            }
+            .section-content {
+                margin-top: 0px;  
+                .block-info {
+                    margin-top: 0px;
+                    margin-bottom: 40px;
+                }
+                .section-block {
+                    margin-top: 0px;   
+                }
+            }
+            
 		}
 		.landing-section.five {
 			.team-container {
 				width: 100%;
+                height: auto;
+                .member-pic {
+                    height: 100px;
+                    width: 100px;
+                }
+                .member {
+                    margin-bottom: 40px;
+                }
 			}
 		}
 
@@ -336,6 +370,7 @@
 			margin-left: calc(50% - 140px);
 			margin-top: 60px;
 			clear: left;
+            height: auto;
 		}
 		
 	}
