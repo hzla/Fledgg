@@ -4,7 +4,18 @@ Status =
 		$('body').on 'click', '.like-svg', @likeStatus
 		$('body').on 'ajax:success', '#new_comment', @addComment
 		$('body').on 'ajax:beforeSend', '#new_comment', @checkBody
+		@scrollMeetings()
 		$('.like').on 'click', @like
+
+	scrollMeetings: ->
+		$(window).scroll ->
+			scrollTop = $(@).scrollTop()
+			scrollTop = 120 if scrollTop > 120
+			position = 180 - scrollTop
+			right = $('.status-section #content-right')
+			right.css 'height', "calc(100% - #{position}px )"
+			right.css 'top', "#{position}px"
+			
 
 	like: ->
 		newCount = parseInt($(@).next().text()) + 1
