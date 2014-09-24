@@ -2,6 +2,7 @@
 <div id="profile-content">
 	<div id="content-left">
 		<div id="profile-cover">
+			<%= image_tag @user.profile_pic_url, :class => "cover-image" %>
 			<%= image_tag @user.profile_pic_url, :class => "profile-main-pic" %>
 			<div class="profile-text-box">
 				<div id="name" class="profile-text"><%= @user.name %></div>

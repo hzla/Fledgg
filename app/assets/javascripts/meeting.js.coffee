@@ -4,6 +4,8 @@ Meeting =
 		$('#meeting_start_time').datetimepicker
 			format:'d.m.Y H:i'
 			lang:'en'
+			minDate: 0
+			minTime: 0
 			step: 30
 			formatTime:'g:i a'
 		$('body').on 'click', '#content-right', @hideMeetingForm
@@ -56,7 +58,7 @@ Meeting =
 		$('#current-meeting').addClass('animated fadeInDown')
 
 	showMeeting: (event, data) ->
-		$('#content-left-small').hide() if $('.mobile').length > 0
+		$('#content-left-small').hide() if $('body.mobile').length > 0
 		$('#content-right-large').show().html(data)
 		$('.message').addClass('animated fadeIn')
 		

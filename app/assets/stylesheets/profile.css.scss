@@ -69,11 +69,17 @@ $profile-left-margin: 50px;
 	margin-top: $top-bar-height;
 	#profile-cover {
 		width: 100%;
+		overflow: hidden;
 		height: 200px;
 		background: $dark-gray;
 		position: relative;
 		div, img {
 			position: absolute;
+		}
+		.cover-image {
+			width: 100%;
+			height: 300%;
+			-webkit-filter: blur(3px)
 		}
 		.profile-main-pic {
 			width: $profile-pic-size;

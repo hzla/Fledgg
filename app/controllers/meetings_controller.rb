@@ -44,6 +44,7 @@ class MeetingsController < ApplicationController
 
 	def show
 		@meeting = Meeting.find(params[:id])
+		@status = @meeting.status current_user
 		render layout: false
 	end
 

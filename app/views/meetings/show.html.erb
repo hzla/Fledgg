@@ -1,4 +1,4 @@
-<div class="message meeting">
+<div class="message meeting <%= @status %>">
 	<div class="message-header">
 		<% user = @meeting.other_user(current_user.id) %>
 		<div class="message-name bold">
@@ -17,7 +17,7 @@
 		<%= @meeting.message %>
 	</div>
 
-	<% if @meeting.status(current_user) == "unaccepted" %>
+	<% if @status == "unaccepted" %>
 		<div class="meeting-actions">
 			<%= link_to accept_path(@meeting) do %>	
 				<div class="meeting-action accept-meeting">
@@ -39,5 +39,16 @@
 				</div>
 			<% end %>
 		</div>
+	<% elsif @status == "pending" %>
+		<%= link_to decline_path(@meeting) do %>
+			<div class="meeting-action decline-meeting">
+				<%= image_tag 'declinewhite.svg', :class => "meeting-action-svg" %>
+				Cancel Request
+			</div>
+		<% end %>
+
+	<% else %>
+
 	<% end %>
+
 </div>

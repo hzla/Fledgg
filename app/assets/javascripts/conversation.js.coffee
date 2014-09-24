@@ -12,7 +12,7 @@ Conversation =
 
 	showMeetings: (event, data) ->
 		$('#content').html(data) 
-		$('.conversation').first().click() if $('.mobile').length < 1
+		$('.conversation').first().click() if $('body.mobile').length < 1
 
 
 	changeTab: ->
@@ -29,7 +29,7 @@ Conversation =
 
 	trashConversation: ->
 		$('.conversation.active').remove()
-		$('#messages-section').click() if $('.mobile').length > 0
+		$('#messages-section').click() if $('body.mobile').length > 0
 
 
 	startPage: ->
@@ -37,13 +37,13 @@ Conversation =
 			$('#new-message-container').show()
 			$('#other_user_id').val $('#send-to').text()
 			$('#message-recipient').text $('#send-name').text()
-			if $('.mobile').length > 0
+			if $('body.mobile').length > 0
 				$('#content-left-small').hide()
 				$('#content-right-large').show()
 		else if $('#go-meetings').length > 0
 			$('#meetings-section').click()
 		else
-			$('.convo-link').first().click() if $('.mobile').length < 1
+			$('.convo-link').first().click() if $('body.mobile').length < 1
 
 	showMessages: ->
 		if $('#send-to').length > 0
@@ -72,7 +72,7 @@ Conversation =
 	displayConvo: (event, data) ->
 		$('.message').remove()
 		$('#new-message-container').hide()
-		$('#content-left-small').hide() if $('.mobile').length > 0
+		$('#content-left-small').hide() if $('body.mobile').length > 0
 		$('#content-right-large').show().append(data)
 		$('.message').addClass('animated fadeIn')
 

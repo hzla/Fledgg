@@ -16165,7 +16165,7 @@ jQuery.fn.best_in_place = function () {
     },
     showMeetings: function(event, data) {
       $('#content').html(data);
-      if ($('.mobile').length < 1) {
+      if ($('body.mobile').length < 1) {
         return $('.conversation').first().click();
       }
     },
@@ -16183,7 +16183,7 @@ jQuery.fn.best_in_place = function () {
     },
     trashConversation: function() {
       $('.conversation.active').remove();
-      if ($('.mobile').length > 0) {
+      if ($('body.mobile').length > 0) {
         return $('#messages-section').click();
       }
     },
@@ -16192,14 +16192,14 @@ jQuery.fn.best_in_place = function () {
         $('#new-message-container').show();
         $('#other_user_id').val($('#send-to').text());
         $('#message-recipient').text($('#send-name').text());
-        if ($('.mobile').length > 0) {
+        if ($('body.mobile').length > 0) {
           $('#content-left-small').hide();
           return $('#content-right-large').show();
         }
       } else if ($('#go-meetings').length > 0) {
         return $('#meetings-section').click();
       } else {
-        if ($('.mobile').length < 1) {
+        if ($('body.mobile').length < 1) {
           return $('.convo-link').first().click();
         }
       }
@@ -16232,7 +16232,7 @@ jQuery.fn.best_in_place = function () {
     displayConvo: function(event, data) {
       $('.message').remove();
       $('#new-message-container').hide();
-      if ($('.mobile').length > 0) {
+      if ($('body.mobile').length > 0) {
         $('#content-left-small').hide();
       }
       $('#content-right-large').show().append(data);
@@ -18437,7 +18437,7 @@ Date.parseFunctions={count:0};Date.parseRegexes=[];Date.formatFunctions={count:0
       return $('#current-meeting').addClass('animated fadeInDown');
     },
     showMeeting: function(event, data) {
-      if ($('.mobile').length > 0) {
+      if ($('body.mobile').length > 0) {
         $('#content-left-small').hide();
       }
       $('#content-right-large').show().html(data);
