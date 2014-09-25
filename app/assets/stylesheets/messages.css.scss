@@ -30,7 +30,7 @@
 	.message-svg {
 		height: 20px;
 		width: 20px;
-		margin-left: 10px;
+		margin-left: 40px;
 		float: left;
 		cursor: pointer;
 	}
@@ -72,6 +72,7 @@
 		height: 40px;
 		font-size: 16px;
 		line-height: 40px;
+        font-family: $proxima;
 	}
 	#submit-message {
 		height: 40px;
@@ -93,6 +94,7 @@
 	}
 	#message-body {
 		border: none;
+        font-family: $proxima;
 	}
 
 	#new_message {
