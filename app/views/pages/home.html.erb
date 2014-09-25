@@ -1,5 +1,5 @@
 <% if !@mobile  %>
-	<%= video_tag "green.webm", id: "landing-video", autoplay: true, :loop => true, muted: true %>
+	<%= image_tag "dlandingbg.png", id: "landing-pic" %>
 <% end %>
 <div class="landing-section white main">
 	<%= image_tag "logo.svg", id: "landing-logo" %>
@@ -81,7 +81,7 @@
             <div class="section-header2">MEET THE TEAM</div>
 			<div class="member">
 				<%= image_tag "vicky.jpg", :class => "member-pic" %>
-				<div class="member-name">Vicky</div>
+				<div class="member-name">Vicky Zhang</div>
 				<div class="member-title">Founder and CEO</div>
 			</div>
 			<div class="member">
@@ -96,7 +96,7 @@
 			</div>
 			<div class="member">
 				<%= image_tag "tom.jpg", :class => "member-pic" %>
-				<div class="member-name">Tom</div>
+				<div class="member-name">Tom Kosnik</div>
 				<div class="member-title">Advisory CMO</div>
 			</div>
 		</div>
