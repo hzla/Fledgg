@@ -23,6 +23,14 @@
 
 .landing-section.main {
 	height: 100%;
+	position: relative;
+	#down-arrow {
+		height: 40px;
+		width: 100%;
+		position: absolute;
+		bottom: 5px;
+		left: 0;
+	}
 }
 
 #landing-logo {

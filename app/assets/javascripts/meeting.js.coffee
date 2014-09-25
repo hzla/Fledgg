@@ -1,13 +1,7 @@
 Meeting = 
 	init: ->
 		Meeting.open = false
-		$('#meeting_start_time').datetimepicker
-			format:'d.m.Y H:i'
-			lang:'en'
-			minDate: 0
-			minTime: 0
-			step: 30
-			formatTime:'g:i a'
+		@initDateTimePicker()
 		$('body').on 'click', '#content-right', @hideMeetingForm
 		$('body').on 'click', '.meeting-request', @showMeetingForm
 		$('body').on 'ajax:success', '.meeting-link', @showMeeting 
@@ -23,6 +17,32 @@ Meeting =
 		Meeting.canRate = true
 		@checkMeetings();
 
+	initDateTimePicker: ->
+		$('#meeting_start_time').datetimepicker
+			format:'d.m.Y H:i'
+			lang:'en'
+			minDate: 0
+			minTime: 0
+			defaultTime: 0
+			step: 30
+			formatTime:'g:i a'
+			onChangeDateTime: Meeting.dateLogic
+			onShow: Meeting.dateLogic
+				
+	dateLogic: (dateTime) ->
+		console.log dateTime
+		if dateTime.getDate() == (new Date().getDate())
+			console.log "this"
+			@.setOptions
+				minTime: 0
+		else
+			console.log "that"
+			@.setOptions
+				minTime: "12:00 am"
+
+
+
+
 	showSending: ->
 		$('#send-meeting').val('Sending...')
 
@@ -32,7 +52,7 @@ Meeting =
 	rate: ->
 		rating = $(@).attr('id')
 		$('#rating-value').val rating
-		$(@).nextAll().find('polygon').css('fill', 'white')
+		$(@).nextAll().find('polygon').css('fill', 'gray')
 		Meeting.rated = true
 		Meeting.canRate = false
 		setTimeout ->
@@ -44,7 +64,7 @@ Meeting =
 		Meeting.rated = false
 	
 	highlightStar: ->
-		$(@).nextAll().find('polygon').css('fill', 'white')
+		$(@).nextAll().find('polygon').css('fill', 'gray')
 		Meeting.rated = false
 
 	checkMeetings: ->

@@ -46,7 +46,7 @@ $top-bar-element-spacing: 15px;
 	font-size: 12px;
 	line-height: 20px;
 	text-align: center;
-	left: 205px;
+	left: 135px;
 	top: 10px;
 	border-radius: 50px;
 }
@@ -192,6 +192,13 @@ $profile-left-margin: 50px;
 
 #profile-cover .form_in_place input {
 	width: 90%;
+}
+
+.time-block {
+	.time-value {
+		min-width: 100px;
+		height: 40px;
+	}
 }
 
 #content-left {
