@@ -46,12 +46,12 @@
 	#submit-status {
 		width: 80px;
 		margin-left: 10px;
-		color: rgba(255,255,255,.5);
-		background: rgba(0,0,0,.5);
+		color: white;
+		background: $light-blue;
 		cursor: pointer;
 	}
 	#submit-status:hover {
-		background: $dark-green;
+		background: $light-blue-hover;
 	}
 }
 
