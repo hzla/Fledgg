@@ -17,9 +17,15 @@ class StatusesController < ApplicationController
 
 	def like
 		status = Status.find(params[:id])
-		new_count = status.like_count + 1
-		status.update_attributes like_count: new_count
-		render nothing: true
+		possible_like = Like.where(user_id: current_user.id, status_id: status.id)
+		if possible_like.empty?
+			Like.create(user_id: current_user.id, status_id: params[:id])
+			new_count = status.like_count + 1
+			status.update_attributes like_count: new_count
+		else
+			render json: {dont_like: true} and return
+		end
+		render json: {dont_like: false}
 	end
 
 

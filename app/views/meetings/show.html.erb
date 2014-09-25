@@ -40,7 +40,7 @@
 			<% end %>
 		</div>
 	<% elsif @status == "pending" %>
-		<%= link_to decline_path(@meeting) do %>
+		<%= link_to decline_path(@meeting), data: {confirm: "Cancel this meeting request?"} do %>
 			<div class="meeting-action decline-meeting">
 				<%= image_tag 'declinewhite.svg', :class => "meeting-action-svg" %>
 				Cancel Request

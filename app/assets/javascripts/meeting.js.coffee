@@ -12,6 +12,7 @@ Meeting =
 		$('body').on 'click', '.meeting-request', @showMeetingForm
 		$('body').on 'ajax:success', '.meeting-link', @showMeeting 
 		$('body').on 'ajax:success', '#new_meeting', @notifyMeeting
+		$('body').on 'submit', '#new_meeting', @showSending
 		$('body').on 'click', '.current-meeting-btn', @hideMeeting
 		$('body').on 'ajax:success', 'a', @checkMeetings
 		$('body').on 'mouseover', '.star-rating-container .star', @highlightStar
@@ -21,6 +22,9 @@ Meeting =
 		$('body').on 'click', '#meeting-cancel', @hideMeetingForm
 		Meeting.canRate = true
 		@checkMeetings();
+
+	showSending: ->
+		$('#send-meeting').val('Sending...')
 
 	thankUser: ->
 		$('.message-body').html "<h1>Thank You for Rating!</h1>"
@@ -64,6 +68,8 @@ Meeting =
 		
 
 	hideMeetingForm: ->
+		$('#send-meeting').val('REQUEST MEETING')
+
 		$('#meeting-modal-container').hide() if Meeting.open = true
 		Meeting.open = false
 		return true

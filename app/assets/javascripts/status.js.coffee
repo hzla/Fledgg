@@ -5,7 +5,7 @@ Status =
 		$('body').on 'ajax:success', '#new_comment', @addComment
 		$('body').on 'ajax:beforeSend', '#new_comment', @checkBody
 		@scrollMeetings()
-		$('.like').on 'click', @like
+		$('.like-link').on 'ajax:success', @like
 
 	scrollMeetings: ->
 		$(window).scroll ->
@@ -17,9 +17,10 @@ Status =
 			right.css 'top', "#{position}px"
 			
 
-	like: ->
-		newCount = parseInt($(@).next().text()) + 1
-		$(@).next().text newCount
+	like: (event, data) ->
+		like = $(@).children('.like')
+		newCount = parseInt(like.next().text()) + 1
+		like.next().text newCount if data.dont_like == false 
 
 	checkBody: ->
 		body = $(@).find('#comment_body').val()

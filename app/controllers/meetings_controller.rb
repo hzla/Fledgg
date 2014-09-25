@@ -21,7 +21,7 @@ class MeetingsController < ApplicationController
 			other_user.meetings << meeting
 			meeting.create_zoom_meeting
 			@current_meeting = meeting
-			#NotificationMailer.meeting_notification(other_user, current_user).deliver if other_user.notify_meetings
+			NotificationMailer.meeting_notification(other_user, current_user, meeting).deliver if other_user.notify_meetings
 		end
 
 		render layout: false

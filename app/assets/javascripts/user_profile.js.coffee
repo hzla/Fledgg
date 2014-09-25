@@ -1,9 +1,18 @@
 UserProfile = 
 	init: ->
-		$('body').on 'click', '.edit-svg', @showEditField
+		$('body').on 'click', '.edit-svg.edit-skill', @showEditField
+		$('body').on 'click', '.edit-svg:not(.edit-skill)', @editField
 		$('body').on 'ajax:success', '#skill-form, #needed-skill-form', @addSkill
 		$('body').on 'click', '.skill', @deleteSkill
 		$('body').on 'ajax:success', '.edit_user', @saveSettings
+		$('.best_in_place').bind 'ajax:success', @checkValues
+
+	checkValues: ->
+		console.log @
+		console.log $(@)
+
+	editField: ->
+		$(@).parent().next().children().first().click()
 
 	saveSettings: ->
 		$('#save-user').val('Saved!')

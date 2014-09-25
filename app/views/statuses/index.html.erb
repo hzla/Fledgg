@@ -12,11 +12,12 @@
 		<%= image_tag current_user.profile_pic_url, :class => "status-bar-pic main" %>
 
 		<%= form_for @status, remote: true do |f| %>
-			<%= f.text_field :body, placeholder: "Share an update..." %>
+			<%= f.text_field :body, placeholder: "What's new with your project?" %>
 			<%= f.submit "Post", id: "submit-status" %>
 		<% end %>
 	</div>
 </div>
+
 
 <div id="content" class="status-section">
 	<div id="content-left">

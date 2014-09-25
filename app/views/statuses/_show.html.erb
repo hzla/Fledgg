@@ -17,7 +17,7 @@
 		<%= status.body %>
 	</div>
 	<div class="status-actions">
-		<%= link_to like_path(status), remote: true do %>
+		<%= link_to like_path(status), remote: true, :class => "like-link" do %>
 			<%= image_tag "likegray.svg", :class =>"status-action-svg like" %>
 			<div class="action-stat like_count"><%= status.like_count %></div>
 		<% end %>

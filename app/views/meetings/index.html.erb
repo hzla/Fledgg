@@ -35,6 +35,9 @@
 							<div class="meeting-text">You sent a pending request to</div>
 						<% end %>
 						<div class="convo-name"><%= user.name %></div>
+						<% if status == "unaccepted" %>
+							<div class="meeting-text">for <%= meeting.date %></div>
+						<% end %>
 						<% if status == "accepted" %>
 							<div class="meeting-text">on <%= meeting.date %></div>
 						<% end %>

@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
 	has_many :messages
 	has_many :statuses
 	has_many :comments
+	has_many :likes
 	attr_accessible :rate_count, :notify_messages, :notify_meetings, :message_count, :meeting_count, :education, :interests, :name, :email, :profile_pic_url, :li_token, :birthday, :star_sign, :personality, :favorite_book, :favorite_movie, :mon, :tues, :wed, :thurs, :fri, :sat, :sun, :bio, :info, :helpfulness, :location, :tagline, :follow_list
 
 	def self.create_with_linkedin auth_hash

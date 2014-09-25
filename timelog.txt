@@ -1,29 +1,17 @@
 Time Estimates
-__________________________________
+Done Today: 130min
 
-DateTimePicker in past, shouldn't be able to schedule meetings in the past, gray out dates before today and in past (30min) DONE
-
-Make DateTimePicker so that text can't be entered, fix on phone(20min) DONE
-
-Meeting Request Cancel Button (10min) DONE
-
-Profile Cover (10min) DONE
+_________________________________
 
 Redo Mobile Rating, Javascript Fucking Uo (30min)
 
 Change Meeting Confirmation to pending. Notifications for when both parties accept. (20min)
 
-Status Move Liking and restrict liking (20min)
+Status Move Liking (5min)
 
 Landing Page arrowdown (2min)
 
 Landing Page modifications (15min)
-
-Self Profile moving elements and adding red pen, fav book to favorite movie (20min)
-
-change color of text on site (5min)
-
-Messages Mobile bug white refresh (20min)
 
 Messages Conversations redesign (20min)
 
