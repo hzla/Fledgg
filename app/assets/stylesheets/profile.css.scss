@@ -272,7 +272,7 @@ $profile-left-margin: 50px;
 	
 	#meetings-count-box {
 		width: 100%;
-		border-radius: 10px;
+		border-radius: 5px;
 		color: white;
 		background-color: $light-green;
 		float: left;
@@ -281,6 +281,7 @@ $profile-left-margin: 50px;
 		line-height: 40px;
 		font-size: $h4;
 		cursor: pointer;
+        font-weight: 400;
 	}
 	.time-block {
 		margin-top: 20px;
