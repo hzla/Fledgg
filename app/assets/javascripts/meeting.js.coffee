@@ -9,7 +9,7 @@ Meeting =
 		$('body').on 'submit', '#new_meeting', @showSending
 		$('body').on 'click', '.current-meeting-btn', @hideMeeting
 		$('body').on 'ajax:success', 'a', @checkMeetings
-		$('body').on 'mouseover', '.star-rating-container .star', @highlightStar
+		$('body').on 'click', '.star-rating-container .star', @highlightStar
 		$('body').on 'mouseleave', '.star-rating-container .star', @unhighlightStar
 		$('body').on 'click', '.star-rating-container .star', @rate
 		$('body').on 'ajax:success', '#rating-form', @thankUser
@@ -40,9 +40,6 @@ Meeting =
 			@.setOptions
 				minTime: "12:00 am"
 
-
-
-
 	showSending: ->
 		$('#send-meeting').val('Sending...')
 
@@ -60,10 +57,11 @@ Meeting =
 		, 300
 
 	unhighlightStar: ->
-		$('.star').find('polygon').css('fill', '#2ecc71') if !Meeting.rated && Meeting.canRate
+		#$('.star').find('polygon').css('fill', '#2ecc71') if !Meeting.rated && Meeting.canRate
 		Meeting.rated = false
 	
 	highlightStar: ->
+		$('.star').find('polygon').css('fill', '#2ecc71')
 		$(@).nextAll().find('polygon').css('fill', 'gray')
 		Meeting.rated = false
 
