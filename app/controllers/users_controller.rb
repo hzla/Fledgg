@@ -52,7 +52,13 @@ class UsersController < ApplicationController
 	end
 
 	def update
-    current_user.update_attributes(params[:user])
+		if params[:user][:info]
+			info = params[:user][:info]
+			sanitized = CGI::unescapeHTML(info.gsub(/<\/?[^>]*>/,""))
+			current_user.update_attributes info: sanitized
+		else
+    	current_user.update_attributes(params[:user])
+    end
     render json: current_user
   end
 

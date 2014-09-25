@@ -32,6 +32,10 @@ textarea:focus, input:focus {
 	outline: 0;
 }
 
+.linkify a {
+	color: $light-blue;
+	text-decoration: underline;
+}
 
 a {
 	text-decoration: none;

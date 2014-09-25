@@ -9,7 +9,8 @@ class StatusesController < ApplicationController
 	end
 
 	def create
-		status = Status.create(params[:status])
+		sanitized = CGI::unescapeHTML(params[:status][:body].gsub(/<\/?[^>]*>/,"")) 
+		status = Status.create(body: sanitized)
 		current_user.statuses << status
 		comment = Comment.new
 		render partial: 'show', locals: {status: status, comment: comment}

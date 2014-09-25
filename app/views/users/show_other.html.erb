@@ -10,6 +10,22 @@
 			</div>
 		</div>
 		<div class="field-header">
+			Expertise
+		</div>
+		<div class="field-row">
+			<% @skills.each do |skill| %>
+				<div class="skill have" id="<%= "s-#{skill.id}" %>"><%= skill.name %>,&nbsp</div>
+			<% end %>
+		</div>
+		<div class="field-header">
+			Looking for help with
+		</div>
+		<div class="field-row">
+			<% @needed_skills.each do |skill| %>
+				<div class="skill needed" id="<%= "s-#{skill.id}" %>"><%= skill.name %>,&nbsp</div>
+			<% end %>
+		</div>
+		<div class="field-header">
 			Bio
 		</div>
 		<div class="field-row">
@@ -18,7 +34,7 @@
 		<div class="field-header">
 			Info
 		</div>
-		<div class="field-row">
+		<div class="field-row linkify">
 			<%= @user.info %> 
 		</div>
 		<div class="field-row misc">
@@ -85,22 +101,6 @@
 
 		<div id="meetings-count-box" class="meeting-request">
 			REQUEST A MEETING
-		</div>
-		<div class="field-header">
-			Expertise
-		</div>
-		<div class="field-row">
-			<% @skills.each do |skill| %>
-				<div class="skill have" id="<%= "s-#{skill.id}" %>"><%= skill.name %>,&nbsp</div>
-			<% end %>
-		</div>
-		<div class="field-header">
-			Looking for help with
-		</div>
-		<div class="field-row">
-			<% @needed_skills.each do |skill| %>
-				<div class="skill needed" id="<%= "s-#{skill.id}" %>"><%= skill.name %>,&nbsp</div>
-			<% end %>
 		</div>
 		<div class="field-header availability">
 			Availability

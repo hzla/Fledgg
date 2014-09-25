@@ -6,10 +6,30 @@ UserProfile =
 		$('body').on 'click', '.skill', @deleteSkill
 		$('body').on 'ajax:success', '.edit_user', @saveSettings
 		$('.best_in_place').bind 'ajax:success', @checkValues
+		$('body').on 'ajax:success', 'a, form', @linkifyLinks
+		@linkifyLinks()
+
+	linkifyLinks: ->
+		$('.linkify').each ->
+			linkifiedText = UserProfile.linkify $(@).text()
+			$(@).html linkifiedText
+
+
+	linkify: (inputText) ->
+		replacePattern1 = /(\b(https?|ftp):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/gim
+		replacedText = inputText.replace(replacePattern1, '<a href="$1" target="_blank">$1</a>')
+		replacePattern2 = /(^|[^\/])(www\.[\S]+(\b|$))/gim
+		replacedText = replacedText.replace(replacePattern2, '$1<a href="http://$2" target="_blank">$2</a>')
+		replacePattern3 = /(([a-zA-Z0-9\-\_\.])+@[a-zA-Z\_]+?(\.[a-zA-Z]{2,6})+)/gim
+		replacedText = replacedText.replace(replacePattern3, '<a href="mailto:$1">$1</a>')
+		replacedText;
+
+
 
 	checkValues: ->
 		console.log @
 		console.log $(@)
+		$(@).click()
 
 	editField: ->
 		$(@).parent().next().children().first().click()
