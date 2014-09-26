@@ -5,8 +5,8 @@
 			<%= image_tag @user.profile_pic_url, :class => "profile-main-pic" %>
 			<div class="profile-text-box">
 				<div id="name" class="profile-text"><%= @user.name %></div>
-				<div id="tagline" class="profile-text"><%= @user.tagline %></div>
-				<div id="location" class="profile-text"><%= @user.location %></div>
+				<div id="tagline" class="profile-text"><%= @user.tagline || "User has not added anything here yet" %></div>
+				<div id="location" class="profile-text"><%= @user.location || "User has not added anything here yet" %></div>
 			</div>
 		</div>
 		<div class="field-header">
@@ -29,42 +29,42 @@
 			Bio
 		</div>
 		<div class="field-row">
-			<%= @user.bio %> 
+			<%= @user.bio || "User has not added anything here yet" %> 
 		</div>
 		<div class="field-header">
 			Info
 		</div>
 		<div class="field-row linkify">
-			<%= @user.info %> 
+			<%= @user.info || "User has not added anything here yet" %> 
 		</div>
 		<div class="field-row misc">
 			<div class="misc-field">
 				<div class="field-label">Birthday</div>
-				<div class="field-value"><%= @user.birthday %></div>
+				<div class="field-value"><%= @user.birthday || "Not added" %></div>
 			</div>
 			<div class="misc-field">
 				<div class="field-label">Interests</div>
-				<div class="field-value"><%= @user.interests %></div>
+				<div class="field-value"><%= @user.interests  || "Not added" %></div>
 			</div>
 			<div class="misc-field">
 				<div class="field-label">Star Sign</div>
-				<div class="field-value"><%= @user.star_sign %></div>
+				<div class="field-value"><%= @user.star_sign || "Not added" %></div>
 			</div>
 			<div class="misc-field">
 				<div class="field-label">Personality Type</div>
-				<div class="field-value"><%= @user.personality %></div>
+				<div class="field-value"><%= @user.personality || "Not added" %></div>
 			</div>
 			<div class="misc-field">
 				<div class="field-label">Favorite Book</div>
-				<div class="field-value"><%= @user.favorite_book %></div>
+				<div class="field-value"><%= @user.favorite_book || "Not added" %></div>
 			</div>
 			<div class="misc-field">
 				<div class="field-label">Favorite Book</div>
-				<div class="field-value"><%= @user.favorite_movie %></div>
+				<div class="field-value"><%= @user.favorite_movie || "Not added" %></div>
 			</div>
 			<div class="misc-field">
 				<div class="field-label">Education</div>
-				<div class="field-value"><%= @user.education %></div>
+				<div class="field-value"><%= @user.education || "Not added" %></div>
 			</div>
 		</div>
 
@@ -112,9 +112,9 @@
 		
 		<div class="field-row availability">
 			<% ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"].each do |day| %>
-				<div class="time-block <%= 'hidden' if !@user.send(day[0..2].downcase.to_sym) %>">
+				<div class="time-block">
 					<div class="day"><%= day %></div>
-					<div class="time-value"><%= @user.send(day[0..2].downcase.to_sym) %></div>
+					<div class="time-value"><%= @user.send(day[0..2].downcase.to_sym) || "Not Available" %></div>
 				</div>
 			<% end %>
 		</div>
@@ -122,7 +122,6 @@
 </div>
 
 <%= render partial: "meetings/meetings_modal.html.erb", locals: {user: @user, meeting: @meeting} %>
-
 
 <% if @mobile %>
 	<script>

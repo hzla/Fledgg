@@ -91,9 +91,12 @@
 				<%= image_tag 'stargray.svg', :class => "star" %> 
 			<% end %>
 		</div>
-		<div id="meetings-count-box">
-			4 Upcoming Meetings
-		</div>
+
+		<%= link_to conversations_path(meetings: true) do %>
+			<div id="meetings-count-box">
+				<%= current_user.upcoming_meetings.count %> Upcoming Meetings
+			</div>
+		<% end %>
 		<div class="field-header availability">
 			Availability
 		</div>

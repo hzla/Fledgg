@@ -321,10 +321,13 @@ $profile-left-margin: 0px;
 			#content-right {
 				float: left;
 				display: block;
-				width: calc(100% - 20px);
-				margin-left: 10px;
+				width: calc(100% - 0px);
 				position: static;
 				clear: left;
+				#meetings-count-box {
+					width: calc(100% - 20px);
+					margin-left: 10px;
+				}
 
 			}
 			#profile-cover {
@@ -339,11 +342,10 @@ $profile-left-margin: 0px;
 			
 			.misc-field {
 				clear: left;
-				width: calc(100% - 20px);
-				margin-left: 10px;
+				width: calc(100% - 0px);
 			}
 			.misc-field:nth-child(2n) {
-				margin-left: 10px;
+				margin-left: 0px;
 			}
 		}
 	}

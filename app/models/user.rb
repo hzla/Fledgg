@@ -18,7 +18,7 @@ class User < ActiveRecord::Base
 		profile = auth_hash['info']
 		li_token = auth_hash.credentials.token
 		skill_list =  auth_hash.extra.raw_info.skills.values[1].map(&:skill).map(&:name)
-		user = User.new name: profile["name"], profile_pic_url: profile['image'], li_token: li_token, email: profile['email'], tagline: profile['headline'], info: profile[:description]
+		user = User.new name: profile["name"], profile_pic_url: profile['image'], li_token: li_token, email: profile['email'], tagline: profile['headline']
     user.authorizations.build :uid => auth_hash["uid"]
     user if user.save
     Skill.add skill_list, user

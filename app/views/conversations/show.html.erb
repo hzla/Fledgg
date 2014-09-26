@@ -9,7 +9,9 @@
 				<div class="message-tagline">
 					<%= user.tagline %>
 				</div>
-				<%= image_tag user.profile_pic_url, :class => "message-pic" %>
+				<%= link_to user_path(user) do %>
+					<%= image_tag user.profile_pic_url, :class => "message-pic" %>
+				<% end %>
 				<div class="message-actions">
 					<%= image_tag 'reply.svg', :class => "reply-svg message-svg", id: @conversation.id %>
 					<%= link_to trash_path(@conversation), :class => "trash-link", data: {confirm: "This will send the entire conversation to the trash. Proceed?"}, remote: true do %>
