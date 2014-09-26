@@ -44,7 +44,7 @@ Meeting =
 		$('#send-meeting').val('Sending...')
 
 	thankUser: ->
-		$('.message-body').html "<h1>Thank You for Rating!</h1>"
+		$('.message-body').html "<h4>Thank You for Rating!</h4>"
 
 	rate: ->
 		rating = $(@).attr('id')
