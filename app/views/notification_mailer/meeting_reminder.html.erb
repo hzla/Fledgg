@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>
+      You have a meeting with <%= @other_user.name %> soon. This meeting can be joined <a href='<%= link_to "here", @meeting.url %>'>here</a>.
+    </p>
+    <p>-Fledgg</p>
+  </body>
+</html>

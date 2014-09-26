@@ -1,4 +1,5 @@
 <div class="top-nav-content hidden mobile">
+		asdfasdfasdfasdfdsf
 		<%= link_to statuses_path, :class => 'tab', id: "status-tab" do %>
 			<div class="mob-nav search side-icon">
 				<%= image_tag "fledgg.svg", :class => "nav-icon svg" %> 
@@ -9,12 +10,12 @@
 		<%= link_to conversations_path, "data-no-turbolink" => true, :class => 'tab', id: "messages" do %>
 			<div class="mob-nav messages side-icon">
 				<%= image_tag "messagesdarkgreen.svg", :class => "nav-icon svg" %>
-				<div class="icon-label main">Messages</div>
-				<% if current_user.message_count + current_user.meeting_count > 0 %>
-					<div class="counter">
-						<%= current_user.message_count + current_user.meeting_count%>
-					</div>
-				<% end %>
+				<div class="icon-label main">
+					Messages
+					<% if current_user.message_count + current_user.meeting_count > 0 %>
+							<%= current_user.message_count + current_user.meeting_count%>
+					<% end %>
+				</div>
 			</div>
 		<% end %>
 

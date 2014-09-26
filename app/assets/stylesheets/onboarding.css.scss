@@ -1,0 +1,45 @@
+@import 'variables';
+
+#profile-content.onboarding {
+	margin-top: 120px;
+	#content-left {
+		left: calc(50% - 310px);
+	}
+}
+
+.onboarding-bar {
+	position: fixed;
+	height: 120px;
+	width: 100%;
+	background: $light-green;
+	top: 0;
+	left: 0;
+	z-index: 5;
+	font-weight: 300;
+	color: white;
+	.bar-content {
+		width: 620px;
+		margin: 0 auto;
+	}
+	.onboarding-header {
+		font-size: $h2;
+		float: left;
+
+	}
+	.onboarding-text {
+		float: left;
+	}
+	.next-button {
+		height: 40px;
+		float: right;
+		background: $blue;
+		border-radius: 5px;
+		text-align: center;
+		line-height: 40px;
+	}
+	.next-button:hover {
+		color: $blue;
+		border: 1px solid $blue;
+		background: white;
+	}
+}

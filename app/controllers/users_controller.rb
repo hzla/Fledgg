@@ -12,7 +12,11 @@ class UsersController < ApplicationController
 		else
 			render 'show'
 		end
+	end
 
+	def onboarding_profile
+		@user = current_user
+		@skills = @user.skills
 	end
 
 	def rate

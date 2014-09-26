@@ -30,6 +30,8 @@ gem 'omniauth-linkedin'
 gem 'dotenv'
 gem 'will_paginate'
 gem 'browser'
+gem 'sidekiq'
+
 gem 'linkedin'
 gem 'best_in_place', github: 'bernat/best_in_place'
 

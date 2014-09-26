@@ -190,6 +190,10 @@ $profile-left-margin: 0px;
 	}
 }
 
+.mobile.counter {
+	display: none;
+}
+
 
 
 #profile-cover .form_in_place input {
@@ -296,6 +300,10 @@ $profile-left-margin: 0px;
 
 @media(max-width: 1023px) {
 	body {
+		.mobile.counter {
+			display: block;
+			left: 17px;
+		}
 		#profile-content {
 			#content-left {
 				float: left;

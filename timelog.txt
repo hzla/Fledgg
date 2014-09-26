@@ -1,9 +1,9 @@
 Time Estimates
-Done Now: 405min
+Done Now: 415min
 
 _________________________________
 
-Notifications Bubble on mobile hamburger (10min)
+
 
 Notifications (120min)
 	-for when both accept
@@ -12,7 +12,7 @@ Notifications (120min)
 
 User Onboarding (180min)
 
-TotalLeft ~ (370min) or 6hr 10min
+TotalLeft ~ (300min) or 5hr 0min
 
 
 

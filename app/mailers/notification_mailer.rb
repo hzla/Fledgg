@@ -13,4 +13,18 @@ class NotificationMailer < ActionMailer::Base
     @other_user = other_user
   	mail(to: @user.email, subject: "You have a meeting request from #{other_user.name}!")
   end
+
+  def meeting_confirmation user, other_user, meeting
+    @meeting = meeting 
+    @user = user
+    @other_user = other_user    
+    mail(to: @other_user.email, subject: "Your meeting on #{@meeting.date} with #{@user.name} has been accepted.")
+  end
+
+  def meeting_reminder user, other_user, meeting
+    @meeting = meeting
+    @user = user
+    @other_user = other_user  
+    mail(to: @user.email, subject: "You have a meeting with #{@other_user.name} in 15 minutes!")
+  end
 end
