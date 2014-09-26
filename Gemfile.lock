@@ -343,6 +343,7 @@ DEPENDENCIES
   rails (= 4.1.0)
   rails_12factor
   rails_admin
+  redis
   rspec-rails
   sass-rails (~> 4.0.0)
   searchbing

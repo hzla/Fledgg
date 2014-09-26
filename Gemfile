@@ -13,6 +13,7 @@ gem 'faker'
 gem 'zoomus'
 gem 'rails_admin'
 gem 'rails_12factor'
+gem 'redis'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem "pg"
