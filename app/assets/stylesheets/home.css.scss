@@ -29,6 +29,7 @@
 	width: 100%;
 	font-family: $proxima;
 	overflow-x: hidden; 
+	overflow-y: hidden; 
 }
 
 .landing-section.main {
@@ -317,7 +318,9 @@
 	    background-size: cover;
 	    padding: 15vh 0px;
 	    padding-top: 0vh;
+	    padding-bottom: 15vh;
 	    box-sizing: border-box;
+	    overflow-y: hidden; 
 		}
 		.section-content {
 			width: 100%;
