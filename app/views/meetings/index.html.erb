@@ -29,10 +29,10 @@
 					<% status = meeting.status(current_user) %>
 					<div class="convo-details">
 						<% if status == "unaccepted" %>
-							<div class="meeting-text">You have a meeting request from</div>
+							<div class="meeting-text">Meeting request from</div>
 						<% end %>
 						<% if status == "pending" %>
-							<div class="meeting-text">You sent a pending request to</div>
+							<div class="meeting-text">Pending request sent to</div>
 						<% end %>
 						<div class="convo-name"><%= user.name %></div>
 						<% if status == "unaccepted" %>

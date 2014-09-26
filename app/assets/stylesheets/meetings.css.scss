@@ -39,7 +39,7 @@
 	width: 240px;
 	float: right;
 	height: 40px;
-	margin-top: 20px;
+	margin-top: 60px;
 }
 .meeting-action {
 	height: 60px;
@@ -153,7 +153,7 @@
 }
 
 @media(max-width: 1023px) {
-	
+
 	body #current-meeting {
 		position: fixed;
 		z-index: 6;
@@ -162,6 +162,12 @@
 		left: 0;
 		top: 0;
 	}
-}
+	.meeting-actions {
+		width: 100%;
+      .meeting-action {
+          margin: 0px 23px;
+      }
+    }
+	}
 
 

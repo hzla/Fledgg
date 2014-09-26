@@ -39,16 +39,16 @@ $top-bar-element-spacing: 15px;
 }
 .counter {
 	position: absolute;
-	background: $red;
-	color: white;
-	width: 20px;
-	height: 20px;
-	font-size: 12px;
-	line-height: 20px;
-	text-align: center;
-	left: 135px;
-	top: 10px;
-	border-radius: 50px;
+    background: #e74c3c;
+    color: white;
+    width: 18px;
+    height: 18px;
+    font-size: 12px;
+    line-height: 1.7;
+    text-align: center;
+    left: 35px;
+    top: 12px;
+    border-radius: 50px;
 }
 
 
@@ -109,6 +109,7 @@ $profile-left-margin: 0px;
 				font-size: $h5;
 				font-weight: 700;
 				margin-top: 10px;
+                line-height: 1.5;
 			}
 			#location {
 				font-size: $h4;
@@ -128,7 +129,7 @@ $profile-left-margin: 0px;
 	width: 100%;
 	}
 	.field-header.availability {
-		padding-top: 40px;
+		padding-top: 20px;
 		border-top: 1px solid $light-gray;
 	}
 	.field-row {
@@ -168,6 +169,7 @@ $profile-left-margin: 0px;
 .best_in_place {
 	cursor: pointer;
 }
+
 .form_in_place {
 	width: 100%;
 	input {
@@ -177,6 +179,9 @@ $profile-left-margin: 0px;
 		font-size: $h4;
 		border: 1px solid $light-gray;
 		border-radius: 5px;
+        font-family: $proxima;
+        padding: 0px 15px;
+        box-sizing: border-box;
 	}
 }
 
@@ -264,7 +269,7 @@ $profile-left-margin: 0px;
 		margin: 0 auto;
 		margin-top: 20px;
 		text-align: center;
-		font-size: 28px;
+		font-size: 14px;
 		color: $gray;
 
 	}
@@ -293,7 +298,7 @@ $profile-left-margin: 0px;
         font-weight: 400;
 	}
 	.time-block {
-		margin-top: 20px;
+		margin-bottom: 20px;
 	}
 	
 }
