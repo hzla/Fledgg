@@ -80,7 +80,7 @@
 					<%= image_tag 'stargray.svg', :class => "star" %> 
 				<% end %>
 			<% else %>
-				Not Yet Rated
+				<%= @user.name %> hasn't been rated yet!
 			<% end %>
 			</div>
 
@@ -127,7 +127,7 @@
 <% if @mobile %>
 	<script>
 		$('#content-left').prepend($('#content-right'))
-		$('#content-right').css('marginTop', '200px')
+		$('#content-right').css('marginTop', '150px')
 	</script>
 <% end %>
 

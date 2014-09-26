@@ -6,7 +6,7 @@
 			<div class="profile-text-box">
 				<div id="name" class="profile-text"><%= @user.name %></div>
 				<div id="tagline" class="profile-text"><%= best_in_place @user, :tagline, type: :input, place_holder: "" %> </div>
-				<div id="location" class="profile-text"><%= best_in_place @user, :location, type: :input, place_holder: "" %> </div>
+				<div id="location" class="profile-text"><%= best_in_place @user, :location, type: :input, place_holder: "Click to add a location" %> </div>
 			</div>
 		</div>
 		<div class="field-header">
@@ -120,7 +120,7 @@ $(document).ready(function(){
 <% if @mobile %>
 	<script>
 		$('#content-left').prepend($('#content-right'))
-		$('#content-right').css('marginTop', '200px')
+		$('#content-right').css('marginTop', '150px')
 	</script>
 <% end %>
 

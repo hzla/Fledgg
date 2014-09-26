@@ -1,6 +1,6 @@
 <div id="current-meeting">
 	<div class="current-meeting-header">
-		You have a meeting pending with
+		You have a pending meeting request for
 	</div>
 	<% user = @current_meeting.other_user(current_user.id) %>
 	<%= image_tag user.profile_pic_url, :class => "current-meeting-pic" %>
