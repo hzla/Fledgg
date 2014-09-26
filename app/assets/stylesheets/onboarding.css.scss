@@ -18,6 +18,10 @@
 		padding-top: 0px;
 		border: none;
 	}
+	.misc-field:nth-child(2n) {
+		margin-left: 0%;
+		margin-right: 5%;
+	}
 }
 
 .misc-text {
