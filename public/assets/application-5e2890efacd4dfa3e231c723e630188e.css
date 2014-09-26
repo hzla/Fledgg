@@ -1,0 +1,6047 @@
+@charset "UTF-8";
+
+/*!
+Animate.css - http://daneden.me/animate
+Licensed under the MIT license - http://opensource.org/licenses/MIT
+
+Copyright (c) 2013 Daniel Eden
+*/
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.animated.infinite {
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+}
+
+.animated.hinge {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+}
+
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  40% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+
+  60% {
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  40% {
+    -webkit-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+
+  60% {
+    -webkit-transform: translateY(-15px);
+    -ms-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+
+.bounce {
+  -webkit-animation-name: bounce;
+  animation-name: bounce;
+}
+
+@-webkit-keyframes flash {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+
+  25%, 75% {
+    opacity: 0;
+  }
+}
+
+@keyframes flash {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+
+  25%, 75% {
+    opacity: 0;
+  }
+}
+
+.flash {
+  -webkit-animation-name: flash;
+  animation-name: flash;
+}
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+.pulse {
+  -webkit-animation-name: pulse;
+  animation-name: pulse;
+}
+
+@-webkit-keyframes rubberBand {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  30% {
+    -webkit-transform: scaleX(1.25) scaleY(0.75);
+    transform: scaleX(1.25) scaleY(0.75);
+  }
+
+  40% {
+    -webkit-transform: scaleX(0.75) scaleY(1.25);
+    transform: scaleX(0.75) scaleY(1.25);
+  }
+
+  60% {
+    -webkit-transform: scaleX(1.15) scaleY(0.85);
+    transform: scaleX(1.15) scaleY(0.85);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes rubberBand {
+  0% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  30% {
+    -webkit-transform: scaleX(1.25) scaleY(0.75);
+    -ms-transform: scaleX(1.25) scaleY(0.75);
+    transform: scaleX(1.25) scaleY(0.75);
+  }
+
+  40% {
+    -webkit-transform: scaleX(0.75) scaleY(1.25);
+    -ms-transform: scaleX(0.75) scaleY(1.25);
+    transform: scaleX(0.75) scaleY(1.25);
+  }
+
+  60% {
+    -webkit-transform: scaleX(1.15) scaleY(0.85);
+    -ms-transform: scaleX(1.15) scaleY(0.85);
+    transform: scaleX(1.15) scaleY(0.85);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+.rubberBand {
+  -webkit-animation-name: rubberBand;
+  animation-name: rubberBand;
+}
+
+@-webkit-keyframes shake {
+  0%, 100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+}
+
+@keyframes shake {
+  0%, 100% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translateX(-10px);
+    -ms-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translateX(10px);
+    -ms-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+}
+
+.shake {
+  -webkit-animation-name: shake;
+  animation-name: shake;
+}
+
+@-webkit-keyframes swing {
+  20% {
+    -webkit-transform: rotate(15deg);
+    transform: rotate(15deg);
+  }
+
+  40% {
+    -webkit-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+
+  60% {
+    -webkit-transform: rotate(5deg);
+    transform: rotate(5deg);
+  }
+
+  80% {
+    -webkit-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes swing {
+  20% {
+    -webkit-transform: rotate(15deg);
+    -ms-transform: rotate(15deg);
+    transform: rotate(15deg);
+  }
+
+  40% {
+    -webkit-transform: rotate(-10deg);
+    -ms-transform: rotate(-10deg);
+    transform: rotate(-10deg);
+  }
+
+  60% {
+    -webkit-transform: rotate(5deg);
+    -ms-transform: rotate(5deg);
+    transform: rotate(5deg);
+  }
+
+  80% {
+    -webkit-transform: rotate(-5deg);
+    -ms-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+  }
+
+  100% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+
+.swing {
+  -webkit-transform-origin: top center;
+  -ms-transform-origin: top center;
+  transform-origin: top center;
+  -webkit-animation-name: swing;
+  animation-name: swing;
+}
+
+@-webkit-keyframes tada {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  10%, 20% {
+    -webkit-transform: scale(0.9) rotate(-3deg);
+    transform: scale(0.9) rotate(-3deg);
+  }
+
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale(1.1) rotate(3deg);
+    transform: scale(1.1) rotate(3deg);
+  }
+
+  40%, 60%, 80% {
+    -webkit-transform: scale(1.1) rotate(-3deg);
+    transform: scale(1.1) rotate(-3deg);
+  }
+
+  100% {
+    -webkit-transform: scale(1) rotate(0);
+    transform: scale(1) rotate(0);
+  }
+}
+
+@keyframes tada {
+  0% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  10%, 20% {
+    -webkit-transform: scale(0.9) rotate(-3deg);
+    -ms-transform: scale(0.9) rotate(-3deg);
+    transform: scale(0.9) rotate(-3deg);
+  }
+
+  30%, 50%, 70%, 90% {
+    -webkit-transform: scale(1.1) rotate(3deg);
+    -ms-transform: scale(1.1) rotate(3deg);
+    transform: scale(1.1) rotate(3deg);
+  }
+
+  40%, 60%, 80% {
+    -webkit-transform: scale(1.1) rotate(-3deg);
+    -ms-transform: scale(1.1) rotate(-3deg);
+    transform: scale(1.1) rotate(-3deg);
+  }
+
+  100% {
+    -webkit-transform: scale(1) rotate(0);
+    -ms-transform: scale(1) rotate(0);
+    transform: scale(1) rotate(0);
+  }
+}
+
+.tada {
+  -webkit-animation-name: tada;
+  animation-name: tada;
+}
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+
+@-webkit-keyframes wobble {
+  0% {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+
+  15% {
+    -webkit-transform: translateX(-25%) rotate(-5deg);
+    transform: translateX(-25%) rotate(-5deg);
+  }
+
+  30% {
+    -webkit-transform: translateX(20%) rotate(3deg);
+    transform: translateX(20%) rotate(3deg);
+  }
+
+  45% {
+    -webkit-transform: translateX(-15%) rotate(-3deg);
+    transform: translateX(-15%) rotate(-3deg);
+  }
+
+  60% {
+    -webkit-transform: translateX(10%) rotate(2deg);
+    transform: translateX(10%) rotate(2deg);
+  }
+
+  75% {
+    -webkit-transform: translateX(-5%) rotate(-1deg);
+    transform: translateX(-5%) rotate(-1deg);
+  }
+
+  100% {
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+}
+
+@keyframes wobble {
+  0% {
+    -webkit-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+
+  15% {
+    -webkit-transform: translateX(-25%) rotate(-5deg);
+    -ms-transform: translateX(-25%) rotate(-5deg);
+    transform: translateX(-25%) rotate(-5deg);
+  }
+
+  30% {
+    -webkit-transform: translateX(20%) rotate(3deg);
+    -ms-transform: translateX(20%) rotate(3deg);
+    transform: translateX(20%) rotate(3deg);
+  }
+
+  45% {
+    -webkit-transform: translateX(-15%) rotate(-3deg);
+    -ms-transform: translateX(-15%) rotate(-3deg);
+    transform: translateX(-15%) rotate(-3deg);
+  }
+
+  60% {
+    -webkit-transform: translateX(10%) rotate(2deg);
+    -ms-transform: translateX(10%) rotate(2deg);
+    transform: translateX(10%) rotate(2deg);
+  }
+
+  75% {
+    -webkit-transform: translateX(-5%) rotate(-1deg);
+    -ms-transform: translateX(-5%) rotate(-1deg);
+    transform: translateX(-5%) rotate(-1deg);
+  }
+
+  100% {
+    -webkit-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    transform: translateX(0%);
+  }
+}
+
+.wobble {
+  -webkit-animation-name: wobble;
+  animation-name: wobble;
+}
+
+@-webkit-keyframes bounceIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(.3);
+    transform: scale(.3);
+  }
+
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+
+  70% {
+    -webkit-transform: scale(.9);
+    transform: scale(.9);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(.3);
+    -ms-transform: scale(.3);
+    transform: scale(.3);
+  }
+
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.05);
+    -ms-transform: scale(1.05);
+    transform: scale(1.05);
+  }
+
+  70% {
+    -webkit-transform: scale(.9);
+    -ms-transform: scale(.9);
+    transform: scale(.9);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+.bounceIn {
+  -webkit-animation-name: bounceIn;
+  animation-name: bounceIn;
+}
+
+@-webkit-keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(30px);
+    transform: translateY(30px);
+  }
+
+  80% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    -ms-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(30px);
+    -ms-transform: translateY(30px);
+    transform: translateY(30px);
+  }
+
+  80% {
+    -webkit-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.bounceInDown {
+  -webkit-animation-name: bounceInDown;
+  animation-name: bounceInDown;
+}
+
+@-webkit-keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(30px);
+    transform: translateX(30px);
+  }
+
+  80% {
+    -webkit-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounceInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    -ms-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(30px);
+    -ms-transform: translateX(30px);
+    transform: translateX(30px);
+  }
+
+  80% {
+    -webkit-transform: translateX(-10px);
+    -ms-transform: translateX(-10px);
+    transform: translateX(-10px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+.bounceInLeft {
+  -webkit-animation-name: bounceInLeft;
+  animation-name: bounceInLeft;
+}
+
+@-webkit-keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(-30px);
+    transform: translateX(-30px);
+  }
+
+  80% {
+    -webkit-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounceInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    -ms-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateX(-30px);
+    -ms-transform: translateX(-30px);
+    transform: translateX(-30px);
+  }
+
+  80% {
+    -webkit-transform: translateX(10px);
+    -ms-transform: translateX(10px);
+    transform: translateX(10px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+.bounceInRight {
+  -webkit-animation-name: bounceInRight;
+  animation-name: bounceInRight;
+}
+
+@-webkit-keyframes bounceInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+
+  80% {
+    -webkit-transform: translateY(10px);
+    transform: translateY(10px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    -ms-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: translateY(-30px);
+    -ms-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+
+  80% {
+    -webkit-transform: translateY(10px);
+    -ms-transform: translateY(10px);
+    transform: translateY(10px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.bounceInUp {
+  -webkit-animation-name: bounceInUp;
+  animation-name: bounceInUp;
+}
+
+@-webkit-keyframes bounceOut {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  25% {
+    -webkit-transform: scale(.95);
+    transform: scale(.95);
+  }
+
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(.3);
+    transform: scale(.3);
+  }
+}
+
+@keyframes bounceOut {
+  0% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  25% {
+    -webkit-transform: scale(.95);
+    -ms-transform: scale(.95);
+    transform: scale(.95);
+  }
+
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(.3);
+    -ms-transform: scale(.3);
+    transform: scale(.3);
+  }
+}
+
+.bounceOut {
+  -webkit-animation-name: bounceOut;
+  animation-name: bounceOut;
+}
+
+@-webkit-keyframes bounceOutDown {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+}
+
+@keyframes bounceOutDown {
+  0% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    -ms-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+}
+
+.bounceOutDown {
+  -webkit-animation-name: bounceOutDown;
+  animation-name: bounceOutDown;
+}
+
+@-webkit-keyframes bounceOutLeft {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+}
+
+@keyframes bounceOutLeft {
+  0% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    -ms-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+}
+
+.bounceOutLeft {
+  -webkit-animation-name: bounceOutLeft;
+  animation-name: bounceOutLeft;
+}
+
+@-webkit-keyframes bounceOutRight {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: translateX(-20px);
+    transform: translateX(-20px);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+}
+
+@keyframes bounceOutRight {
+  0% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: translateX(-20px);
+    -ms-transform: translateX(-20px);
+    transform: translateX(-20px);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    -ms-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+}
+
+.bounceOutRight {
+  -webkit-animation-name: bounceOutRight;
+  animation-name: bounceOutRight;
+}
+
+@-webkit-keyframes bounceOutUp {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+}
+
+@keyframes bounceOutUp {
+  0% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  20% {
+    opacity: 1;
+    -webkit-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    -ms-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+}
+
+.bounceOutUp {
+  -webkit-animation-name: bounceOutUp;
+  animation-name: bounceOutUp;
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+@-webkit-keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+}
+
+@-webkit-keyframes fadeInDownBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDownBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    -ms-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.fadeInDownBig {
+  -webkit-animation-name: fadeInDownBig;
+  animation-name: fadeInDownBig;
+}
+
+@-webkit-keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100px);
+    transform: translateX(-100px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100px);
+    -ms-transform: translateX(-100px);
+    transform: translateX(-100px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+.fadeInLeft {
+  -webkit-animation-name: fadeInLeft;
+  animation-name: fadeInLeft;
+}
+
+@-webkit-keyframes fadeInLeftBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInLeftBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    -ms-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+.fadeInLeftBig {
+  -webkit-animation-name: fadeInLeftBig;
+  animation-name: fadeInLeftBig;
+}
+
+@-webkit-keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+.fadeInRight {
+  -webkit-animation-name: fadeInRight;
+  animation-name: fadeInRight;
+}
+
+@-webkit-keyframes fadeInRightBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRightBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    -ms-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+.fadeInRightBig {
+  -webkit-animation-name: fadeInRightBig;
+  animation-name: fadeInRightBig;
+}
+
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+@-webkit-keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUpBig {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    -ms-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.fadeInUpBig {
+  -webkit-animation-name: fadeInUpBig;
+  animation-name: fadeInUpBig;
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.fadeOut {
+  -webkit-animation-name: fadeOut;
+  animation-name: fadeOut;
+}
+
+@-webkit-keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+}
+
+@keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+}
+
+.fadeOutDown {
+  -webkit-animation-name: fadeOutDown;
+  animation-name: fadeOutDown;
+}
+
+@-webkit-keyframes fadeOutDownBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+}
+
+@keyframes fadeOutDownBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    -ms-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+}
+
+.fadeOutDownBig {
+  -webkit-animation-name: fadeOutDownBig;
+  animation-name: fadeOutDownBig;
+}
+
+@-webkit-keyframes fadeOutLeft {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-20px);
+    transform: translateX(-20px);
+  }
+}
+
+@keyframes fadeOutLeft {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-20px);
+    -ms-transform: translateX(-20px);
+    transform: translateX(-20px);
+  }
+}
+
+.fadeOutLeft {
+  -webkit-animation-name: fadeOutLeft;
+  animation-name: fadeOutLeft;
+}
+
+@-webkit-keyframes fadeOutLeftBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+}
+
+@keyframes fadeOutLeftBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    -ms-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+}
+
+.fadeOutLeftBig {
+  -webkit-animation-name: fadeOutLeftBig;
+  animation-name: fadeOutLeftBig;
+}
+
+@-webkit-keyframes fadeOutRight {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+}
+
+@keyframes fadeOutRight {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
+  }
+}
+
+.fadeOutRight {
+  -webkit-animation-name: fadeOutRight;
+  animation-name: fadeOutRight;
+}
+
+@-webkit-keyframes fadeOutRightBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+}
+
+@keyframes fadeOutRightBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    -ms-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+}
+
+.fadeOutRightBig {
+  -webkit-animation-name: fadeOutRightBig;
+  animation-name: fadeOutRightBig;
+}
+
+@-webkit-keyframes fadeOutUp {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes fadeOutUp {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    transform: translateY(-20px);
+  }
+}
+
+.fadeOutUp {
+  -webkit-animation-name: fadeOutUp;
+  animation-name: fadeOutUp;
+}
+
+@-webkit-keyframes fadeOutUpBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+}
+
+@keyframes fadeOutUpBig {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    -ms-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+}
+
+.fadeOutUpBig {
+  -webkit-animation-name: fadeOutUpBig;
+  animation-name: fadeOutUpBig;
+}
+
+@-webkit-keyframes flip {
+  0% {
+    -webkit-transform: perspective(400px) translateZ(0) rotateY(-360deg) scale(1);
+    transform: perspective(400px) translateZ(0) rotateY(-360deg) scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+
+  40% {
+    -webkit-transform: perspective(400px) translateZ(150px) rotateY(-190deg) scale(1);
+    transform: perspective(400px) translateZ(150px) rotateY(-190deg) scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+
+  50% {
+    -webkit-transform: perspective(400px) translateZ(150px) rotateY(-170deg) scale(1);
+    transform: perspective(400px) translateZ(150px) rotateY(-170deg) scale(1);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  80% {
+    -webkit-transform: perspective(400px) translateZ(0) rotateY(0deg) scale(.95);
+    transform: perspective(400px) translateZ(0) rotateY(0deg) scale(.95);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  100% {
+    -webkit-transform: perspective(400px) translateZ(0) rotateY(0deg) scale(1);
+    transform: perspective(400px) translateZ(0) rotateY(0deg) scale(1);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+}
+
+@keyframes flip {
+  0% {
+    -webkit-transform: perspective(400px) translateZ(0) rotateY(-360deg) scale(1);
+    -ms-transform: perspective(400px) translateZ(0) rotateY(-360deg) scale(1);
+    transform: perspective(400px) translateZ(0) rotateY(-360deg) scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+
+  40% {
+    -webkit-transform: perspective(400px) translateZ(150px) rotateY(-190deg) scale(1);
+    -ms-transform: perspective(400px) translateZ(150px) rotateY(-190deg) scale(1);
+    transform: perspective(400px) translateZ(150px) rotateY(-190deg) scale(1);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+
+  50% {
+    -webkit-transform: perspective(400px) translateZ(150px) rotateY(-170deg) scale(1);
+    -ms-transform: perspective(400px) translateZ(150px) rotateY(-170deg) scale(1);
+    transform: perspective(400px) translateZ(150px) rotateY(-170deg) scale(1);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  80% {
+    -webkit-transform: perspective(400px) translateZ(0) rotateY(0deg) scale(.95);
+    -ms-transform: perspective(400px) translateZ(0) rotateY(0deg) scale(.95);
+    transform: perspective(400px) translateZ(0) rotateY(0deg) scale(.95);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+
+  100% {
+    -webkit-transform: perspective(400px) translateZ(0) rotateY(0deg) scale(1);
+    -ms-transform: perspective(400px) translateZ(0) rotateY(0deg) scale(1);
+    transform: perspective(400px) translateZ(0) rotateY(0deg) scale(1);
+    -webkit-animation-timing-function: ease-in;
+    animation-timing-function: ease-in;
+  }
+}
+
+.animated.flip {
+  -webkit-backface-visibility: visible;
+  -ms-backface-visibility: visible;
+  backface-visibility: visible;
+  -webkit-animation-name: flip;
+  animation-name: flip;
+}
+
+@-webkit-keyframes flipInX {
+  0% {
+    -webkit-transform: perspective(400px) rotateX(90deg);
+    transform: perspective(400px) rotateX(90deg);
+    opacity: 0;
+  }
+
+  40% {
+    -webkit-transform: perspective(400px) rotateX(-10deg);
+    transform: perspective(400px) rotateX(-10deg);
+  }
+
+  70% {
+    -webkit-transform: perspective(400px) rotateX(10deg);
+    transform: perspective(400px) rotateX(10deg);
+  }
+
+  100% {
+    -webkit-transform: perspective(400px) rotateX(0deg);
+    transform: perspective(400px) rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes flipInX {
+  0% {
+    -webkit-transform: perspective(400px) rotateX(90deg);
+    -ms-transform: perspective(400px) rotateX(90deg);
+    transform: perspective(400px) rotateX(90deg);
+    opacity: 0;
+  }
+
+  40% {
+    -webkit-transform: perspective(400px) rotateX(-10deg);
+    -ms-transform: perspective(400px) rotateX(-10deg);
+    transform: perspective(400px) rotateX(-10deg);
+  }
+
+  70% {
+    -webkit-transform: perspective(400px) rotateX(10deg);
+    -ms-transform: perspective(400px) rotateX(10deg);
+    transform: perspective(400px) rotateX(10deg);
+  }
+
+  100% {
+    -webkit-transform: perspective(400px) rotateX(0deg);
+    -ms-transform: perspective(400px) rotateX(0deg);
+    transform: perspective(400px) rotateX(0deg);
+    opacity: 1;
+  }
+}
+
+.flipInX {
+  -webkit-backface-visibility: visible !important;
+  -ms-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+  -webkit-animation-name: flipInX;
+  animation-name: flipInX;
+}
+
+@-webkit-keyframes flipInY {
+  0% {
+    -webkit-transform: perspective(400px) rotateY(90deg);
+    transform: perspective(400px) rotateY(90deg);
+    opacity: 0;
+  }
+
+  40% {
+    -webkit-transform: perspective(400px) rotateY(-10deg);
+    transform: perspective(400px) rotateY(-10deg);
+  }
+
+  70% {
+    -webkit-transform: perspective(400px) rotateY(10deg);
+    transform: perspective(400px) rotateY(10deg);
+  }
+
+  100% {
+    -webkit-transform: perspective(400px) rotateY(0deg);
+    transform: perspective(400px) rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes flipInY {
+  0% {
+    -webkit-transform: perspective(400px) rotateY(90deg);
+    -ms-transform: perspective(400px) rotateY(90deg);
+    transform: perspective(400px) rotateY(90deg);
+    opacity: 0;
+  }
+
+  40% {
+    -webkit-transform: perspective(400px) rotateY(-10deg);
+    -ms-transform: perspective(400px) rotateY(-10deg);
+    transform: perspective(400px) rotateY(-10deg);
+  }
+
+  70% {
+    -webkit-transform: perspective(400px) rotateY(10deg);
+    -ms-transform: perspective(400px) rotateY(10deg);
+    transform: perspective(400px) rotateY(10deg);
+  }
+
+  100% {
+    -webkit-transform: perspective(400px) rotateY(0deg);
+    -ms-transform: perspective(400px) rotateY(0deg);
+    transform: perspective(400px) rotateY(0deg);
+    opacity: 1;
+  }
+}
+
+.flipInY {
+  -webkit-backface-visibility: visible !important;
+  -ms-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+  -webkit-animation-name: flipInY;
+  animation-name: flipInY;
+}
+
+@-webkit-keyframes flipOutX {
+  0% {
+    -webkit-transform: perspective(400px) rotateX(0deg);
+    transform: perspective(400px) rotateX(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: perspective(400px) rotateX(90deg);
+    transform: perspective(400px) rotateX(90deg);
+    opacity: 0;
+  }
+}
+
+@keyframes flipOutX {
+  0% {
+    -webkit-transform: perspective(400px) rotateX(0deg);
+    -ms-transform: perspective(400px) rotateX(0deg);
+    transform: perspective(400px) rotateX(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: perspective(400px) rotateX(90deg);
+    -ms-transform: perspective(400px) rotateX(90deg);
+    transform: perspective(400px) rotateX(90deg);
+    opacity: 0;
+  }
+}
+
+.flipOutX {
+  -webkit-animation-name: flipOutX;
+  animation-name: flipOutX;
+  -webkit-backface-visibility: visible !important;
+  -ms-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+}
+
+@-webkit-keyframes flipOutY {
+  0% {
+    -webkit-transform: perspective(400px) rotateY(0deg);
+    transform: perspective(400px) rotateY(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: perspective(400px) rotateY(90deg);
+    transform: perspective(400px) rotateY(90deg);
+    opacity: 0;
+  }
+}
+
+@keyframes flipOutY {
+  0% {
+    -webkit-transform: perspective(400px) rotateY(0deg);
+    -ms-transform: perspective(400px) rotateY(0deg);
+    transform: perspective(400px) rotateY(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: perspective(400px) rotateY(90deg);
+    -ms-transform: perspective(400px) rotateY(90deg);
+    transform: perspective(400px) rotateY(90deg);
+    opacity: 0;
+  }
+}
+
+.flipOutY {
+  -webkit-backface-visibility: visible !important;
+  -ms-backface-visibility: visible !important;
+  backface-visibility: visible !important;
+  -webkit-animation-name: flipOutY;
+  animation-name: flipOutY;
+}
+
+@-webkit-keyframes lightSpeedIn {
+  0% {
+    -webkit-transform: translateX(100%) skewX(-30deg);
+    transform: translateX(100%) skewX(-30deg);
+    opacity: 0;
+  }
+
+  60% {
+    -webkit-transform: translateX(-20%) skewX(30deg);
+    transform: translateX(-20%) skewX(30deg);
+    opacity: 1;
+  }
+
+  80% {
+    -webkit-transform: translateX(0%) skewX(-15deg);
+    transform: translateX(0%) skewX(-15deg);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: translateX(0%) skewX(0deg);
+    transform: translateX(0%) skewX(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes lightSpeedIn {
+  0% {
+    -webkit-transform: translateX(100%) skewX(-30deg);
+    -ms-transform: translateX(100%) skewX(-30deg);
+    transform: translateX(100%) skewX(-30deg);
+    opacity: 0;
+  }
+
+  60% {
+    -webkit-transform: translateX(-20%) skewX(30deg);
+    -ms-transform: translateX(-20%) skewX(30deg);
+    transform: translateX(-20%) skewX(30deg);
+    opacity: 1;
+  }
+
+  80% {
+    -webkit-transform: translateX(0%) skewX(-15deg);
+    -ms-transform: translateX(0%) skewX(-15deg);
+    transform: translateX(0%) skewX(-15deg);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: translateX(0%) skewX(0deg);
+    -ms-transform: translateX(0%) skewX(0deg);
+    transform: translateX(0%) skewX(0deg);
+    opacity: 1;
+  }
+}
+
+.lightSpeedIn {
+  -webkit-animation-name: lightSpeedIn;
+  animation-name: lightSpeedIn;
+  -webkit-animation-timing-function: ease-out;
+  animation-timing-function: ease-out;
+}
+
+@-webkit-keyframes lightSpeedOut {
+  0% {
+    -webkit-transform: translateX(0%) skewX(0deg);
+    transform: translateX(0%) skewX(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: translateX(100%) skewX(-30deg);
+    transform: translateX(100%) skewX(-30deg);
+    opacity: 0;
+  }
+}
+
+@keyframes lightSpeedOut {
+  0% {
+    -webkit-transform: translateX(0%) skewX(0deg);
+    -ms-transform: translateX(0%) skewX(0deg);
+    transform: translateX(0%) skewX(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: translateX(100%) skewX(-30deg);
+    -ms-transform: translateX(100%) skewX(-30deg);
+    transform: translateX(100%) skewX(-30deg);
+    opacity: 0;
+  }
+}
+
+.lightSpeedOut {
+  -webkit-animation-name: lightSpeedOut;
+  animation-name: lightSpeedOut;
+  -webkit-animation-timing-function: ease-in;
+  animation-timing-function: ease-in;
+}
+
+@-webkit-keyframes rotateIn {
+  0% {
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transform: rotate(-200deg);
+    transform: rotate(-200deg);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes rotateIn {
+  0% {
+    -webkit-transform-origin: center center;
+    -ms-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transform: rotate(-200deg);
+    -ms-transform: rotate(-200deg);
+    transform: rotate(-200deg);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform-origin: center center;
+    -ms-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+
+.rotateIn {
+  -webkit-animation-name: rotateIn;
+  animation-name: rotateIn;
+}
+
+@-webkit-keyframes rotateInDownLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes rotateInDownLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+
+.rotateInDownLeft {
+  -webkit-animation-name: rotateInDownLeft;
+  animation-name: rotateInDownLeft;
+}
+
+@-webkit-keyframes rotateInDownRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes rotateInDownRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    -ms-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform-origin: right bottom;
+    -ms-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+
+.rotateInDownRight {
+  -webkit-animation-name: rotateInDownRight;
+  animation-name: rotateInDownRight;
+}
+
+@-webkit-keyframes rotateInUpLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes rotateInUpLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+
+.rotateInUpLeft {
+  -webkit-animation-name: rotateInUpLeft;
+  animation-name: rotateInUpLeft;
+}
+
+@-webkit-keyframes rotateInUpRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes rotateInUpRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    -ms-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform-origin: right bottom;
+    -ms-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+}
+
+.rotateInUpRight {
+  -webkit-animation-name: rotateInUpRight;
+  animation-name: rotateInUpRight;
+}
+
+@-webkit-keyframes rotateOut {
+  0% {
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transform: rotate(200deg);
+    transform: rotate(200deg);
+    opacity: 0;
+  }
+}
+
+@keyframes rotateOut {
+  0% {
+    -webkit-transform-origin: center center;
+    -ms-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform-origin: center center;
+    -ms-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-transform: rotate(200deg);
+    -ms-transform: rotate(200deg);
+    transform: rotate(200deg);
+    opacity: 0;
+  }
+}
+
+.rotateOut {
+  -webkit-animation-name: rotateOut;
+  animation-name: rotateOut;
+}
+
+@-webkit-keyframes rotateOutDownLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+}
+
+@keyframes rotateOutDownLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+}
+
+.rotateOutDownLeft {
+  -webkit-animation-name: rotateOutDownLeft;
+  animation-name: rotateOutDownLeft;
+}
+
+@-webkit-keyframes rotateOutDownRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+}
+
+@keyframes rotateOutDownRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    -ms-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform-origin: right bottom;
+    -ms-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+}
+
+.rotateOutDownRight {
+  -webkit-animation-name: rotateOutDownRight;
+  animation-name: rotateOutDownRight;
+}
+
+@-webkit-keyframes rotateOutUpLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+}
+
+@keyframes rotateOutUpLeft {
+  0% {
+    -webkit-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform-origin: left bottom;
+    -ms-transform-origin: left bottom;
+    transform-origin: left bottom;
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    opacity: 0;
+  }
+}
+
+.rotateOutUpLeft {
+  -webkit-animation-name: rotateOutUpLeft;
+  animation-name: rotateOutUpLeft;
+}
+
+@-webkit-keyframes rotateOutUpRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+}
+
+@keyframes rotateOutUpRight {
+  0% {
+    -webkit-transform-origin: right bottom;
+    -ms-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform-origin: right bottom;
+    -ms-transform-origin: right bottom;
+    transform-origin: right bottom;
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    opacity: 0;
+  }
+}
+
+.rotateOutUpRight {
+  -webkit-animation-name: rotateOutUpRight;
+  animation-name: rotateOutUpRight;
+}
+
+@-webkit-keyframes slideInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    -ms-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+
+  100% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.slideInDown {
+  -webkit-animation-name: slideInDown;
+  animation-name: slideInDown;
+}
+
+@-webkit-keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    -ms-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+.slideInLeft {
+  -webkit-animation-name: slideInLeft;
+  animation-name: slideInLeft;
+}
+
+@-webkit-keyframes slideInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    -ms-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+.slideInRight {
+  -webkit-animation-name: slideInRight;
+  animation-name: slideInRight;
+}
+
+@-webkit-keyframes slideOutLeft {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+}
+
+@keyframes slideOutLeft {
+  0% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    -ms-transform: translateX(-2000px);
+    transform: translateX(-2000px);
+  }
+}
+
+.slideOutLeft {
+  -webkit-animation-name: slideOutLeft;
+  animation-name: slideOutLeft;
+}
+
+@-webkit-keyframes slideOutRight {
+  0% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+}
+
+@keyframes slideOutRight {
+  0% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    -ms-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+}
+
+.slideOutRight {
+  -webkit-animation-name: slideOutRight;
+  animation-name: slideOutRight;
+}
+
+@-webkit-keyframes slideOutUp {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+}
+
+@keyframes slideOutUp {
+  0% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(-2000px);
+    -ms-transform: translateY(-2000px);
+    transform: translateY(-2000px);
+  }
+}
+
+.slideOutUp {
+  -webkit-animation-name: slideOutUp;
+  animation-name: slideOutUp;
+}
+
+@-webkit-keyframes slideInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    -ms-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.slideInUp {
+  -webkit-animation-name: slideInUp;
+  animation-name: slideInUp;
+}
+
+@-webkit-keyframes slideOutDown {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+}
+
+@keyframes slideOutDown {
+  0% {
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(2000px);
+    -ms-transform: translateY(2000px);
+    transform: translateY(2000px);
+  }
+}
+
+.slideOutDown {
+  -webkit-animation-name: slideOutDown;
+  animation-name: slideOutDown;
+}
+
+@-webkit-keyframes hinge {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+
+  20%, 60% {
+    -webkit-transform: rotate(80deg);
+    transform: rotate(80deg);
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+
+  40% {
+    -webkit-transform: rotate(60deg);
+    transform: rotate(60deg);
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+
+  80% {
+    -webkit-transform: rotate(60deg) translateY(0);
+    transform: rotate(60deg) translateY(0);
+    -webkit-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: translateY(700px);
+    transform: translateY(700px);
+    opacity: 0;
+  }
+}
+
+@keyframes hinge {
+  0% {
+    -webkit-transform: rotate(0);
+    -ms-transform: rotate(0);
+    transform: rotate(0);
+    -webkit-transform-origin: top left;
+    -ms-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+
+  20%, 60% {
+    -webkit-transform: rotate(80deg);
+    -ms-transform: rotate(80deg);
+    transform: rotate(80deg);
+    -webkit-transform-origin: top left;
+    -ms-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+
+  40% {
+    -webkit-transform: rotate(60deg);
+    -ms-transform: rotate(60deg);
+    transform: rotate(60deg);
+    -webkit-transform-origin: top left;
+    -ms-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+
+  80% {
+    -webkit-transform: rotate(60deg) translateY(0);
+    -ms-transform: rotate(60deg) translateY(0);
+    transform: rotate(60deg) translateY(0);
+    -webkit-transform-origin: top left;
+    -ms-transform-origin: top left;
+    transform-origin: top left;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: translateY(700px);
+    -ms-transform: translateY(700px);
+    transform: translateY(700px);
+    opacity: 0;
+  }
+}
+
+.hinge {
+  -webkit-animation-name: hinge;
+  animation-name: hinge;
+}
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+
+@-webkit-keyframes rollIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100%) rotate(-120deg);
+    transform: translateX(-100%) rotate(-120deg);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0px) rotate(0deg);
+    transform: translateX(0px) rotate(0deg);
+  }
+}
+
+@keyframes rollIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-100%) rotate(-120deg);
+    -ms-transform: translateX(-100%) rotate(-120deg);
+    transform: translateX(-100%) rotate(-120deg);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0px) rotate(0deg);
+    -ms-transform: translateX(0px) rotate(0deg);
+    transform: translateX(0px) rotate(0deg);
+  }
+}
+
+.rollIn {
+  -webkit-animation-name: rollIn;
+  animation-name: rollIn;
+}
+
+/* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
+
+@-webkit-keyframes rollOut {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0px) rotate(0deg);
+    transform: translateX(0px) rotate(0deg);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(100%) rotate(120deg);
+    transform: translateX(100%) rotate(120deg);
+  }
+}
+
+@keyframes rollOut {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateX(0px) rotate(0deg);
+    -ms-transform: translateX(0px) rotate(0deg);
+    transform: translateX(0px) rotate(0deg);
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: translateX(100%) rotate(120deg);
+    -ms-transform: translateX(100%) rotate(120deg);
+    transform: translateX(100%) rotate(120deg);
+  }
+}
+
+.rollOut {
+  -webkit-animation-name: rollOut;
+  animation-name: rollOut;
+}
+
+@-webkit-keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(.3);
+    transform: scale(.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(.3);
+    -ms-transform: scale(.3);
+    transform: scale(.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+.zoomIn {
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+}
+
+@-webkit-keyframes zoomInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(.1) translateY(-2000px);
+    transform: scale(.1) translateY(-2000px);
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale(.475) translateY(60px);
+    transform: scale(.475) translateY(60px);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+
+@keyframes zoomInDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(.1) translateY(-2000px);
+    -ms-transform: scale(.1) translateY(-2000px);
+    transform: scale(.1) translateY(-2000px);
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale(.475) translateY(60px);
+    -ms-transform: scale(.475) translateY(60px);
+    transform: scale(.475) translateY(60px);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+
+.zoomInDown {
+  -webkit-animation-name: zoomInDown;
+  animation-name: zoomInDown;
+}
+
+@-webkit-keyframes zoomInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(.1) translateX(-2000px);
+    transform: scale(.1) translateX(-2000px);
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale(.475) translateX(48px);
+    transform: scale(.475) translateX(48px);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+
+@keyframes zoomInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(.1) translateX(-2000px);
+    -ms-transform: scale(.1) translateX(-2000px);
+    transform: scale(.1) translateX(-2000px);
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale(.475) translateX(48px);
+    -ms-transform: scale(.475) translateX(48px);
+    transform: scale(.475) translateX(48px);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+
+.zoomInLeft {
+  -webkit-animation-name: zoomInLeft;
+  animation-name: zoomInLeft;
+}
+
+@-webkit-keyframes zoomInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(.1) translateX(2000px);
+    transform: scale(.1) translateX(2000px);
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale(.475) translateX(-48px);
+    transform: scale(.475) translateX(-48px);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+
+@keyframes zoomInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(.1) translateX(2000px);
+    -ms-transform: scale(.1) translateX(2000px);
+    transform: scale(.1) translateX(2000px);
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale(.475) translateX(-48px);
+    -ms-transform: scale(.475) translateX(-48px);
+    transform: scale(.475) translateX(-48px);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+
+.zoomInRight {
+  -webkit-animation-name: zoomInRight;
+  animation-name: zoomInRight;
+}
+
+@-webkit-keyframes zoomInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(.1) translateY(2000px);
+    transform: scale(.1) translateY(2000px);
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale(.475) translateY(-60px);
+    transform: scale(.475) translateY(-60px);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+
+@keyframes zoomInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(.1) translateY(2000px);
+    -ms-transform: scale(.1) translateY(2000px);
+    transform: scale(.1) translateY(2000px);
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale(.475) translateY(-60px);
+    -ms-transform: scale(.475) translateY(-60px);
+    transform: scale(.475) translateY(-60px);
+    -webkit-animation-timing-function: ease-out;
+    animation-timing-function: ease-out;
+  }
+}
+
+.zoomInUp {
+  -webkit-animation-name: zoomInUp;
+  animation-name: zoomInUp;
+}
+
+@-webkit-keyframes zoomOut {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0;
+    -webkit-transform: scale(.3);
+    transform: scale(.3);
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes zoomOut {
+  0% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0;
+    -webkit-transform: scale(.3);
+    -ms-transform: scale(.3);
+    transform: scale(.3);
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.zoomOut {
+  -webkit-animation-name: zoomOut;
+  animation-name: zoomOut;
+}
+
+@-webkit-keyframes zoomOutDown {
+  40% {
+    opacity: 1;
+    -webkit-transform: scale(.475) translateY(-60px);
+    transform: scale(.475) translateY(-60px);
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(.1) translateY(2000px);
+    transform: scale(.1) translateY(2000px);
+    -webkit-transform-origin: center bottom;
+    transform-origin: center bottom;
+  }
+}
+
+@keyframes zoomOutDown {
+  40% {
+    opacity: 1;
+    -webkit-transform: scale(.475) translateY(-60px);
+    -ms-transform: scale(.475) translateY(-60px);
+    transform: scale(.475) translateY(-60px);
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(.1) translateY(2000px);
+    -ms-transform: scale(.1) translateY(2000px);
+    transform: scale(.1) translateY(2000px);
+    -webkit-transform-origin: center bottom;
+    -ms-transform-origin: center bottom;
+    transform-origin: center bottom;
+  }
+}
+
+.zoomOutDown {
+  -webkit-animation-name: zoomOutDown;
+  animation-name: zoomOutDown;
+}
+
+@-webkit-keyframes zoomOutLeft {
+  40% {
+    opacity: 1;
+    -webkit-transform: scale(.475) translateX(42px);
+    transform: scale(.475) translateX(42px);
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(.1) translateX(-2000px);
+    transform: scale(.1) translateX(-2000px);
+    -webkit-transform-origin: left center;
+    transform-origin: left center;
+  }
+}
+
+@keyframes zoomOutLeft {
+  40% {
+    opacity: 1;
+    -webkit-transform: scale(.475) translateX(42px);
+    -ms-transform: scale(.475) translateX(42px);
+    transform: scale(.475) translateX(42px);
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(.1) translateX(-2000px);
+    -ms-transform: scale(.1) translateX(-2000px);
+    transform: scale(.1) translateX(-2000px);
+    -webkit-transform-origin: left center;
+    -ms-transform-origin: left center;
+    transform-origin: left center;
+  }
+}
+
+.zoomOutLeft {
+  -webkit-animation-name: zoomOutLeft;
+  animation-name: zoomOutLeft;
+}
+
+@-webkit-keyframes zoomOutRight {
+  40% {
+    opacity: 1;
+    -webkit-transform: scale(.475) translateX(-42px);
+    transform: scale(.475) translateX(-42px);
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(.1) translateX(2000px);
+    transform: scale(.1) translateX(2000px);
+    -webkit-transform-origin: right center;
+    transform-origin: right center;
+  }
+}
+
+@keyframes zoomOutRight {
+  40% {
+    opacity: 1;
+    -webkit-transform: scale(.475) translateX(-42px);
+    -ms-transform: scale(.475) translateX(-42px);
+    transform: scale(.475) translateX(-42px);
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(.1) translateX(2000px);
+    -ms-transform: scale(.1) translateX(2000px);
+    transform: scale(.1) translateX(2000px);
+    -webkit-transform-origin: right center;
+    -ms-transform-origin: right center;
+    transform-origin: right center;
+  }
+}
+
+.zoomOutRight {
+  -webkit-animation-name: zoomOutRight;
+  animation-name: zoomOutRight;
+}
+
+@-webkit-keyframes zoomOutUp {
+  40% {
+    opacity: 1;
+    -webkit-transform: scale(.475) translateY(60px);
+    transform: scale(.475) translateY(60px);
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(.1) translateY(-2000px);
+    transform: scale(.1) translateY(-2000px);
+    -webkit-transform-origin: center top;
+    transform-origin: center top;
+  }
+}
+
+@keyframes zoomOutUp {
+  40% {
+    opacity: 1;
+    -webkit-transform: scale(.475) translateY(60px);
+    -ms-transform: scale(.475) translateY(60px);
+    transform: scale(.475) translateY(60px);
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+  }
+
+  100% {
+    opacity: 0;
+    -webkit-transform: scale(.1) translateY(-2000px);
+    -ms-transform: scale(.1) translateY(-2000px);
+    transform: scale(.1) translateY(-2000px);
+    -webkit-transform-origin: center top;
+    -ms-transform-origin: center top;
+    transform-origin: center top;
+  }
+}
+
+.zoomOutUp {
+  -webkit-animation-name: zoomOutUp;
+  animation-name: zoomOutUp;
+}
+/* line 3, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/conversations.css.scss */
+.bar-section {
+  float: left;
+  color: rgba(255, 255, 255, 0.7);
+  height: 100%;
+  width: auto;
+  line-height: 60px;
+  margin-right: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* line 15, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/conversations.css.scss */
+.new-message-section {
+  float: right;
+  color: white;
+  height: 60px;
+  line-height: 60px;
+  cursor: pointer;
+}
+
+/* line 23, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/conversations.css.scss */
+.bar-section.active {
+  color: white;
+  border-bottom: 5px solid white;
+  height: 55px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* line 31, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/conversations.css.scss */
+.new-message-svg {
+  height: 20px;
+  float: left;
+  margin-right: 10px;
+  margin-top: 20px;
+}
+
+/* line 38, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/conversations.css.scss */
+.green-bar-content {
+  width: 960px;
+  margin: 0 auto;
+  height: auto;
+}
+
+/* line 44, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/conversations.css.scss */
+#content-left-small {
+  position: fixed;
+  left: calc(50% - 510px);
+  width: 350px;
+  top: 120px;
+  height: calc(100% - 120px);
+  overflow-y: scroll;
+}
+
+/* line 53, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/conversations.css.scss */
+#content-right-large {
+  position: fixed;
+  right: calc(50% - 480px);
+  width: 620px;
+  top: 120px;
+  height: calc(100% - 120px);
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+/* line 63, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/conversations.css.scss */
+#conversation-title {
+  color: #242424;
+  width: auto;
+  float: left;
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-left: 30px;
+}
+
+/* line 74, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/conversations.css.scss */
+#conversations {
+  width: 100%;
+  margin-top: 10px;
+  float: right;
+}
+/* line 79, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/conversations.css.scss */
+#conversations .conversation.active .convoarrow-svg {
+  display: block;
+}
+/* line 84, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/conversations.css.scss */
+#conversations .conversation {
+  width: 100%;
+  float: right;
+  height: 80px;
+  cursor: pointer;
+  position: relative;
+  overflow-x: visible;
+  border-bottom: 1px solid #e0e0e0;
+}
+/* line 92, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/conversations.css.scss */
+#conversations .conversation .border-hider {
+  width: 30px;
+  height: 20px;
+  position: absolute;
+  bottom: -1px;
+  background: white;
+}
+/* line 99, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/conversations.css.scss */
+#conversations .conversation .convoarrow-svg {
+  position: absolute;
+  height: 20px;
+  left: 0;
+  top: 20px;
+  display: none;
+}
+/* line 106, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/conversations.css.scss */
+#conversations .conversation .convo-pic {
+  height: 40px;
+  width: 40px;
+  float: left;
+  border-radius: 100px;
+  margin-right: 20px;
+  margin-top: 10px;
+  margin-left: 30px;
+}
+/* line 115, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/conversations.css.scss */
+#conversations .conversation .convo-details {
+  width: calc(100% - 90px);
+  float: left;
+  height: 100%;
+  margin-top: 10px;
+  color: #414141;
+}
+/* line 121, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/conversations.css.scss */
+#conversations .conversation .convo-details div {
+  float: left;
+  clear: left;
+}
+/* line 125, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/conversations.css.scss */
+#conversations .conversation .convo-details .convo-name {
+  font-weight: 700;
+}
+/* line 128, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/conversations.css.scss */
+#conversations .conversation .convo-details .convo-date {
+  float: right;
+  clear: none;
+  color: #e0e0e0;
+  font-size: 12px;
+}
+/* line 134, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/conversations.css.scss */
+#conversations .conversation .convo-details .convo-subject {
+  font-weight: 700;
+  color: #2ecc71;
+}
+
+@media (max-width: 1023px) {
+  /* line 146, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/conversations.css.scss */
+  body #content.messages #content-right-large, body #content.messages #conversation-title, body #content.messages .border-hider {
+    display: none;
+  }
+  /* line 150, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/conversations.css.scss */
+  body #content.messages #conversations .conversation.active .convoarrow-svg {
+    display: none;
+  }
+  /* line 154, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/conversations.css.scss */
+  body #content.messages #conversations .conversation .convo-pic {
+    margin-left: 10px;
+  }
+  /* line 159, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/conversations.css.scss */
+  body #content.messages #content-right-large {
+    position: absolute;
+    width: 100%;
+    left: 0;
+  }
+  /* line 164, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/conversations.css.scss */
+  body #content.messages #content-right-large .message .message-pic {
+    left: 10px;
+  }
+  /* line 167, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/conversations.css.scss */
+  body #content.messages #content-right-large .message .message-actions {
+    right: 10px;
+  }
+  /* line 170, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/conversations.css.scss */
+  body #content.messages #content-right-large .message .meeting-request-details, body #content.messages #content-right-large .message .meeting-message {
+    margin-left: 10px;
+  }
+  /* line 174, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/conversations.css.scss */
+  body #content.messages #content-right-large #new-message-container #submit-message {
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+  /* line 180, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/conversations.css.scss */
+  body #content.messages #content-left-small {
+    position: absolute;
+    width: 100%;
+    left: 0;
+  }
+}
+/* line 3, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+#landing-pic {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  background-size: cover;
+  width: 100%;
+  object-fit: fill;
+}
+
+/* line 11, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+#landing-overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  z-index: -1;
+}
+
+/* line 19, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+.landing-section {
+  width: 100%;
+  font-family: "proxima-nova", sans-serif;
+}
+
+/* line 24, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+.landing-section.main {
+  height: 100%;
+  position: relative;
+}
+/* line 27, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+.landing-section.main #down-arrow {
+  height: 40px;
+  width: 100%;
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+}
+
+/* line 36, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+#landing-logo {
+  width: 100px;
+  height: 125px;
+  display: block;
+  margin: 0 auto;
+  padding-top: 20vh;
+}
+
+/* line 44, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+#logo-title {
+  font-size: 34px;
+  width: 250px;
+  margin: 0 auto;
+  margin-top: 20px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  text-align: center;
+  font-family: "proxima-nova", sans-serif, sans-serif;
+}
+
+/* line 55, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+#logo-text {
+  margin: 0 auto;
+  width: 260px;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 10px;
+  font-family: "proxima-nova", sans-serif, sans-serif;
+  font-weight: 300;
+}
+
+/* line 65, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+.linkedin-svg {
+  height: 30px;
+  width: 30px;
+  float: left;
+  margin-top: 18px;
+  margin-left: 30px;
+}
+
+/* line 73, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+.sign-up-box {
+  background: #007bb6;
+  width: 300px;
+  height: 64px;
+  border-radius: 10px;
+  margin-top: 20px;
+  display: inline-block;
+  margin-left: calc(50% - 150px);
+}
+/* line 81, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+.sign-up-box .sign-up-text {
+  float: right;
+  height: 64px;
+  line-height: 64px;
+  margin-right: 30px;
+  font-family: "proxima-nova", sans-serif, sans-serif;
+}
+
+/* line 90, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+.two {
+  background: white;
+  color: #414141;
+  height: 540px;
+}
+/* line 94, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+.two .section-block:nth-child(2n) {
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
+/* line 100, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+.section-header {
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  width: 100%;
+  text-align: center;
+  padding-top: 120px;
+  font-family: "proxima-nova", sans-serif, sans-serif;
+}
+
+/* line 110, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+.section-header2 {
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  width: 100%;
+  text-align: center;
+  padding-top: 40px;
+  font-family: "proxima-nova", sans-serif, sans-serif;
+}
+
+/* line 120, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+.section-block {
+  width: 280px;
+  float: left;
+  height: 300px;
+  color: #414141;
+  font-family: "proxima-nova", sans-serif, sans-serif;
+}
+/* line 126, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+.section-block .block-text {
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  width: 100%;
+  text-align: center;
+}
+/* line 133, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+.section-block .block-image {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  margin-top: 20px;
+  display: block;
+}
+/* line 140, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+.section-block .block-info {
+  text-align: center;
+  font-size: 20px;
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+/* line 151, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+.section-content {
+  width: 960px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+/* line 157, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+.landing-section.three {
+  height: 160px;
+  color: white;
+  text-align: center;
+  line-height: 160px;
+  background: #414141;
+  font-family: "proxima-nova", sans-serif, sans-serif;
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+/* line 169, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+.landing-section.four {
+  height: 540px;
+  position: relative;
+  background-size: cover;
+  font-family: "proxima-nova", sans-serif, sans-serif;
+}
+/* line 174, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+.landing-section.four .people-image {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+}
+/* line 180, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+.landing-section.four .section-block:nth-child(2n) {
+  margin-left: 60px;
+  margin-right: 60px;
+}
+/* line 184, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+.landing-section.four .section-block {
+  color: black;
+  font-size: 20px;
+  margin-top: 60px;
+  font-weight: 300;
+}
+/* line 190, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+.landing-section.four .block-text {
+  font-size: 20px;
+}
+
+/* line 195, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+.landing-section.five {
+  height: 400px;
+  margin-top: -40px;
+  background: white;
+  font-family: "proxima-nova", sans-serif, sans-serif;
+}
+/* line 200, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+.landing-section.five .team-container {
+  width: 100%;
+  height: 600px;
+  margin: 0 auto;
+}
+/* line 204, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+.landing-section.five .team-container .member {
+  width: 25%;
+  height: 50%;
+  float: left;
+}
+/* line 209, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+.landing-section.five .team-container .member-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 200px;
+  margin: 0 auto;
+  display: block;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+/* line 218, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+.landing-section.five .team-container .member-name {
+  width: 100%;
+  text-align: center;
+  font-weight: 600;
+}
+/* line 223, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+.landing-section.five .team-container .member-title {
+  width: 100%;
+  text-align: center;
+  color: #939393;
+}
+
+/* line 232, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+.landing-section.six {
+  height: 500px;
+  background: #2ecc71;
+}
+
+/* line 238, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+#feedback-form {
+  float: left;
+  margin-left: 200px;
+  width: 380px;
+  margin-top: 80px;
+  font-family: "proxima-nova", sans-serif, sans-serif;
+}
+/* line 244, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+#feedback-form input, #feedback-form textarea {
+  width: 100%;
+  height: 40px;
+  margin-top: 20px;
+  float: left;
+  border-radius: 5px;
+  clear: left;
+  font-size: 16px;
+  font-family: "proxima-nova", sans-serif, sans-serif;
+  border: 0px;
+  padding: 0px 15px;
+  box-sizing: border-box;
+}
+/* line 257, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+#feedback-form #feedback-body {
+  height: 100px;
+  font-family: "proxima-nova", sans-serif, sans-serif;
+  box-sizing: border-box;
+  padding: 10px 15px;
+}
+/* line 263, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+#feedback-form #send-feedback {
+  border: none;
+  background: #3498db;
+  color: white;
+  cursor: pointer;
+  font-family: "proxima-nova", sans-serif, sans-serif;
+  padding: 0px 15px;
+  box-sizing: border-box;
+}
+/* line 272, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+#feedback-form #send-feedback:hover {
+  color: #3498db;
+  background: white;
+  border: 1px solid #3498db;
+  font-family: "proxima-nova", sans-serif, sans-serif;
+}
+/* line 279, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+#feedback-form .feedback-title {
+  color: white;
+  text-align: center;
+}
+
+/* line 285, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+#site-copy-container {
+  float: right;
+  margin-right: 200px;
+  margin-top: 80px;
+  font-family: "proxima-nova", sans-serif, sans-serif;
+}
+/* line 290, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+#site-copy-container .copy-link {
+  float: right;
+  color: white;
+  margin-bottom: 20px;
+  font-size: 20px;
+  clear: right;
+  cursor: pointer;
+}
+
+@media (max-width: 1023px) {
+  /* line 303, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+  body .landing-section.white.main {
+    background-image: url(/assets/mobilelandingbg.png);
+    background-size: cover;
+    padding: 15vh 0px;
+    box-sizing: border-box;
+  }
+  /* line 309, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+  body .section-content {
+    width: 100%;
+  }
+  /* line 312, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+  body #landing-logo {
+    padding-top: 20px;
+  }
+  /* line 315, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+  body .two, body .three, body .landing-section.four, body .landing-section.five {
+    height: auto;
+    float: left;
+  }
+  /* line 318, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+  body .two .section-block:nth-child(2n), body .three .section-block:nth-child(2n), body .landing-section.four .section-block:nth-child(2n), body .landing-section.five .section-block:nth-child(2n) {
+    float: left;
+    margin-left: calc(50% - 140px);
+    margin-top: 90px;
+  }
+  /* line 323, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+  body .two .section-block.first, body .three .section-block.first, body .landing-section.four .section-block.first, body .landing-section.five .section-block.first {
+    margin-top: 0px;
+  }
+  /* line 327, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+  body .landing-section.two {
+    font-size: 28px;
+    height: 1340px;
+  }
+  /* line 330, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+  body .landing-section.two .section-block {
+    margin-top: 20px;
+  }
+  /* line 334, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+  body .landing-section.three {
+    font-size: 28px;
+    line-height: 1.2;
+    padding: 5vh 0px;
+    box-sizing: border-box;
+  }
+  /* line 341, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+  body .landing-section.four {
+    background: #2ecc71;
+    color: white;
+    background-size: 100px 100%;
+  }
+  /* line 345, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+  body .landing-section.four .section-header {
+    padding: 40px 0px;
+  }
+  /* line 348, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+  body .landing-section.four .section-content {
+    margin-top: 0px;
+  }
+  /* line 350, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+  body .landing-section.four .section-content .block-info {
+    margin-top: 0px;
+    margin-bottom: 40px;
+  }
+  /* line 354, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+  body .landing-section.four .section-content .section-block {
+    margin-top: 0px;
+  }
+  /* line 361, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+  body .landing-section.five .team-container {
+    width: 100%;
+    height: auto;
+  }
+  /* line 364, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+  body .landing-section.five .team-container .member-pic {
+    height: 100px;
+    width: 100px;
+  }
+  /* line 368, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+  body .landing-section.five .team-container .member {
+    margin-bottom: 40px;
+  }
+  /* line 374, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+  body .landing-section.six {
+    display: none;
+  }
+  /* line 377, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/home.css.scss */
+  body .section-block {
+    float: left;
+    margin-left: calc(50% - 140px);
+    margin-top: 60px;
+    clear: left;
+    height: auto;
+  }
+}
+/* line 3, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/master.css.scss */
+html {
+  width: 100%;
+  height: 100%;
+}
+
+/* line 7, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/master.css.scss */
+input {
+  -webkit-appearance: none;
+}
+
+/* line 10, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/master.css.scss */
+.hidden {
+  display: none;
+}
+
+/* line 13, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/master.css.scss */
+div, input {
+  -webkit-transition: background .5s;
+}
+
+/* line 17, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/master.css.scss */
+.bold {
+  font-weight: 700;
+}
+
+/* line 20, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/master.css.scss */
+body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  font-family: "proxima-nova", sans-serif;
+}
+
+/* line 27, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/master.css.scss */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* line 31, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/master.css.scss */
+textarea:focus, input:focus {
+  outline: 0;
+}
+
+/* line 35, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/master.css.scss */
+.linkify a {
+  color: #3498db;
+  text-decoration: underline;
+}
+
+/* line 40, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/master.css.scss */
+a {
+  text-decoration: none;
+  color: white;
+}
+
+/* line 45, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/master.css.scss */
+.white {
+  color: white;
+}
+/* line 3, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/meeting-modal.css.scss */
+#meeting-modal-container {
+  position: fixed;
+  height: 100%;
+  left: 0;
+  top: 50px;
+  width: calc(50% + 140px);
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* line 12, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/meeting-modal.css.scss */
+#meeting-modal-content {
+  height: 300px;
+  width: 300px;
+  float: right;
+  margin-right: 120px;
+  margin-top: 120px;
+}
+/* line 18, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/meeting-modal.css.scss */
+#meeting-modal-content .form-row {
+  width: 100%;
+  margin-top: 10px;
+  float: left;
+  clear: left;
+}
+/* line 24, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/meeting-modal.css.scss */
+#meeting-modal-content .form-input {
+  height: 40px;
+  width: 200px;
+  float: right;
+  border: none;
+  font-size: 16px;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+/* line 33, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/meeting-modal.css.scss */
+#meeting-modal-content #meeting_message {
+  height: 140px;
+}
+/* line 36, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/meeting-modal.css.scss */
+#meeting-modal-content .form-label {
+  color: white;
+  float: left;
+  width: 70px;
+}
+/* line 41, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/meeting-modal.css.scss */
+#meeting-modal-content #send-meeting {
+  width: 100%;
+  text-align: center;
+  color: white;
+  background: #2ecc71;
+  font-weight: 300;
+  height: 40px;
+  margin-top: 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  line-height: 1.3;
+  font-family: "proxima-nova", sans-serif;
+}
+/* line 56, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/meeting-modal.css.scss */
+#meeting-modal-content #send-meeting:hover {
+  color: #2ecc71;
+  background: white;
+  border: 1px solid #2ecc71;
+}
+/* line 4, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/meetings.css.scss */
+.message.meeting {
+  border-bottom: none;
+}
+
+/* line 9, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/meetings.css.scss */
+.meeting-text {
+  color: #2ecc71;
+  font-weight: 500;
+  float: left;
+  clear: left;
+}
+
+/* line 16, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/meetings.css.scss */
+.meeting-request-details {
+  margin-top: 20px;
+  float: left;
+  padding-top: 20px;
+  border-top: 1px solid #e0e0e0;
+  width: 100%;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* line 29, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/meetings.css.scss */
+.message .message-body.meeting-message {
+  margin-left: 0px;
+}
+
+/* line 34, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/meetings.css.scss */
+.convo-details.past div {
+  color: #939393;
+}
+
+/* line 38, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/meetings.css.scss */
+.meeting-actions {
+  width: 240px;
+  float: right;
+  height: 40px;
+  margin-top: 20px;
+}
+
+/* line 44, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/meetings.css.scss */
+.meeting-action {
+  height: 60px;
+  width: 60px;
+  float: left;
+  margin-left: 20px;
+  border-radius: 100px;
+  text-align: center;
+  color: white;
+  line-height: 85px;
+  cursor: pointer;
+  position: relative;
+  font-size: 12px;
+  font-weight: 300;
+}
+
+/* line 59, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/meetings.css.scss */
+.accept-meeting {
+  background: #2ecc71;
+}
+
+/* line 63, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/meetings.css.scss */
+.reply-meeting {
+  background: #34495e;
+}
+
+/* line 67, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/meetings.css.scss */
+.decline-meeting {
+  background: #e74c3c;
+}
+
+/* line 71, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/meetings.css.scss */
+.pending .decline-meeting {
+  margin-top: 20px;
+  float: right;
+}
+
+/* line 76, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/meetings.css.scss */
+.meeting-action-svg {
+  position: absolute;
+  height: 30px;
+  width: 100%;
+  left: 0;
+  top: 5px;
+}
+
+/* line 85, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/meetings.css.scss */
+#current-meeting {
+  width: 300px;
+  height: 250px;
+  position: fixed;
+  top: 65px;
+  right: calc(50% - 480px);
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  text-align: center;
+  border-radius: 5px;
+  font-weight: 300;
+}
+/* line 97, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/meetings.css.scss */
+#current-meeting div {
+  width: 100%;
+}
+/* line 100, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/meetings.css.scss */
+#current-meeting .current-meeting-header {
+  margin-top: 20px;
+}
+/* line 103, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/meetings.css.scss */
+#current-meeting .current-meeting-name {
+  font-weight: 700;
+}
+/* line 106, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/meetings.css.scss */
+#current-meeting .current-meeting-btn {
+  float: none;
+  width: 80px;
+  margin: 0 auto;
+  height: 40px;
+  background: #2ecc71;
+  border-radius: 5px;
+  margin-top: 20px;
+  cursor: pointer;
+  line-height: 40px;
+}
+/* line 117, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/meetings.css.scss */
+#current-meeting .current-meeting-pic {
+  margin: 10px 0px;
+  width: 60px;
+  height: 60px;
+  border-radius: 100px;
+}
+
+/* line 125, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/meetings.css.scss */
+#submit-rating {
+  width: 100px;
+  float: left;
+  height: 40px;
+  color: white;
+  background: #2ecc71;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+/* line 137, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/meetings.css.scss */
+#submit-rating:hover {
+  background: white;
+  border: 1px solid #2ecc71;
+  color: #2ecc71;
+}
+
+/* line 143, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/meetings.css.scss */
+.star-rating-container {
+  margin-top: 20px;
+  height: 30px;
+}
+/* line 146, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/meetings.css.scss */
+.star-rating-container .star {
+  width: 30px;
+  height: 30px;
+  float: left;
+  margin-right: 20px;
+  cursor: pointer;
+}
+/* line 3, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/messages.css.scss */
+.message {
+  width: 100%;
+  float: left;
+  position: relative;
+  border-bottom: 1px solid #e0e0e0;
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
+/* line 10, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/messages.css.scss */
+.message .message-body {
+  width: calc(100% - 60px);
+  float: left;
+  margin-left: 60px;
+  margin-top: 20px;
+}
+/* line 16, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/messages.css.scss */
+.message .message-pic {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+}
+/* line 24, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/messages.css.scss */
+.message .message-actions {
+  position: absolute;
+  bottom: 10px;
+  right: 0;
+}
+/* line 30, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/messages.css.scss */
+.message .message-svg {
+  height: 20px;
+  width: 20px;
+  margin-left: 40px;
+  float: left;
+  cursor: pointer;
+}
+
+/* line 39, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/messages.css.scss */
+.message.first {
+  padding-bottom: 40px;
+}
+
+/* line 43, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/messages.css.scss */
+.message-header {
+  width: calc(100% - 60px);
+  float: left;
+  margin-left: 60px;
+}
+/* line 47, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/messages.css.scss */
+.message-header div {
+  float: left;
+  clear: left;
+}
+
+/* line 53, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/messages.css.scss */
+.message-tagline {
+  color: #e0e0e0;
+  font-size: 14px;
+}
+
+/* line 63, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/messages.css.scss */
+#new-message-container {
+  width: 100%;
+  height: 100%;
+  float: left;
+}
+/* line 67, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/messages.css.scss */
+#new-message-container input, #new-message-container textarea, #new-message-container #message-recipient {
+  border: none;
+  width: 100%;
+  float: left;
+  border-bottom: 1px solid #e0e0e0;
+  height: 40px;
+  font-size: 16px;
+  line-height: 40px;
+  font-family: "proxima-nova", sans-serif;
+}
+/* line 77, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/messages.css.scss */
+#new-message-container #submit-message {
+  height: 40px;
+  width: 150px;
+  background: #2ecc71;
+  border-radius: 5px;
+  float: right;
+  color: white;
+  line-height: 35px;
+  cursor: pointer;
+}
+/* line 87, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/messages.css.scss */
+#new-message-container #submit-message:hover {
+  color: #2ecc71;
+  background: white;
+  border: 1px solid green;
+}
+/* line 92, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/messages.css.scss */
+#new-message-container textarea {
+  height: calc(100% - 132px);
+}
+/* line 95, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/messages.css.scss */
+#new-message-container #message-body {
+  border: none;
+  font-family: "proxima-nova", sans-serif;
+}
+/* line 100, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/messages.css.scss */
+#new-message-container #new_message {
+  height: 100%;
+}
+/* line 8, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+.user-actions-container {
+  position: relative;
+  float: right;
+  padding-left: 15px;
+}
+/* line 12, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+.user-actions-container .result-actions-container {
+  position: absolute;
+  width: 200px;
+  bottom: 2px;
+  z-index: 12;
+  display: none;
+  right: 0;
+}
+/* line 19, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+.user-actions-container .result-actions-container .result-actions {
+  display: block;
+  bottom: -85px;
+  right: 0px;
+}
+/* line 24, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+.user-actions-container .result-actions-container .logout {
+  border-top: 1px solid #e0e0e0;
+}
+
+/* line 31, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+.user-actions-container:hover .result-actions-container {
+  display: block;
+}
+
+/* line 37, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+#message-link {
+  position: relative;
+}
+
+/* line 40, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+.counter {
+  position: absolute;
+  background: #e74c3c;
+  color: white;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  line-height: 20px;
+  text-align: center;
+  left: 135px;
+  top: 10px;
+  border-radius: 50px;
+}
+
+/* line 56, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+.profile-circle-pic {
+  height: 40px;
+  width: 40px;
+  border-radius: 100px;
+}
+
+/* line 65, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+#profile-content {
+  width: 100%;
+  float: left;
+  position: relative;
+  margin-top: 60px;
+}
+/* line 70, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+#profile-content #profile-cover {
+  width: 100%;
+  overflow: hidden;
+  height: 150px;
+  background: white;
+  position: relative;
+}
+/* line 76, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+#profile-content #profile-cover div, #profile-content #profile-cover img {
+  position: absolute;
+}
+/* line 79, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+#profile-content #profile-cover .cover-image {
+  width: 100%;
+  height: 300%;
+  -webkit-filter: blur(30px);
+}
+/* line 84, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+#profile-content #profile-cover .profile-main-pic {
+  width: 125px;
+  height: 125px;
+  left: 0px;
+  bottom: 0;
+}
+/* line 90, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+#profile-content #profile-cover .profile-text-box {
+  left: 145px;
+  width: calc(100% - 125px);
+  height: 125px;
+  bottom: 0;
+  color: #414141;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+/* line 98, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+#profile-content #profile-cover .profile-text-box .profile-text {
+  float: left;
+  clear: left;
+  width: 100%;
+  position: static;
+}
+/* line 104, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+#profile-content #profile-cover .profile-text-box #name {
+  font-size: 34px;
+  font-weight: 300;
+}
+/* line 108, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+#profile-content #profile-cover .profile-text-box #tagline {
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+/* line 113, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+#profile-content #profile-cover .profile-text-box #location {
+  font-size: 16px;
+  font-weight: 300;
+}
+/* line 122, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+#profile-content .field-header {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 24px;
+  float: left;
+  clear: left;
+  width: 100%;
+}
+/* line 130, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+#profile-content .field-header.availability {
+  padding-top: 40px;
+  border-top: 1px solid #e0e0e0;
+}
+/* line 134, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+#profile-content .field-row {
+  width: 100%;
+  font-size: 16px;
+  color: #414141;
+  float: left;
+  clear: left;
+}
+/* line 141, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+#profile-content .field-row.availability {
+  margin-bottom: 20px;
+}
+/* line 144, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+#profile-content .field-row.misc {
+  padding-top: 40px;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 20px;
+}
+/* line 149, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+#profile-content .misc-field {
+  width: 45%;
+  float: left;
+  margin-top: 10px;
+  height: 20px;
+}
+/* line 155, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+#profile-content .misc-field:nth-child(2n) {
+  margin-left: 5%;
+}
+/* line 158, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+#profile-content .field-label {
+  color: #414141;
+  font-weight: 500;
+  float: left;
+}
+/* line 163, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+#profile-content .field-value {
+  float: right;
+}
+
+/* line 168, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+.best_in_place {
+  cursor: pointer;
+}
+
+/* line 171, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+.form_in_place {
+  width: 100%;
+}
+/* line 173, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+.form_in_place input {
+  height: 40px;
+  border: none;
+  width: 100%;
+  font-size: 16px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+}
+
+/* line 184, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+.misc .form_in_place input {
+  height: 16px;
+  float: right;
+  width: 100px;
+  text-align: left;
+  margin: 0;
+}
+
+/* line 195, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+#profile-cover .form_in_place input {
+  width: 90%;
+}
+
+/* line 200, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+.time-block .time-value {
+  min-width: 100px;
+  height: 40px;
+}
+
+/* line 206, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+#content-left {
+  position: absolute;
+  left: calc(50% - 480px);
+  width: 620px;
+  top: 0;
+  min-height: 100vh;
+}
+
+/* line 213, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+.edit-svg {
+  height: 16px;
+  width: 16px;
+  display: inline;
+  cursor: pointer;
+}
+
+/* line 220, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+.skill {
+  float: left;
+  cursor: url(/assets/tc.jpeg), auto;
+}
+
+/* line 224, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+.skill:hover {
+  color: #e74c3c;
+}
+
+/* line 227, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+.skill-name {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+/* line 236, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+#content-right {
+  position: absolute;
+  padding-right: calc(50% - 480px);
+  right: 0;
+  width: 320px;
+  top: 0;
+  min-height: 100vh;
+}
+/* line 243, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+#content-right .user-action {
+  width: 50%;
+  float: left;
+  text-align: center;
+  margin-top: 20px;
+  font-weight: 700;
+  color: #414141;
+  cursor: pointer;
+}
+/* line 252, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+#content-right #helpfulness-label {
+  width: 100%;
+  text-align: center;
+  color: #939393;
+  margin-top: 20px;
+}
+/* line 258, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+#content-right #star-container {
+  width: 280px;
+  margin: 0 auto;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 28px;
+  color: #939393;
+}
+/* line 267, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+#content-right .star {
+  float: left;
+  margin-right: 20px;
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+}
+/* line 274, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+#content-right .star:nth-child(5n) {
+  margin-right: 0;
+}
+/* line 278, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+#content-right #meetings-count-box {
+  width: 100%;
+  border-radius: 5px;
+  color: white;
+  background-color: #2ecc71;
+  float: left;
+  margin-top: 20px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 400;
+}
+/* line 291, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+#content-right .time-block {
+  margin-top: 20px;
+}
+
+@media (max-width: 1023px) {
+  /* line 300, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+  body #profile-content #content-left {
+    float: left;
+    position: static;
+  }
+  /* line 303, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+  body #profile-content #content-left .field-header, body #profile-content #content-left .field-row {
+    width: calc(100% - 20px);
+    margin-left: 10px;
+  }
+  /* line 308, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+  body #profile-content #content-right {
+    float: left;
+    display: block;
+    width: calc(100% - 20px);
+    margin-left: 10px;
+    position: static;
+    clear: left;
+  }
+  /* line 318, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+  body #profile-content #profile-cover .profile-main-pic {
+    left: 0;
+  }
+  /* line 321, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+  body #profile-content #profile-cover .profile-text-box {
+    left: 145px;
+    width: calc(100% - 155px);
+  }
+  /* line 327, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+  body #profile-content .misc-field {
+    clear: left;
+    width: calc(100% - 20px);
+    margin-left: 10px;
+  }
+  /* line 332, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/profile.css.scss */
+  body #profile-content .misc-field:nth-child(2n) {
+    margin-left: 10px;
+  }
+}
+/* line 3, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/search.css.scss */
+#green-bar {
+  height: 60px;
+  background: #2ecc71;
+  color: white;
+  width: 100%;
+  position: fixed;
+  top: 60px;
+  z-index: 1;
+}
+
+/* line 13, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/search.css.scss */
+#results-text {
+  width: 960px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+/* line 19, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/search.css.scss */
+#content-left.results {
+  top: 140px;
+}
+
+/* line 23, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/search.css.scss */
+.result {
+  width: 100%;
+  height: 60px;
+  position: relative;
+  cursor: pointer;
+}
+
+/* line 30, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/search.css.scss */
+.result-actions {
+  height: 80px;
+  border-radius: 5px;
+  border: 1px solid #414141;
+  position: absolute;
+  bottom: -55px;
+  right: -115px;
+  width: 125px;
+  display: none;
+  z-index: 5;
+  background: white;
+}
+/* line 41, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/search.css.scss */
+.result-actions .result-action {
+  width: 100%;
+  height: 40px;
+  float: left;
+  color: #414141;
+  text-align: center;
+  line-height: 40px;
+  font-weight: 500;
+}
+/* line 50, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/search.css.scss */
+.result-actions .result-action.follow-action {
+  border-bottom: 1px solid #414141;
+}
+
+/* line 56, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/search.css.scss */
+.result-actions-container:hover .result-actions {
+  display: block;
+}
+
+/* line 61, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/search.css.scss */
+.result-meeting-request {
+  height: 40px;
+  float: right;
+  background: #2ecc71;
+  line-height: 40px;
+  color: white;
+  display: none;
+  border-radius: 5px;
+  padding: 0px 10px;
+  margin-top: 10px;
+}
+
+/* line 73, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/search.css.scss */
+.result-svg {
+  height: 10px;
+  margin-top: 25px;
+  float: right;
+  margin-left: 10px;
+  display: none;
+}
+
+/* line 82, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/search.css.scss */
+.result:hover .result-star-container {
+  display: none;
+}
+/* line 85, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/search.css.scss */
+.result:hover .result-meeting-request {
+  display: block;
+}
+/* line 88, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/search.css.scss */
+.result:hover .result-svg {
+  display: block;
+}
+
+/* line 94, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/search.css.scss */
+.result-pic {
+  height: 40px;
+  width: 40px;
+  border-radius: 100px;
+  float: left;
+  margin-top: 10px;
+}
+
+/* line 102, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/search.css.scss */
+.result-info {
+  height: 100%;
+  width: 350px;
+  float: left;
+  margin-left: 20px;
+}
+
+/* line 109, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/search.css.scss */
+.result-name {
+  font-weight: 600;
+  color: #414141;
+  float: left;
+  margin-top: 12px;
+}
+
+/* line 116, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/search.css.scss */
+.result-tagline {
+  font-weight: 300;
+  color: #939393;
+  float: left;
+  clear: left;
+  font-size: 14px;
+}
+
+/* line 124, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/search.css.scss */
+.result-star-container {
+  margin-top: 20px;
+  float: right;
+}
+
+/* line 129, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/search.css.scss */
+.result-star {
+  height: 20px;
+  width: 20px;
+  float: left;
+  margin-left: 10px;
+}
+
+/* line 136, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/search.css.scss */
+#content-right.result-details {
+  top: 120px;
+  position: fixed;
+  height: 100%;
+  overflow-y: scroll;
+}
+/* line 141, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/search.css.scss */
+#content-right.result-details #profile-content {
+  margin-top: 0px;
+}
+/* line 143, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/search.css.scss */
+#content-right.result-details #profile-content #profile-cover {
+  height: 120px;
+}
+/* line 146, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/search.css.scss */
+#content-right.result-details #profile-content .skill {
+  cursor: default;
+}
+/* line 149, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/search.css.scss */
+#content-right.result-details #profile-content .skill:hover {
+  color: #939393;
+}
+/* line 152, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/search.css.scss */
+#content-right.result-details #profile-content .profile-main-pic {
+  height: 120px;
+  width: 120px;
+  left: 0;
+}
+/* line 157, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/search.css.scss */
+#content-right.result-details #profile-content .profile-text-box {
+  left: 140px;
+  top: 10px;
+  width: 180px;
+  height: 110px;
+}
+/* line 162, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/search.css.scss */
+#content-right.result-details #profile-content .profile-text-box #name {
+  font-size: 16px;
+  font-weight: 600;
+}
+/* line 166, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/search.css.scss */
+#content-right.result-details #profile-content .profile-text-box #tagline {
+  font-size: 16px;
+  font-weight: 300;
+  margin-top: 10px;
+}
+/* line 171, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/search.css.scss */
+#content-right.result-details #profile-content .profile-text-box #location {
+  font-size: 16px;
+  font-weight: 300;
+  margin-top: 10px;
+}
+
+@media (max-width: 1023px) {
+  /* line 183, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/search.css.scss */
+  body .result:hover .result-star-container {
+    display: block;
+  }
+  /* line 186, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/search.css.scss */
+  body .result:hover .result-meeting-request {
+    display: none;
+  }
+  /* line 189, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/search.css.scss */
+  body .result:hover .result-svg {
+    display: none;
+  }
+  /* line 193, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/search.css.scss */
+  body #green-bar {
+    height: auto;
+  }
+  /* line 196, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/search.css.scss */
+  body #content-left.results {
+    top: 80px;
+  }
+  /* line 200, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/search.css.scss */
+  body .result-actions-container:hover .result-actions {
+    display: none;
+  }
+  /* line 204, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/search.css.scss */
+  body #results-text {
+    text-align: center;
+    width: 100%;
+    font-size: 12px;
+    margin: 2px 0px;
+  }
+  /* line 211, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/search.css.scss */
+  body #content.results-section #content-right {
+    display: none;
+  }
+  /* line 214, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/search.css.scss */
+  body #content.results-section #content-left {
+    position: absolute;
+    left: 0;
+    width: 100%;
+  }
+  /* line 218, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/search.css.scss */
+  body #content.results-section #content-left .result {
+    height: auto;
+    padding: 10px;
+    float: left;
+    border-bottom: 1px solid #f1f1f1;
+    box-sizing: border-box;
+  }
+  /* line 224, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/search.css.scss */
+  body #content.results-section #content-left .result .result-info {
+    width: auto;
+    margin-left: 10px;
+  }
+  /* line 227, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/search.css.scss */
+  body #content.results-section #content-left .result .result-info .result-name {
+    margin-top: 0px;
+  }
+  /* line 231, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/search.css.scss */
+  body #content.results-section #content-left .result .result-pic {
+    clear: left;
+    margin: 0px;
+  }
+  /* line 235, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/search.css.scss */
+  body #content.results-section #content-left .result .result-star-container {
+    float: right;
+    margin-left: 0px;
+    margin-top: 0px;
+  }
+  /* line 239, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/search.css.scss */
+  body #content.results-section #content-left .result .result-star-container .result-star {
+    height: 10px;
+    width: 10px;
+    float: left;
+    margin-left: 0px;
+  }
+}
+/* line 4, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/settings.css.scss */
+#content-left.settings-section {
+  top: 60px;
+}
+
+/* line 10, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/settings.css.scss */
+.notification-header {
+  font-size: 24px;
+  margin-top: 40px;
+}
+
+/* line 14, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/settings.css.scss */
+.settings-group {
+  float: left;
+  clear: left;
+  font-size: 16px;
+  margin-top: 20px;
+}
+/* line 19, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/settings.css.scss */
+.settings-group .input-label {
+  float: left;
+  margin-right: 20px;
+  margin-top: 12px;
+}
+/* line 24, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/settings.css.scss */
+.settings-group input {
+  font-size: 16px;
+  float: left;
+  padding-left: 10px;
+}
+/* line 29, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/settings.css.scss */
+.settings-group #user_email {
+  width: 300px;
+  border: none;
+  background: #e0e0e0;
+  border-radius: 5px;
+  height: 40px;
+}
+/* line 36, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/settings.css.scss */
+.settings-group #save-user {
+  width: 100px;
+  float: left;
+  height: 40px;
+  color: white;
+  background: #2ecc71;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+/* line 46, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/settings.css.scss */
+.settings-group #save-user:hover {
+  background: white;
+  border: 1px solid #2ecc71;
+  color: #2ecc71;
+}
+
+/* line 53, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/settings.css.scss */
+.check-label {
+  float: right;
+}
+
+@media (max-width: 1023px) {
+  /* line 59, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/settings.css.scss */
+  body .edit_user > div {
+    margin-left: 10px;
+  }
+  /* line 62, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/settings.css.scss */
+  body .settings-group #user_email {
+    width: 290px;
+  }
+}
+/* line 3, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/status.css.scss */
+#status-header {
+  font-size: 34px;
+  margin-left: 60px;
+  color: white;
+  height: 60px;
+  line-height: 80px;
+  font-weight: 600;
+}
+
+/* line 12, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/status.css.scss */
+#status-bar {
+  position: fixed;
+  z-index: 1;
+  top: 120px;
+  background: #2ecc71;
+  color: white;
+  width: 100%;
+  height: 60px;
+}
+
+/* line 22, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/status.css.scss */
+.status-bar-pic {
+  height: 40px;
+  width: 40px;
+  border-radius: 100px;
+  float: left;
+  margin-top: 10px;
+  margin-right: 20px;
+}
+
+/* line 32, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/status.css.scss */
+#new_status input {
+  height: 40px;
+  float: left;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-size: 16px;
+  box-sizing: border-box;
+  font-family: "proxima-nova", sans-serif;
+}
+/* line 42, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/status.css.scss */
+#new_status #status_body {
+  width: 440px;
+  padding-left: 15px;
+}
+/* line 46, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/status.css.scss */
+#new_status #submit-status {
+  width: 80px;
+  margin-left: 10px;
+  color: white;
+  background: #3498db;
+  cursor: pointer;
+}
+/* line 53, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/status.css.scss */
+#new_status #submit-status:hover {
+  background: #38a9f5;
+}
+
+/* line 59, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/status.css.scss */
+.status-section #content-left {
+  top: 180px;
+}
+/* line 62, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/status.css.scss */
+.status-section #content-right {
+  top: 180px;
+}
+
+/* line 69, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/status.css.scss */
+#statuses {
+  margin-top: 10px;
+}
+
+/* line 73, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/status.css.scss */
+.status {
+  width: 100%;
+  float: left;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+}
+/* line 78, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/status.css.scss */
+.status .result-info {
+  float: left;
+  width: calc(100% - 60px);
+  margin-left: 0px;
+}
+
+/* line 85, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/status.css.scss */
+.status-body {
+  float: left;
+  margin-top: 10px;
+}
+
+/* line 90, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/status.css.scss */
+.comment {
+  width: calc(100% - 60px);
+  float: left;
+  margin-left: 60px;
+}
+
+/* line 96, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/status.css.scss */
+.status-actions {
+  float: left;
+  margin-left: 60px;
+  margin-top: 10px;
+  clear: left;
+  font-size: 14px;
+  color: #e0e0e0;
+}
+/* line 104, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/status.css.scss */
+.status-actions div {
+  float: left;
+  margin-right: 20px;
+}
+/* line 108, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/status.css.scss */
+.status-actions img {
+  float: left;
+  width: 14px;
+  height: 14px;
+  margin-right: 10px;
+  margin-top: 1px;
+}
+/* line 115, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/status.css.scss */
+.status-actions .action-stat {
+  color: #939393;
+}
+
+/* line 120, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/status.css.scss */
+#comment_body {
+  width: calc(100% - 0px);
+  height: 40px;
+  margin-top: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+  font-family: "proxima-nova", sans-serif;
+  padding-left: 15px;
+}
+
+/* line 132, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/status.css.scss */
+.like-text {
+  color: #939393;
+  text-decoration: underline;
+}
+
+/* line 137, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/status.css.scss */
+.comment-submit {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  background: #2ecc71;
+  border-radius: 100px;
+  margin-top: 10px;
+  float: right;
+  cursor: pointer;
+}
+
+/* line 148, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/status.css.scss */
+.like-svg {
+  position: absolute;
+  width: 100%;
+  height: 30px;
+  margin-top: 5px;
+}
+
+/* line 155, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/status.css.scss */
+.comment-submit:hover {
+  background-color: #26ab5f;
+}
+
+/* line 160, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/status.css.scss */
+.status-section #conversations {
+  max-height: calc(100% - 160px);
+  overflow-y: scroll;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 20px;
+}
+/* line 165, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/status.css.scss */
+.status-section #conversations .conversation {
+  border: none;
+}
+/* line 169, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/status.css.scss */
+.status-section #conversations .conversation .convo-pic {
+  margin-left: 0px;
+}
+/* line 173, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/status.css.scss */
+.status-section #content-right {
+  position: fixed;
+  min-height: 0px;
+  height: calc(100% - 180px);
+}
+
+/* line 180, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/status.css.scss */
+#feedback {
+  height: 40px;
+  width: 320px;
+  border-radius: 5px;
+  background: #e0e0e0;
+  color: #414141;
+  font-weight: 600;
+  text-align: center;
+  line-height: 40px;
+  position: absolute;
+  bottom: 40px;
+}
+
+/* line 193, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/status.css.scss */
+#site-info-box {
+  width: 320px;
+  position: absolute;
+  color: #939393;
+  bottom: 10px;
+  font-size: 14px;
+}
+/* line 199, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/status.css.scss */
+#site-info-box .site-info {
+  float: left;
+  margin-right: 20px;
+}
+/* line 203, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/status.css.scss */
+#site-info-box .site-info.last {
+  float: right;
+  margin-right: 0px;
+}
+
+@media (max-width: 1023px) {
+  /* line 212, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/status.css.scss */
+  body #content-right {
+    display: none;
+  }
+  /* line 215, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/status.css.scss */
+  body #content-left {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    font-size: 14px;
+  }
+  /* line 220, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/status.css.scss */
+  body #content-left .status {
+    margin-left: 10px;
+  }
+  /* line 222, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/status.css.scss */
+  body #content-left .status .status-bar-pic {
+    margin-right: 10px;
+  }
+  /* line 225, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/status.css.scss */
+  body #content-left .status .result-tagline {
+    font-size: 12px;
+  }
+  /* line 228, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/status.css.scss */
+  body #content-left .status .status-body {
+    clear: left;
+    margin-left: 50px;
+    width: calc(100% - 70px);
+    margin-top: 5px;
+  }
+  /* line 234, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/status.css.scss */
+  body #content-left .status .comment {
+    width: calc(100% - 40px);
+    margin-left: 30px;
+  }
+  /* line 238, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/status.css.scss */
+  body #content-left .status .comment-body {
+    width: 240px;
+  }
+  /* line 241, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/status.css.scss */
+  body #content-left .status .comment.comment-form-box {
+    margin-left: 10px;
+  }
+  /* line 243, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/status.css.scss */
+  body #content-left .status .comment.comment-form-box .result-info {
+    width: 300px;
+  }
+  /* line 246, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/status.css.scss */
+  body #content-left .status .comment.comment-form-box .comment-submit {
+    margin-right: 10px;
+  }
+  /* line 253, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/status.css.scss */
+  body .status-bar-pic.main, body .comment-pic {
+    display: none;
+  }
+  /* line 256, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/status.css.scss */
+  body .green-bar-content {
+    width: 100%;
+  }
+  /* line 259, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/status.css.scss */
+  body #new_status {
+    width: 100%;
+  }
+  /* line 261, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/status.css.scss */
+  body #new_status #status_body {
+    width: 285px;
+    margin-left: 10px;
+    float: none;
+  }
+  /* line 266, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/status.css.scss */
+  body #new_status #submit-status {
+    display: none;
+  }
+}
+/* line 1, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_datetimepicker {
+  box-shadow: 0px 5px 15px -5px rgba(0, 0, 0, 0.506);
+  background: #FFFFFF;
+  border-bottom: 1px solid #BBBBBB;
+  border-left: 1px solid #CCCCCC;
+  border-right: 1px solid #CCCCCC;
+  border-top: 1px solid #CCCCCC;
+  color: #333333;
+  font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  padding: 8px;
+  padding-left: 0px;
+  padding-top: 2px;
+  position: absolute;
+  z-index: 9999;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  display: none;
+}
+
+/* line 20, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_datetimepicker iframe {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 75px;
+  height: 210px;
+  background: transparent;
+  border: none;
+}
+
+/*For IE8 or lower*/
+/* line 30, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_datetimepicker button {
+  border: none !important;
+}
+
+/* line 34, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
+/* line 43, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_noselect::selection {
+  background: transparent;
+}
+
+/* line 44, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_noselect::-moz-selection {
+  background: transparent;
+}
+
+/* line 45, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_datetimepicker.xdsoft_inline {
+  display: inline-block;
+  position: static;
+  box-shadow: none;
+}
+
+/* line 50, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_datetimepicker * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+/* line 56, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_datetimepicker .xdsoft_datepicker, .xdsoft_datetimepicker .xdsoft_timepicker {
+  display: none;
+}
+
+/* line 59, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_datetimepicker .xdsoft_datepicker.active, .xdsoft_datetimepicker .xdsoft_timepicker.active {
+  display: block;
+}
+
+/* line 62, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_datetimepicker .xdsoft_datepicker {
+  width: 224px;
+  float: left;
+  margin-left: 8px;
+}
+
+/* line 67, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_datetimepicker.xdsoft_showweeks .xdsoft_datepicker {
+  width: 256px;
+}
+
+/* line 70, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_datetimepicker .xdsoft_timepicker {
+  width: 58px;
+  float: left;
+  text-align: center;
+  margin-left: 8px;
+  margin-top: 0px;
+}
+
+/* line 77, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_datetimepicker .xdsoft_datepicker.active + .xdsoft_timepicker {
+  margin-top: 8px;
+  margin-bottom: 3px;
+}
+
+/* line 81, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_datetimepicker .xdsoft_mounthpicker {
+  position: relative;
+  text-align: center;
+}
+
+/* line 86, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_datetimepicker .xdsoft_prev, .xdsoft_datetimepicker .xdsoft_next, .xdsoft_datetimepicker .xdsoft_today_button {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAAAeCAYAAACsYQl4AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDozQjRCQjRGREU4MkNFMzExQjRDQkIyRDJDOTdBRUI1MCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpCQjg0OUYyNTZDODAxMUUzQjMwM0IwMERBNUU0ODQ5NSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpCQjg0OUYyNDZDODAxMUUzQjMwM0IwMERBNUU0ODQ5NSIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOkI5NzE3MjFBN0E2Q0UzMTFBQjJEQjgzMDk5RTNBNTdBIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjNCNEJCNEZERTgyQ0UzMTFCNENCQjJEMkM5N0FFQjUwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+aQvATgAAAfVJREFUeNrsmr1OwzAQxzGtkPjYEAuvVGAvfQIGRKADE49gdLwDDwBiZ2RhQUKwICQkWLsgFiRQuIBTucFJ/XFp4+hO+quqnZ4uvzj2nV2RpukCW/22yAgYNINmc7du7DcghCjrkqgOKjF1znpt6rZ0AGWQj7TvCU8d9UM+QAGDrhdyc2Bnc1WVVPBev9V8lBnY+rDwncWZThG4xk4lmxtJy2AHgoY/FySgbSBPwPZ8mEXbQx3aDERb0EbYAYFC7pcAtAvkMWwC0D3NX58S9D/YnoGC7nPWr3Dg9JTbtuHhDShBT8D2CBSK/iIEvVXxpuxSgh7DdgwUTL4iA92zmJb6lKB/YTsECmV+IgK947AGDIqgQ/LojsO135Hn51l2cWlov0JdGNrPUceueXRwilSVgkUyom9Rd6gbLfYTDeO+1v6orn0InTogYDGUkYLO3/wc9BdqqTCKP1Tfi+oTIaCBIL2TES+GTyruT9S61p6BHam+99DFEAgLFklYsIBHwSI9QY80H5ta+1rB/6ovaKihBJeEJbgLbBlQgl+j3lDPqA2tfQV1j3pVn8s+oKHGTSVJ+FqDLeR5bCqJ2E/BCycsoLZETXaKGs7rhKVt+9HZScrZNMi88V8P7LlDbvOZYaJVpMMmBCT4n0o8dTBoNgbdWPsRYACs3r7XyNfbnAAAAABJRU5ErkJggg==");
+}
+
+/* line 89, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_datetimepicker .xdsoft_prev {
+  float: left;
+  background-position: -20px 0px;
+}
+
+/* line 93, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_datetimepicker .xdsoft_today_button {
+  float: left;
+  background-position: -70px 0px;
+  margin-left: 5px;
+}
+
+/* line 99, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_datetimepicker .xdsoft_next {
+  float: right;
+  background-position: 0px 0px;
+}
+
+/* line 105, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_datetimepicker .xdsoft_next, .xdsoft_datetimepicker .xdsoft_prev, .xdsoft_datetimepicker .xdsoft_today_button {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: 0px none currentColor;
+  cursor: pointer;
+  display: block;
+  height: 30px;
+  opacity: 0.5;
+  outline: medium none currentColor;
+  overflow: hidden;
+  padding: 0px;
+  position: relative;
+  text-indent: 100%;
+  white-space: nowrap;
+  width: 20px;
+}
+
+/* line 122, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_prev,
+.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_next {
+  float: none;
+  background-position: -40px -15px;
+  height: 15px;
+  width: 30px;
+  display: block;
+  margin-left: 14px;
+  margin-top: 7px;
+}
+
+/* line 131, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_prev {
+  background-position: -40px 0px;
+  margin-bottom: 7px;
+  margin-top: 0px;
+}
+
+/* line 136, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box {
+  height: 151px;
+  overflow: hidden;
+  border-bottom: 1px solid #DDDDDD;
+}
+
+/* line 141, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box > div > div {
+  background: #F5F5F5;
+  border-top: 1px solid #DDDDDD;
+  color: #666666;
+  font-size: 12px;
+  text-align: center;
+  border-collapse: collapse;
+  cursor: pointer;
+  border-bottom-width: 0px;
+  height: 25px;
+  line-height: 25px;
+}
+
+/* line 154, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box > div > div:first-child {
+  border-top-width: 0px;
+}
+
+/* line 159, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_datetimepicker .xdsoft_today_button:hover,
+.xdsoft_datetimepicker .xdsoft_next:hover,
+.xdsoft_datetimepicker .xdsoft_prev:hover {
+  opacity: 1;
+}
+
+/* line 162, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_datetimepicker .xdsoft_label {
+  display: inline;
+  position: relative;
+  z-index: 9999;
+  margin: 0;
+  padding: 5px 3px;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: bold;
+  background-color: #fff;
+  float: left;
+  width: 182px;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* line 177, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_datetimepicker .xdsoft_label:hover {
+  text-decoration: underline;
+}
+
+/* line 180, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_datetimepicker .xdsoft_label > .xdsoft_select {
+  border: 1px solid #ccc;
+  position: absolute;
+  right: 0px;
+  top: 30px;
+  z-index: 101;
+  display: none;
+  background: #fff;
+  max-height: 160px;
+  overflow-y: hidden;
+}
+
+/* line 191, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_datetimepicker .xdsoft_label > .xdsoft_select.xdsoft_monthselect {
+  right: -7px;
+}
+
+/* line 192, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_datetimepicker .xdsoft_label > .xdsoft_select.xdsoft_yearselect {
+  right: 2px;
+}
+
+/* line 193, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_datetimepicker .xdsoft_label > .xdsoft_select > div > .xdsoft_option:hover {
+  color: #fff;
+  background: #ff8000;
+}
+
+/* line 197, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_datetimepicker .xdsoft_label > .xdsoft_select > div > .xdsoft_option {
+  padding: 2px 10px 2px 5px;
+}
+
+/* line 200, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_datetimepicker .xdsoft_label > .xdsoft_select > div > .xdsoft_option.xdsoft_current {
+  background: #33AAFF;
+  box-shadow: #178FE5 0px 1px 3px 0px inset;
+  color: #fff;
+  font-weight: 700;
+}
+
+/* line 206, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_datetimepicker .xdsoft_month {
+  width: 90px;
+  text-align: right;
+}
+
+/* line 210, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_datetimepicker .xdsoft_calendar {
+  clear: both;
+}
+
+/* line 213, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_datetimepicker .xdsoft_year {
+  width: 56px;
+}
+
+/* line 216, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_datetimepicker .xdsoft_calendar table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+/* line 221, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_datetimepicker .xdsoft_calendar td > div {
+  padding-right: 5px;
+}
+
+/* line 224, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_datetimepicker .xdsoft_calendar th {
+  height: 25px;
+}
+
+/* line 227, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_datetimepicker .xdsoft_calendar td, .xdsoft_datetimepicker .xdsoft_calendar th {
+  width: 14.2857142%;
+  background: #F5F5F5;
+  border: 1px solid #DDDDDD;
+  color: #666666;
+  font-size: 12px;
+  text-align: right;
+  padding: 0px;
+  border-collapse: collapse;
+  cursor: pointer;
+  height: 25px;
+}
+
+/* line 239, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_datetimepicker.xdsoft_showweeks .xdsoft_calendar td, .xdsoft_datetimepicker.xdsoft_showweeks .xdsoft_calendar th {
+  width: 12.5%;
+}
+
+/* line 242, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_datetimepicker .xdsoft_calendar th {
+  background: #F1F1F1;
+}
+
+/* line 245, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_today {
+  color: #33AAFF;
+}
+
+/* line 250, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_default,
+.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_current,
+.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box > div > div.xdsoft_current {
+  background: #33AAFF;
+  box-shadow: #178FE5 0px 1px 3px 0px inset;
+  color: #fff;
+  font-weight: 700;
+}
+
+/* line 258, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_other_month,
+.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_disabled,
+.xdsoft_datetimepicker .xdsoft_time_box > div > div.xdsoft_disabled {
+  opacity: 0.5;
+}
+
+/* line 261, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_other_month.xdsoft_disabled {
+  opacity: 0.2;
+}
+
+/* line 265, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_datetimepicker .xdsoft_calendar td:hover,
+.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box > div > div:hover {
+  color: #fff !important;
+  background: #ff8000 !important;
+  box-shadow: none !important;
+}
+
+/* line 271, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_datetimepicker .xdsoft_calendar td.xdsoft_disabled:hover,
+.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box > div > div.xdsoft_disabled:hover {
+  color: inherit	!important;
+  background: inherit !important;
+  box-shadow: inherit !important;
+}
+
+/* line 276, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_datetimepicker .xdsoft_calendar th {
+  font-weight: 700;
+  text-align: center;
+  color: #999;
+  cursor: default;
+}
+
+/* line 282, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_datetimepicker .xdsoft_copyright {
+  color: #ccc !important;
+  font-size: 10px;
+  clear: both;
+  float: none;
+  margin-left: 8px;
+}
+
+/* line 283, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_datetimepicker .xdsoft_copyright a {
+  color: #eee !important;
+}
+
+/* line 284, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_datetimepicker .xdsoft_copyright a:hover {
+  color: #aaa !important;
+}
+
+/* line 287, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_time_box {
+  position: relative;
+  border: 1px solid #ccc;
+}
+
+/* line 291, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_scrollbar > .xdsoft_scroller {
+  background: #ccc !important;
+  height: 20px;
+  border-radius: 3px;
+}
+
+/* line 296, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_scrollbar {
+  position: absolute;
+  width: 7px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  cursor: pointer;
+}
+
+/* line 304, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/time_picker.css.scss */
+.xdsoft_scroller_box {
+  position: relative;
+}
+/* line 8, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/top-bars.css.scss */
+.top-nav-content {
+  background: white;
+  height: 100%;
+  width: 80%;
+  left: 0;
+  position: fixed;
+  z-index: 100;
+}
+
+/* line 17, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/top-bars.css.scss */
+.top-nav-content .icon-label {
+  opacity: 1;
+  color: #2ecc71;
+}
+
+/* line 22, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/top-bars.css.scss */
+.top-form {
+  float: left;
+}
+/* line 24, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/top-bars.css.scss */
+.top-form input {
+  background-color: rgba(255, 255, 255, 0.3);
+  border: none;
+  border-radius: 5px;
+  height: 40px;
+  margin-top: 10px;
+  color: #1e884b;
+  font-family: "proxima-nova", sans-serif;
+  font-size: 16px;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+/* line 36, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/top-bars.css.scss */
+.top-form ::-webkit-input-placeholder {
+  color: #26ab5f;
+}
+
+/* line 41, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/top-bars.css.scss */
+#user-top-bar {
+  height: 60px;
+  width: 100%;
+  position: fixed;
+  background: #2ecc71;
+  z-index: 5;
+}
+/* line 47, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/top-bars.css.scss */
+#user-top-bar #people-search-form {
+  position: relative;
+}
+/* line 50, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/top-bars.css.scss */
+#user-top-bar .search-svg {
+  height: 15px;
+  position: absolute;
+  top: 22px;
+  right: 12px;
+}
+/* line 56, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/top-bars.css.scss */
+#user-top-bar #user-top-bar-content {
+  width: 960px;
+  margin: 0 auto;
+  height: 100%;
+  box-sizing: border-box;
+}
+/* line 61, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/top-bars.css.scss */
+#user-top-bar #user-top-bar-content .fledgg-svg {
+  height: 30px;
+  width: 30px;
+  margin-top: 15px;
+  float: left;
+}
+/* line 67, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/top-bars.css.scss */
+#user-top-bar #user-top-bar-content .mobile-menu-icon {
+  display: none;
+}
+/* line 70, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/top-bars.css.scss */
+#user-top-bar #user-top-bar-content div, #user-top-bar #user-top-bar-content img {
+  cursor: pointer;
+}
+/* line 73, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/top-bars.css.scss */
+#user-top-bar #user-top-bar-content #fledgg-text {
+  font-size: 19px;
+  float: left;
+  color: white;
+  font-family: "proxima-nova", sans-serif;
+  height: 100%;
+  line-height: 60px;
+  margin-left: 15px;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+}
+/* line 84, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/top-bars.css.scss */
+#user-top-bar #user-top-bar-content #name-search {
+  width: auto;
+  margin-left: 15px;
+}
+/* line 88, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/top-bars.css.scss */
+#user-top-bar #user-top-bar-content #skill-search {
+  width: 295px;
+  margin-left: 5px;
+}
+/* line 92, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/top-bars.css.scss */
+#user-top-bar #user-top-bar-content .profile-circle-pic {
+  float: right;
+  margin-right: 15px;
+  margin-top: 10px;
+  margin-left: 30px;
+}
+/* line 98, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/top-bars.css.scss */
+#user-top-bar #user-top-bar-content .svg {
+  height: 13px;
+  float: right;
+  margin-top: 23.5px;
+  width: 20px;
+}
+
+/* line 107, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/top-bars.css.scss */
+#green-bar, #status-bar {
+  position: absolute;
+}
+
+@media (max-width: 1023px) {
+  /* line 115, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/top-bars.css.scss */
+  body #meeting-modal-container {
+    width: 100%;
+    overflow-y: scroll;
+    left: 0;
+  }
+  /* line 119, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/top-bars.css.scss */
+  body #meeting-modal-container #meeting-modal-content {
+    width: 100%;
+    padding: 10px;
+    height: 100%;
+    overflow-y: scroll;
+    margin: 0px;
+    box-sizing: border-box;
+  }
+  /* line 126, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/top-bars.css.scss */
+  body #meeting-modal-container #meeting-modal-content #send-meeting {
+    width: calc(50% - 5px);
+    float: right;
+    padding-left: 5px;
+  }
+  /* line 131, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/top-bars.css.scss */
+  body #meeting-modal-container #meeting-modal-content #meeting-cancel {
+    display: block;
+    width: calc(50% - 5px);
+    float: left;
+    text-align: center;
+    color: #939393;
+    background: #e0e0e0;
+    font-weight: 300;
+    height: 40px;
+    margin-top: 30px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    line-height: 40px;
+  }
+  /* line 152, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/top-bars.css.scss */
+  body #green-bar {
+    width: 100%;
+  }
+  /* line 154, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/top-bars.css.scss */
+  body #green-bar .green-bar-content {
+    width: 100%;
+  }
+  /* line 157, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/top-bars.css.scss */
+  body #green-bar .bar-section {
+    width: 33.33%;
+    text-align: center;
+    margin-right: 0px;
+  }
+  /* line 162, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/top-bars.css.scss */
+  body #green-bar .bar-section.active {
+    border-bottom: 7px solid white;
+  }
+  /* line 167, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/top-bars.css.scss */
+  body #user-top-bar #user-top-bar-content {
+    width: 100%;
+  }
+  /* line 169, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/top-bars.css.scss */
+  body #user-top-bar #user-top-bar-content #people-search-form {
+    width: 100%;
+  }
+  /* line 172, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/top-bars.css.scss */
+  body #user-top-bar #user-top-bar-content img, body #user-top-bar #user-top-bar-content #fledgg-text, body #user-top-bar #user-top-bar-content svg {
+    display: none;
+  }
+  /* line 175, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/top-bars.css.scss */
+  body #user-top-bar #user-top-bar-content #name-search {
+    width: calc(50% - 30px);
+    padding: 0px 5px;
+    margin-left: 0px;
+  }
+  /* line 180, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/top-bars.css.scss */
+  body #user-top-bar #user-top-bar-content #skill-search {
+    width: calc(50% - 30px);
+    margin-left: 5px;
+    padding: 0px 5px;
+  }
+  /* line 185, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/top-bars.css.scss */
+  body #user-top-bar #user-top-bar-content .mobile-menu-icon {
+    display: block;
+    height: 20px;
+    width: 20px;
+    float: left;
+    margin: 0;
+    padding: 20px 10px;
+  }
+  /* line 192, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/top-bars.css.scss */
+  body #user-top-bar #user-top-bar-content .mobile-menu-icon path {
+    fill: #1e884b;
+  }
+}
+/* line 6, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/top_nav.css.scss */
+.mobile .mob-nav {
+  height: 60px;
+  border-bottom: 1px solid #f1f1f1;
+  box-sizing: border-box;
+  padding: 20px;
+}
+/* line 11, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/top_nav.css.scss */
+.mobile .mob-nav .nav-icon {
+  height: 24px;
+  width: 24px;
+  margin: 0px;
+}
+/* line 16, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/top_nav.css.scss */
+.mobile .mob-nav .icon-label.main {
+  width: 80%;
+  font-size: 16px;
+  font-family: "proxima-nova", sans-serif;
+  float: right;
+}
+/* line 23, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/top_nav.css.scss */
+.mobile .settings.side-icon {
+  margin-left: 0px;
+  position: absolute;
+  width: 100%;
+}
+/* line 27, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/top_nav.css.scss */
+.mobile .settings.side-icon .icon-label.main {
+  width: 170px;
+}
+/* line 31, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/top_nav.css.scss */
+.mobile .profile-icon {
+  border-radius: 100px;
+}
+/* line 34, /Users/andylee/Desktop/freelance/fledgg/app/assets/stylesheets/top_nav.css.scss */
+.mobile .svg path {
+  fill: #1e884b;
+}
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ */
+
