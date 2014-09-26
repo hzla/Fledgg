@@ -5,10 +5,17 @@ UserProfile =
 		$('body').on 'ajax:success', '#skill-form, #needed-skill-form', @addSkill
 		$('body').on 'click', '.skill', @deleteSkill
 		$('body').on 'ajax:success', '.edit_user', @saveSettings
+		$('body').on 'click', '.skill-input', @addSkillFromBox
 		$('.best_in_place').bind 'ajax:success', @checkValues
 		$('body').on 'ajax:success', 'a, form', @linkifyLinks
 		@linkifyLinks()
 
+	addSkillFromBox: ->
+		skill = $(@).text()
+		$('.skill-name').val skill
+		$('#needed-skill-form').submit()
+
+		
 	linkifyLinks: ->
 		$('.linkify').each ->
 			linkifiedText = UserProfile.linkify $(@).text()
@@ -60,8 +67,13 @@ UserProfile =
 
 	addSkill: (event, data) ->
 		$(@)[0].reset()
-		skillList = $(@).parents('.field-row').next()
 		skill = data.name
+		if $('.onboarding.skills').length < 1
+			skillList = $(@).parents('.field-row').next()
+			
+		else
+			skillList = $('#skill-row')
+
 
 		if $(@).attr('id') == "skill-form"
 			className = "have"

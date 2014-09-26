@@ -8,7 +8,9 @@ Rails.application.routes.draw do
 
 
   get '/users/settings', to: 'users#settings', as: 'settings'
-  get '/onboarding', to: 'users#onboarding_profile', as: 'onboarding'
+  get '/setup', to: 'users#onboarding_profile', as: 'onboarding'
+  get '/needed_skills', to: 'users#onboarding_skills', as: 'onboarding_skills'
+  get '/availability', to: 'users#onboarding_availability', as: 'onboarding_availability'
 
   resources :users
   post '/users/search', to: 'users#search', as: "search"

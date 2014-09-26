@@ -19,6 +19,16 @@ class UsersController < ApplicationController
 		@skills = @user.skills
 	end
 
+	def onboarding_skills
+		@user = current_user
+		@skills = Skill.all
+	end
+
+	def onboarding_availability
+		@user = current_user
+		
+	end
+
 	def rate
 		user = User.find params[:id]
 		rating = params[:rating]

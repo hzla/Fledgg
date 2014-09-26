@@ -1,0 +1,46 @@
+<div class="onboarding-bar">
+	<div class="bar-content">
+		<div class="onboarding-header">One more thing. When are you free?</div>
+		<div class="onboarding-text">
+			<span class="no-mobile">With fledgg, you can schedule and enter calls right in your browser.<br></span>
+			Put down some times you'll be available to meet with.
+		</div>
+		<%= link_to statuses_path do %>
+			<div class="next-button">
+				Done!
+			</div>
+		<% end %>
+	</div>
+</div>
+
+<div id="profile-content" class="onboarding skills">
+	<div id="content-left">
+		<div class="field-header availability">
+			Availability
+		</div>
+		
+		<div class="field-row availability">
+			<% ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"].each do |day| %>
+				<div class="time-block">
+					<div class="day"><%= day %> <%= image_tag 'edit.svg', :class => "edit-svg" %> </div>
+					<div class="time-value">
+						<%= best_in_place @user, day[0..2].downcase.to_sym, type: :input, place_holder: "What times are you free to meet?", classes: "misc-field" %>
+					</div>
+				</div>
+			<% end %>
+		</div>
+		<div class="field-row">
+			<%= link_to statuses_path do %>
+				<div class="mobile-next">
+					Done
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>
+
+<script>
+$(document).ready(function(){
+	$('.best_in_place').best_in_place()
+})
+</script>

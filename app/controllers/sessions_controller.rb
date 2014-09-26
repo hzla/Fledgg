@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
 	  else #create new user if not authorized
 	    user = User.create_with_linkedin auth_hash
 	    session[:user_id] = user.id 
-	    redirect_to user_path(user)
+	    redirect_to onboarding_path
 	  end
 	end
 

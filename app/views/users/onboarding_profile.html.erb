@@ -1,15 +1,15 @@
 <div class="onboarding-bar">
 	<div class="bar-content">
 		<div class="onboarding-header">Setup your profile.</div>
-		<div class="onboardig-text">
-			We've populated your profile based on info from your Linkedin profile.<br> Feel free to make any changes or click next if everything looks okay.
+		<div class="onboarding-text">
+			We've populated your profile based on info from your Linkedin profile. Feel free to make any changes or click next if everything looks okay.
 		</div>
-
-		<div class="next-button">
-			Next
-		</div>
+		<%= link_to onboarding_skills_path do %>
+			<div class="next-button">
+				Next
+			</div>
+		<% end %>
 	</div>
-
 </div>
 <div id="profile-content" class="onboarding">
 	<div id="content-left">
@@ -47,6 +47,9 @@
 			<%= best_in_place @user, :info, type: :input, place_holder: "Share a link to your current project (Dropbox, Website, Google Drive)" %>  
 		</div>
 		<div class="field-row misc">
+			<div class="misc-text">
+				Add a little personality to your profile! Or if you'd like to skip this part, you can always complete your profile later.
+			</div>
 			<div class="misc-field">
 				<div class="field-label">Birthday <%= image_tag 'edit.svg', :class => "edit-svg" %></div>
 				<div class="field-value"><%= best_in_place @user, :birthday, type: :input, place_holder: "" %> </div>
@@ -75,6 +78,13 @@
 				<div class="field-label">Education <%= image_tag 'edit.svg', :class => "edit-svg" %></div>
 				<div class="field-value"><%= best_in_place @user, :favorite_movie, type: :input, place_holder: "" %></div>
 			</div>
+		</div>
+		<div class="field-row">
+			<%= link_to onboarding_skills_path do %>
+				<div class="mobile-next">
+					Next
+				</div>
+			<% end %>
 		</div>
 	</div>
 </div>
