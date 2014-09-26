@@ -8,6 +8,15 @@
     object-fit: fill;
 }
 
+.mobile-landing {
+	display: none;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	z-index: -1;
+	left: 0;
+}
 #landing-overlay {
 	width: 100%;
 	height: 100%;
@@ -300,11 +309,13 @@
 
 @media(max-width: 1023px) {
 	body {
+		.mobile-landing {
+			display: block;
+		}
 		.landing-section.white.main {
-			background-image: image-url('mobilelandingbg.png'); 
-            background-size: cover;
-            padding: 15vh 0px;
-            box-sizing: border-box;
+	    background-size: cover;
+	    padding: 15vh 0px;
+	    box-sizing: border-box;
 		}
 		.section-content {
 			width: 100%;
