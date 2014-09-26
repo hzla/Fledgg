@@ -23,7 +23,7 @@ class MeetingsController < ApplicationController
 			meeting.create_zoom_meeting
 			@current_meeting = meeting
 			MeetingNotificationWorker.perform_async other_user.id, current_user.id, meeting.id
-			#NotificationMailer.meeting_notification(other_user, current_user, meeting).deliver if other_user.notify_meetings
+			NotificationMailer.meeting_notification(other_user, current_user, meeting).deliver if other_user.notify_meetings
 		end
 
 		render layout: false
@@ -46,7 +46,7 @@ class MeetingsController < ApplicationController
 		if meeting.accepted?
 			MeetingConfirmationWorker.perform_async current_user.id, other_user.id, meeting.id
 			MeetingReminderWorker.perform_at (meeting.start_time - 15.minutes), current_user.id, other_user.id, meeting.id
-			#NotificationMailer.meeting_confirmation(current_user, other_user, meeting).deliver
+			NotificationMailer.meeting_confirmation(current_user, other_user, meeting).deliver
 		end
 		redirect_to conversations_path(meetings: true)
 	end
