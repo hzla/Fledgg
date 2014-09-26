@@ -3,6 +3,9 @@
 
 #content-left.settings-section  {
 	top: 60px;
+	#user_notify_meetings, #user_notify_messages {
+    -webkit-appearance: checkbox;
+}
 
 }
 
