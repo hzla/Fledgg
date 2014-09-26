@@ -118,7 +118,7 @@
 }
 
 #comment_body {
-	width: calc(100% - 50px);
+	width: calc(100% - 0px);
 	height: 40px;
 	margin-top: 10px;
 	border: 1px solid $light-gray;
@@ -127,6 +127,11 @@
     box-sizing: border-box;
     font-family: $proxima;
     padding-left: 15px;
+}
+
+.like-text {
+	color: $gray;
+	text-decoration: underline;
 }
 
 .comment-submit {

@@ -2,7 +2,7 @@ class Meeting < ActiveRecord::Base
 	has_many :users, through: :appointments
 	has_many :appointments, dependent: :destroy
 
-	attr_accessible :name, :title, :creator, :receiver, :start_time, :url, :message
+	attr_accessible :name, :title, :creator, :receiver, :start_time, :url, :message, :past
 
 	def other_user user_id
 		id = name.gsub(user_id.to_s, "").split("-").last.to_i

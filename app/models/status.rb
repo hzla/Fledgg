@@ -5,4 +5,7 @@ class Status < ActiveRecord::Base
 	belongs_to :user
 
 
+	def liked_by? current_user
+		!likes.where(user_id: current_user).empty?
+	end
 end

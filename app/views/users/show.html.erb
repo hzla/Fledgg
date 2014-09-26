@@ -118,4 +118,11 @@ $(document).ready(function(){
 })
 </script>
 
+<% if @mobile %>
+	<script>
+		$('#content-left').prepend($('#content-right'))
+		$('#content-right').css('marginTop', '200px')
+	</script>
+<% end %>
+
 

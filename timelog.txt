@@ -1,30 +1,18 @@
 Time Estimates
-Done Now: 205min
+Done Now: 405min
 
 _________________________________
 
-
-Status Move Liking (5min)
-
-Include Zoom link (3min)
-
-Landing Page arrowdown (2min)
-
 Notifications Bubble on mobile hamburger (10min)
 
-Messages Conversations redesign (20min)
-
-Change Meeting Confirmation to pending. Notifications for when both parties accept. (20min)
-
-Past Meetings (20min)
-
-Redo Mobile Rating, Javascript Fucking Uo (30min)
-
 Notifications (120min)
+	-for when both accept
+	-for 15 minutes before
+	-inlude zoom link
 
-User Onboarding (240min)
+User Onboarding (180min)
 
-TotalLeft ~ (485min) or 9 hr 5min
+TotalLeft ~ (370min) or 6hr 10min
 
 
 

@@ -18,6 +18,13 @@
 	</div>
 	<div class="status-actions">
 		<%= link_to like_path(status), remote: true, :class => "like-link" do %>
+			<div class="like-text">
+				<% if status.liked_by? current_user %>
+					Unlike
+				<% else %>
+					Like this
+				<% end %>
+			</div>
 			<%= image_tag "likegray.svg", :class =>"status-action-svg like" %>
 			<div class="action-stat like_count"><%= status.like_count %></div>
 		<% end %>
@@ -52,9 +59,6 @@
 					<%= f.text_field :body, :class => "comment-body", placeholder: "Leave a comment..." %>
 					<%= f.hidden_field :status_id, value: status.id %>
 					<%= f.submit "Submit", :class => "hidden" %>
-					<div class="comment-submit">
-						<%= image_tag "likewhite.svg", :class => "like-svg" %>
-					</div>
 				<% end %>
 			</div>
 		</div>

@@ -45,6 +45,23 @@
 				</div>
 			<% end %>
 		<% end %>
+		<div id="conversation-title">Past Meetings</div>
+		<% @past_meetings.each do |meeting| %>
+			<% user = meeting.other_user(current_user.id) %>
+			<%= link_to meeting_path(meeting), remote: true, :class => "meeting-link" do %>
+				<div class="conversation" id='<%= "u-#{user.id}" %>'>
+					<div class="border-hider"></div>
+					<%= image_tag "conversearrow.svg", :class => "convoarrow-svg" %>
+					<%= image_tag user.profile_pic_url, :class => "convo-pic" %>
+					<% status = meeting.status(current_user) %>
+					<div class="convo-details past">
+						<div class="meeting-text">You had a meeting with</div>
+						<div class="convo-name"><%= user.name %></div>
+						<div class="meeting-text">on <%= meeting.date %></div>
+					</div>
+				</div>
+			<% end %>
+		<% end %>
 	</div>
 </div>
 

@@ -24,6 +24,9 @@ class StatusesController < ApplicationController
 			new_count = status.like_count + 1
 			status.update_attributes like_count: new_count
 		else
+			possible_like.first.destroy
+			new_count = status.like_count - 1
+			status.update_attributes like_count: new_count
 			render json: {dont_like: true} and return
 		end
 		render json: {dont_like: false}

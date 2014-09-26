@@ -4,6 +4,7 @@ class MeetingsController < ApplicationController
 
 	def index
 		@meetings = current_user.meetings.where('start_time > (?)', Time.now - 7.hours)
+		@past_meetings = current_user.meetings.where(past: true)
 		@ratings = current_user.appointments.where(rater: true)
 		current_user.update_attributes meeting_count: 0
 		render layout: false
@@ -52,17 +53,20 @@ class MeetingsController < ApplicationController
   	if current_user
   		appointments = current_user.appointments.where( accepted: true, dismissed: nil ).map(&:meeting_id)
       p appointments
+      puts "past appointments"
       if appointments
         meetings = Meeting.where('id in (?)', appointments).where('start_time < (?)', Time.now - 7.hours ).select {|meeting| meeting.accepted? }
         p meetings
+        puts "meetings"
         if !meetings.empty? 
           appointment_ids = meetings.select {|meeting| meeting.start_time < Time.now - 15.minutes - 7.hours }.map(&:appointments)
       	  p appointment_ids
+      	  puts "app ids"
           if appointment_ids
             appointment_ids = appointment_ids.flatten.map(&:id) 
             Appointment.where('id in (?)', appointment_ids).update_all dismissed: true
             p meetings.select {|n| n.start_time > Time.now - 15.minutes - 7.hours }.sort_by {|n| n.start_time}.reverse.first
-            puts "\n%" * 50
+            puts "\n% meetings" * 50
             @current_meeting =  meetings.select {|n| n.start_time > Time.now - 15.minutes - 7.hours}.sort_by {|n| n.start_time}.reverse.first
           end
         end
@@ -75,6 +79,7 @@ class MeetingsController < ApplicationController
 
   def join
   	meeting = Meeting.find params[:id]
+  	meeting.update_attributes past: true
   	meeting.appointments.where(user_id: current_user.id).update_all dismissed: true, rater: true
   	redirect_to meeting.url
   end

@@ -20,7 +20,13 @@ Status =
 	like: (event, data) ->
 		like = $(@).children('.like')
 		newCount = parseInt(like.next().text()) + 1
-		like.next().text newCount if data.dont_like == false 
+		if data.dont_like == false 
+			like.next().text newCount 
+			$(@).children('.like-text').text 'Unlike' 
+		else
+			like.next().text newCount - 2
+			$(@).children('.like-text').text 'Like this' 
+
 
 	checkBody: ->
 		body = $(@).find('#comment_body').val()
