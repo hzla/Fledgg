@@ -10,7 +10,7 @@ production:
   :port: 587
   :authentication: plain
   :user_name: vicky@fledgg.com
-  :password: FLedgg.983052
+  :password: Fledgg.983052
   :enable_starttls_auto: true
 
 
