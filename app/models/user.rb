@@ -12,10 +12,11 @@ class User < ActiveRecord::Base
 	has_many :statuses
 	has_many :comments
 	has_many :likes
-	attr_accessible :rate_count, :notify_messages, :notify_meetings, :message_count, :meeting_count, :education, :interests, :name, :email, :profile_pic_url, :li_token, :birthday, :star_sign, :personality, :favorite_book, :favorite_movie, :mon, :tues, :wed, :thurs, :fri, :sat, :sun, :bio, :info, :helpfulness, :location, :tagline, :follow_list
+	attr_accessible :role, :rate_count, :notify_messages, :notify_meetings, :message_count, :meeting_count, :education, :interests, :name, :email, :profile_pic_url, :li_token, :birthday, :star_sign, :personality, :favorite_book, :favorite_movie, :mon, :tues, :wed, :thurs, :fri, :sat, :sun, :bio, :info, :helpfulness, :location, :tagline, :follow_list
 
 	def self.create_with_linkedin auth_hash
 		profile = auth_hash['info']
+		p profile
 		li_token = auth_hash.credentials.token
 		skill_list =  auth_hash.extra.raw_info.skills.values[1].map(&:skill).map(&:name)
 		user = User.new name: profile["name"], profile_pic_url: profile['image'], li_token: li_token, email: profile['email'], tagline: profile['headline']
@@ -128,8 +129,4 @@ class User < ActiveRecord::Base
 		end
 		users_hash
 	end
-
-
-
-
 end
