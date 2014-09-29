@@ -103,7 +103,7 @@
 				<div class="time-block">
 					<div class="day"><%= day %> <%= image_tag 'edit.svg', :class => "edit-svg" %> </div>
 					<div class="time-value">
-						<%= best_in_place @user, day[0..2].downcase.to_sym, type: :input, place_holder: "", classes: "misc-field" %>
+						<%= best_in_place @user, day[0..2].downcase.to_sym, type: :input, place_holder: "Unknown", classes: "misc-field" %>
 					</div>
 				</div>
 			<% end %>
