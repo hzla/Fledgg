@@ -5,6 +5,7 @@ class MessagesController < ApplicationController
 		sanitized = CGI::unescapeHTML(params[:message][:body].gsub(/<\/?[^>]*>/,"")) 
 		message = Message.create(body: sanitized)
 		if params[:message][:conversation_id] != ""
+			message.update_attributes conversation_id: params[:message][:conversation_id]
 			render nothing: true and return
 		else
 			other_user = User.find params[:other_user_id]
