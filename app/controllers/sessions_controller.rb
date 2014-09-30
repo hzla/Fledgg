@@ -5,6 +5,8 @@ class SessionsController < ApplicationController
 	def create
 	  auth_hash = request.env['omniauth.auth']
 	  auth = Authorization.find_by_uid auth_hash['uid']
+	  p auth_hash
+	  puts "\n" * 20
 	  #redirect to user page if they've already authorized
 	  if auth
 	    session[:user_id] = auth.user.id

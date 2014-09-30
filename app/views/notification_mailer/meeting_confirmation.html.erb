@@ -5,7 +5,7 @@
   </head>
   <body>
     <p>
-      Your meeting has been accepted by both parties. Click <a href=<%= url_for controller: "conversations", action: "index", only_path: false, host: "http://localhost:3000" %>>here</a> to view. This meeting can be joined <a href='<%= link_to "here", @meeting.url %>'>here</a>.
+      Your meeting has been accepted by both parties. You can view all your meetings <a href=<%= url_for controller: "conversations", action: "index", only_path: false, host: "http://www.fledgg.com" %>>here</a>. This meeting can be joined <a href='<%= @meeting.url %>'>here</a>.
     </p>
     <p>-Fledgg</p>
   </body>

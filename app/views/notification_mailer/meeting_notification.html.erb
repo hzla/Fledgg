@@ -6,7 +6,9 @@
   <body>
     <p>Hi <%= @user.name%>,</p>
     <p>
-        You have a new meeting reqest on Fledgg. Click <a href=<%= url_for controller: "conversations", action: "index", only_path: false, host: "http://localhost:3000" %>>here</a> to view. This meeting can be joined <a href=<%= link_to "here", @meeting.url %>.
+        You have a new meeting request on Fledgg. You can view all your meetings <a href=<%= url_for controller: "conversations", action: "index", only_path: false, host: "http://www.fledgg.com" %>>here</a>. 
+
+        This meeting can be joined <a href='<%= @meeting.url %>' style="color: #3498db; cursor: pointer;" >here</a>.
     </p>
     <p>-Fledgg</p>
   </body>

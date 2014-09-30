@@ -12,6 +12,10 @@ Rails.application.routes.draw do
   get '/needed_skills', to: 'users#onboarding_skills', as: 'onboarding_skills'
   get '/availability', to: 'users#onboarding_availability', as: 'onboarding_availability'
 
+
+
+  get '/users/following', to: 'users#following', as: 'following_users'
+  get '/users/linkedin', to: 'users#linkedin', as: 'linkedin_users'
   resources :users
   post '/users/search', to: 'users#search', as: "search"
   get '/users/:id/result_info', to: 'users#result_info', as: 'user_result_info'

@@ -169,6 +169,11 @@ $profile-left-margin: 0px;
 
 .best_in_place {
 	cursor: pointer;
+	color: $gray;
+}
+
+.best_in_place[data-bip-original-content] {
+	color: $dark-gray;
 }
 
 .form_in_place {

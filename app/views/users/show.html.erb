@@ -5,7 +5,7 @@
 			<%= image_tag @user.profile_pic_url, :class => "profile-main-pic" %>
 			<div class="profile-text-box">
 				<div id="name" class="profile-text"><%= @user.name %></div>
-				<div id="tagline" class="profile-text"><%= best_in_place @user, :tagline, type: :input, place_holder: "" %> </div>
+				<div id="tagline" class="profile-text"><%= best_in_place @user, :tagline, type: :input, place_holder: "Click to add a tagline" %> </div>
 				<div id="location" class="profile-text"><%= best_in_place @user, :location, type: :input, place_holder: "Click to add a location" %> </div>
 			</div>
 		</div>
@@ -52,31 +52,31 @@
 		<div class="field-row misc">
 			<div class="misc-field">
 				<div class="field-label">Birthday <%= image_tag 'edit.svg', :class => "edit-svg" %></div>
-				<div class="field-value"><%= best_in_place @user, :birthday, type: :input, place_holder: "" %> </div>
+				<div class="field-value"><%= best_in_place @user, :birthday, type: :input, place_holder: "July, 4" %> </div>
 			</div>
 			<div class="misc-field">
 				<div class="field-label">Interests <%= image_tag 'edit.svg', :class => "edit-svg" %></div>
-				<div class="field-value"><%= best_in_place @user, :interests, type: :input, place_holder: "ex: reading, running..." %> </div>
+				<div class="field-value"><%= best_in_place @user, :interests, type: :input, place_holder: "Biking, Fishing, Skydiving" %> </div>
 			</div>
 			<div class="misc-field">
 				<div class="field-label">Star Sign <%= image_tag 'edit.svg', :class => "edit-svg" %></div>
-				<div class="field-value"><%= best_in_place @user, :star_sign, type: :input, place_holder: "ex: Leo" %> </div>
+				<div class="field-value"><%= best_in_place @user, :star_sign, type: :input, place_holder: "Virgo" %> </div>
 			</div>
 			<div class="misc-field">
 				<div class="field-label">Personality Type <%= image_tag 'edit.svg', :class => "edit-svg" %></div>
-				<div class="field-value"><%= best_in_place @user, :personality, type: :input, place_holder: "ex: INTP" %></div>
+				<div class="field-value"><%= best_in_place @user, :personality, type: :input, place_holder: "ENTP" %></div>
 			</div>
 			<div class="misc-field">
 				<div class="field-label">Favorite Book <%= image_tag 'edit.svg', :class => "edit-svg" %></div>
-				<div class="field-value"><%= best_in_place @user, :favorite_book, type: :input, place_holder: "ex: Lord of the Rings" %></div>
+				<div class="field-value"><%= best_in_place @user, :favorite_book, type: :input, place_holder: "Catcher in the Rye" %></div>
 			</div>
 			<div class="misc-field">
 				<div class="field-label">Favorite Movie <%= image_tag 'edit.svg', :class => "edit-svg" %></div>
-				<div class="field-value"><%= best_in_place @user, :favorite_movie, type: :input, place_holder: "ex: The Dark Knight" %></div>
+				<div class="field-value"><%= best_in_place @user, :favorite_movie, type: :input, place_holder: "Pulp Fiction" %></div>
 			</div>
 			<div class="misc-field">
 				<div class="field-label">Education <%= image_tag 'edit.svg', :class => "edit-svg" %></div>
-				<div class="field-value"><%= best_in_place @user, :education, type: :input, place_holder: "" %></div>
+				<div class="field-value"><%= best_in_place @user, :education, type: :input, place_holder: "Everyman University" %></div>
 			</div>
 		</div>
 

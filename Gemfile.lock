@@ -339,6 +339,7 @@ DEPENDENCIES
   pg
   premailer-rails
   protected_attributes (~> 1.0.5)
+  pry
   rack-cors
   rails (= 4.1.0)
   rails_12factor

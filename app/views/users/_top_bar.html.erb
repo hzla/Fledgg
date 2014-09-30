@@ -44,7 +44,9 @@
 					<%= current_user.message_count + current_user.meeting_count %>
 				</div>
 			<% end %>
-
+		<% end %>
+		<%= link_to users_path do %>
+			<%= image_tag 'peopledarkgreen.svg', :class => "profile-circle-pic" %>
 		<% end %>
 	</div>
 </div>

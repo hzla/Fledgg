@@ -1,7 +1,39 @@
 class UsersController < ApplicationController
 	include SessionsHelper
 
+	def index
+		@meeting = Meeting.new
+		@users = User.all.order(:name)
+		@filter_bar = true 
+		@index = true 
+		render 'search'
+	end
 
+	def linkedin
+		@meeting = Meeting.new
+		client = LinkedIn::Client.new(ENV['LI_API_KEY'], ENV['LI_SECRET_KEY'])
+		auth = current_user.authorizations.first
+		client.authorize_from_access auth.token, auth.secret
+		con_ids = client.connections.all.map(&:id)
+		auths = Authorization.where 'uid in (?)', con_ids
+		if auths
+			@users = auths.map(&:user)
+		else
+			@users = []
+		end 
+		@filter_bar = true  
+		@linkedin = true
+		render 'search'
+	end
+
+	def following
+		@meeting = Meeting.new
+		@users = current_user.following_users
+		@filter_bar = true
+		@following = true  
+		render 'search'
+	end
+	
 	def show
 		@user = User.find_by_permalink(params[:id])
 		@meeting = Meeting.new
@@ -45,7 +77,6 @@ class UsersController < ApplicationController
 	end
 
 	def settings
-
 	end
 
 	def access

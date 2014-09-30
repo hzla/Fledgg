@@ -1,6 +1,29 @@
 <%= render partial: 'top_bar' %>
 <div id="green-bar">
-	<div id="results-text"><%= @users.length %> results for <%= @searched_terms %></div>
+	<% if @filter_bar %>
+		<div class="green-bar-content">
+			<%= link_to users_path do %>
+				<div class="bar-section <%= 'active' if @index %>" id="messages-section">
+					All Professionals
+					<%= "(#{current_user.message_count})" if current_user.message_count > 0 %>
+				</div>
+			<% end %>
+			<%= link_to following_users_path, id: "meetings-link" do %>
+				<div class="bar-section <%= 'active' if @following %>" id="meetings-section">
+					Who you're following
+					<%= "(#{current_user.meeting_count})" if current_user.meeting_count > 0 %>
+				</div>
+			<% end %>
+			<%= link_to linkedin_users_path, id: 'trashed-link' do %>
+				<div class="bar-section <%= 'active' if @linkedin %>" id="trash-section">
+					Linkedin Connections
+				</div>
+			<% end %>
+		</div>
+	<% else %>
+		<div id="results-text"><%= @users.length %> results for <%= @searched_terms %></div>
+	<% end %>
+	
 </div>
 <div id="content" class="results-section">
 

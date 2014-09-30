@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
 	has_many :likes
 	has_many :experiences
 	has_many :educations
-	before_save :create_permalink
+	after_create :create_permalink
 	attr_accessible :permalink, :role, :rate_count, :notify_messages, :notify_meetings, :message_count, :meeting_count, :education, :interests, :name, :email, :profile_pic_url, :li_token, :birthday, :star_sign, :personality, :favorite_book, :favorite_movie, :mon, :tues, :wed, :thurs, :fri, :sat, :sun, :bio, :info, :helpfulness, :location, :tagline, :follow_list
 
 	def self.create_with_linkedin auth_hash
@@ -22,17 +22,19 @@ class User < ActiveRecord::Base
 		extra_info = auth_hash.extra.raw_info
 
 		li_token = auth_hash.credentials.token
+		secret = auth_hash.credentials.secret
 		skill_list =  extra_info.skills.values[1].map(&:skill).map(&:name)
 		user = User.new name: profile["name"], profile_pic_url: profile['image'], li_token: li_token, email: profile['email'], tagline: profile['headline'], location: profile['location']
-    user.authorizations.build :uid => auth_hash["uid"]
+    user.authorizations.build :uid => auth_hash["uid"], token: li_token , secret: secret
     user if user.save
     Skill.add skill_list, user
     user.follow_self
 
     ed_list = auth_hash.extra.raw_info.educations.values[1]
 		ed_list.each do |ed|
-			p ed['schoolName']
-			Education.create name: ed['schoolName'], start_year: ed.startDate['year'].to_i, end_year: ed.endDate['year'].to_i, user_id: user.id
+			if ed.startDate['year'] && ed.endDate['year']
+				Education.create name: ed['schoolName'], start_year: ed.startDate['year'].to_i, end_year: ed.endDate['year'].to_i, user_id: user.id
+			end
 		end
 
 		exp_list = auth_hash.extra.raw_info.threeCurrentPositions.values[1]
@@ -84,7 +86,8 @@ class User < ActiveRecord::Base
 	end
 
 	def create_permalink
-		permalink = name.gsub(" ","").downcase + id.to_s
+		link = name.gsub(" ","").downcase + id.to_s
+		update_attributes permalink: link
 	end
 
 	def to_param
@@ -140,6 +143,10 @@ class User < ActiveRecord::Base
 
 	def following
 		Status.where('user_id in (?)', follow_list.split(",")).order('created_at desc')
+	end
+
+	def following_users
+		User.find follow_list.split(",")
 	end
 
 	def upcoming_meetings
