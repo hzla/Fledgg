@@ -16,7 +16,7 @@
 	<div id="content-left">
 		<div class="field-row">
 			<%= form_tag needed_skills_path, id: "needed-skill-form", remote: true do %>
-				<%= text_field_tag :needed_skill_name, nil, :class => "skill-name input-row", placeholder: "Type any areas you need help with, and press enter to add" %>
+				<%= text_field_tag :needed_skill_name, nil, :class => "skill-name input-row", placeholder: "Type and press enter to add" %>
 			<% end %>
 		</div>
 		<div class="field-row">
@@ -32,15 +32,12 @@
 		<div class="field-header">
 			Looking for help with
 		</div>
-
-
 		<div class="field-row" id="skill-row">
-
 		</div>
 		<div class="field-row">
 			<%= link_to onboarding_availability_path do %>
 				<div class="mobile-next">
-					Skip
+					Next
 				</div>
 			<% end %>
 		</div>

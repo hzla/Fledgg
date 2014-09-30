@@ -337,16 +337,24 @@ $profile-left-margin: 0px;
 				.profile-text-box {
 					left: 145px;
 					width: calc(100% - 155px);
+                    #tagline{
+                        margin-top: 0px; 
+                        font-weight: 400;
+                        font-size: 15px;
+                    }
+                    #location{
+                        font-size: 15px;
+                    }
 				}
 			} 
 			
 			.misc-field {
 				clear: left;
-				width: calc(100% - 20px);
-				margin-left: 10px;
+				width: 100%;
+				margin-left: 0px;
 			}
 			.misc-field:nth-child(2n) {
-				margin-left: 10px;
+				margin-left: 0px;
 			}
 		}
 	}
