@@ -12,18 +12,43 @@ class User < ActiveRecord::Base
 	has_many :statuses
 	has_many :comments
 	has_many :likes
-	attr_accessible :role, :rate_count, :notify_messages, :notify_meetings, :message_count, :meeting_count, :education, :interests, :name, :email, :profile_pic_url, :li_token, :birthday, :star_sign, :personality, :favorite_book, :favorite_movie, :mon, :tues, :wed, :thurs, :fri, :sat, :sun, :bio, :info, :helpfulness, :location, :tagline, :follow_list
+	has_many :experiences
+	has_many :educations
+	before_save :create_permalink
+	attr_accessible :permalink, :role, :rate_count, :notify_messages, :notify_meetings, :message_count, :meeting_count, :education, :interests, :name, :email, :profile_pic_url, :li_token, :birthday, :star_sign, :personality, :favorite_book, :favorite_movie, :mon, :tues, :wed, :thurs, :fri, :sat, :sun, :bio, :info, :helpfulness, :location, :tagline, :follow_list
 
 	def self.create_with_linkedin auth_hash
 		profile = auth_hash['info']
-		p profile
+		extra_info = auth_hash.extra.raw_info
+		p auth_hash.extra.raw_info.educations
+		p auth_hash.extra.raw_info.threeCurrentPositions
+		puts "\n" * 30
+
+
 		li_token = auth_hash.credentials.token
-		skill_list =  auth_hash.extra.raw_info.skills.values[1].map(&:skill).map(&:name)
-		user = User.new name: profile["name"], profile_pic_url: profile['image'], li_token: li_token, email: profile['email'], tagline: profile['headline']
+		skill_list =  extra_info.skills.values[1].map(&:skill).map(&:name)
+		user = User.new name: profile["name"], profile_pic_url: profile['image'], li_token: li_token, email: profile['email'], tagline: profile['headline'], location: profile['location']
     user.authorizations.build :uid => auth_hash["uid"]
     user if user.save
     Skill.add skill_list, user
     user.follow_self
+
+    ed_list = auth_hash.extra.raw_info.educations.values[1]
+		ed_list.each do |ed|
+			p ed['schoolName']
+			Education.create name: ed['schoolName'], start_year: ed.startDate['year'].to_i, end_year: ed.endDate['year'].to_i, user_id: user.id
+		end
+
+		exp_list = auth_hash.extra.raw_info.threeCurrentPositions.values[1]
+		exp_list.each do |exp|
+			start_date = Date.new exp['startDate']['year'], exp['startDate']['month']
+			if exp['endDate']
+				end_date = Date.new exp['endDate']['year'], exp['endDate']['month']
+			end
+			exp = Experience.create company: exp.company['name'], is_current: exp['isCurrent'], summary: exp['summary'], title: exp['title'], start_date: start_date, user_id: user.id
+			exp.update_attributes end_date: end_date if exp['endDate']
+		end
+
     user
 	end
 
@@ -45,6 +70,31 @@ class User < ActiveRecord::Base
 
 	def followed_by user
 		user.follow_list.split(",").include? id.to_s
+	end
+
+	def follow user_id
+		new_list = follow_list + "#{user_id},"
+	  update_attributes follow_list: new_list
+	end
+
+	def unfollow user_id
+		new_list = follow_list.gsub("#{user_id},", "")
+		update_attributes follow_list: new_list
+	end
+
+	def self.update_permalinks
+		all.each do |user|
+			user.update_attributes permalink: (user.name.gsub(" ","").downcase + user.id.to_s)
+		end
+	end
+
+
+	def create_permalink
+		permalink = name.gsub(" ","").downcase + id.to_s
+	end
+
+	def to_param
+		permalink
 	end
 	# returns a list of users based on an array of names, and array of skill names
 	#first get user_ids of name matches if there's a name list

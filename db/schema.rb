@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140926013250) do
+ActiveRecord::Schema.define(version: 20140929232251) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,27 @@ ActiveRecord::Schema.define(version: 20140926013250) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "trashed",    default: false
+  end
+
+  create_table "educations", force: true do |t|
+    t.string   "name"
+    t.integer  "start_year"
+    t.integer  "end_year"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "experiences", force: true do |t|
+    t.string   "company"
+    t.string   "title"
+    t.boolean  "is_current"
+    t.text     "summary"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "expertises", force: true do |t|
@@ -152,6 +173,7 @@ ActiveRecord::Schema.define(version: 20140926013250) do
     t.boolean  "notify_meetings", default: true
     t.integer  "rate_count",      default: 1
     t.string   "role"
+    t.string   "permalink"
   end
 
   create_table "wants", force: true do |t|

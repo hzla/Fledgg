@@ -12,7 +12,8 @@ class PagesController < ApplicationController
 	end
 
 	def feedback
-		
+		NotificationMailer.feedback(params[:title],params[:email],params[:body]).deliver
+		render nothing: true
 	end
 
 end

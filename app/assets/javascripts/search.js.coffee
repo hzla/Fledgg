@@ -6,7 +6,13 @@ Search =
 		$('.result').hoverIntent @displayResultInfo, @doNothing
 
 	showFollowed: ->
-		$(@).find('div').text('FOLLOWED')
+		if $(@).hasClass "unfollow"
+			$(@).find('div').text('+ FOLLOW')
+			$(@).removeClass().addClass('follow-link follow')
+		else
+			$(@).find('div').text('UNFOLLOW')
+			$(@).removeClass().addClass('follow-link unfollow')
+
 
 	doNothing: -> 
 		return

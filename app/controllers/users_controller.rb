@@ -3,11 +3,11 @@ class UsersController < ApplicationController
 
 
 	def show
-		@user = User.find params[:id]
+		@user = User.find_by_permalink(params[:id])
 		@meeting = Meeting.new
 		@skills = @user.skills
 		@needed_skills = @user.needed_skills
-		if params[:id] != current_user.id.to_s
+		if params[:id] != current_user.permalink
 			render('show_other') and return
 		else
 			render 'show'
@@ -38,8 +38,6 @@ class UsersController < ApplicationController
 		Appointment.where(user_id: current_user.id, meeting_id: params[:meeting_id]).first.update_attributes rater: false
 		render nothing: true
 	end
-
-
 
 	def update
 		current_user.update_attributes params[:user]
@@ -82,8 +80,8 @@ class UsersController < ApplicationController
   end
 
   def follow
-  	new_list = current_user.follow_list += "#{params[:id]},"
-  	current_user.update_attributes follow_list: new_list
+  	other_user = User.find params[:id]
+  	other_user.followed_by(current_user) ? current_user.unfollow(params[:id]) : current_user.follow(params[:id]) 
   	render nothing: true
   end
 

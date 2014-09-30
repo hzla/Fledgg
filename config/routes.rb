@@ -33,7 +33,7 @@ Rails.application.routes.draw do
   get '/meetings/:id/rate', to: 'meetings#rate', as: 'rate'
   get '/meetings/:id/decline', to: 'meetings#destroy', as: 'decline'
 
-  get '/feedback', to: 'pages#feedback', as: 'feedback'
+  post '/feedback', to: 'pages#feedback', as: 'feedback'
 
   resources :statuses 
   get '/statuses/:id/like', to: 'statuses#like', as: 'like'

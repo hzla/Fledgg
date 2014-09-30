@@ -85,14 +85,12 @@
 			</div>
 
 		<% if @user.followed_by current_user %>
-			<div class="user-action">
-				FOLLOWED
-			</div>
+			<%= link_to follow_path(@user), :class => "follow-link unfollow", remote: true do %>
+				<div class="user-action">UNFOLLOW</div>
+			<% end %>
 		<% else %>
-			<%= link_to follow_path(@user), :class => "follow-link", remote: true do %>
-			<div class="user-action">
-				+ FOLLOW
-			</div>
+			<%= link_to follow_path(@user), :class => "follow-link follow", remote: true do %>
+			<div class="user-action">+ FOLLOW</div>
 			<% end %>
 		<% end %>
 		
@@ -114,7 +112,7 @@
 			<% ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"].each do |day| %>
 				<div class="time-block">
 					<div class="day"><%= day %></div>
-					<div class="time-value"><%= @user.send(day[0..2].downcase.to_sym) || "Not Available" %></div>
+					<div class="time-value"><%= @user.send(day[0..2].downcase.to_sym) || "Unknown" %></div>
 				</div>
 			<% end %>
 		</div>

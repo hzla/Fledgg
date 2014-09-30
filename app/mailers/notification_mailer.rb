@@ -27,4 +27,9 @@ class NotificationMailer < ActionMailer::Base
     @other_user = other_user  
     mail(to: @user.email, subject: "You have a meeting with #{@other_user.name} in 15 minutes!")
   end
+
+  def feedback title, email, body
+    @body = body
+    mail(to: 'andylee.hzl@gmail.com', 'vicky@fledgg.com', subject: "Feedback from #{email} about #{title}")
+  end
 end

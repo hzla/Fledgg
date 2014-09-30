@@ -1,18 +1,63 @@
+DONE: 125min
+
 Time Estimates
-Done Now: 415min
 
-_________________________________
+Bold Unread Messages (40min)
+
+Pending Meetings on top (30min)
+
+Adjust Timepicker scroll, scrap if necessary (30min)
+
+Modal for when you get a meeting request (20min)
+
+Onboarding Skills removed and curated (20min)
+
+Delete Button for comments and statuses (20min)
+
+Follow list page (1hr)
+
+________________________
+MOBILE
+
+Onboarding List alphabetized (5min)
+
+Fix activty 10 margin scroll (5min)
+
+Fix User Profile CSS blank scrolling (5min)
+
+____________________________
+
+profile placeholders to guide users (10min)
+
+SSL security (2hr)
+
+include zoom link (10min)
+
+show 5 gray stars for unrated people (15min)
+
+favorite movie getting mixed with education (20min)
+
+________________________________________________
+
+
+Total: 570min or 9hrs 30min 
+W/O SSL: 450min or 7hrs 30min
+
+______________________________
+
+More than trivial things
+
+vanity urls
+ssl security
+modal for meeting request
+bold unread messages
+meetings pending on top
+
+search will take at least 5hrs to implement and optimize
 
 
 
-Notifications (120min)
-	-for when both accept
-	-for 15 minutes before
-	-inlude zoom link
 
-User Onboarding (180min)
-
-TotalLeft ~ (300min) or 5hr 0min
 
 
 
