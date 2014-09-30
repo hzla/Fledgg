@@ -90,7 +90,7 @@
 .two {
 	background: white;
 	color: $dark-gray;
-	height: 540px;
+	height: 430px;
 	.section-block:nth-child(2n) {
 		margin-left: 60px;
 		margin-right: 60px;
@@ -99,49 +99,49 @@
 
 .section-header {
 	font-size: $h2;
-    font-weight: 700;
-    letter-spacing: 2px;
-	width: 100%;
-	text-align: center;
-	padding-top: 120px;
-    font-family: $proxima,sans-serif;
-}
-   
-.section-header2 {
-	font-size: $h2;
-    font-weight: 700;
-    letter-spacing: 2px;
+    font-weight: 300;
+    letter-spacing: 0px;
 	width: 100%;
 	text-align: center;
 	padding-top: 40px;
     font-family: $proxima,sans-serif;
 }
+   
+.section-header2 {
+	font-size: $h2;
+    font-weight: 300;
+    letter-spacing: 0px;
+	width: 100%;
+	text-align: center;
+	padding-top: 40px;
+    font-family: $proxima,sans-serif;
+    margin-bottom: 40px;
+}
 
 .section-block {
-	width: 280px;
+	width: 270px;
 	float: left;
-	height: 300px;
+	height: auto;
 	color: $dark-gray;
     font-family: $proxima,sans-serif;
 	.block-text {
-		font-size: $h2;
+		font-size: 22px;
         font-weight: 700;
-        letter-spacing: 2px;
+        letter-spacing: 1.5px;
 		width: 100%;
 		text-align: center;
 	}
 	.block-image {
-		width: 200px;
-		height: 200px;
+		width: 180px;
+		height: 180px;
 		margin: 0 auto;
 		margin-top: 20px;
 		display: block;
 	}
 	.block-info {
 		text-align: center;
-		font-size: 20px;
+		font-size: 17px;
 		margin-top: 20px;
-        font-size: $h3;
         font-weight: 300;
 	}
 }
@@ -149,21 +149,20 @@
 
 
 .section-content {
-	width: 960px;
+	width: 930px;
 	margin: 0 auto;
-	margin-top: 40px;
 }
 
 .landing-section.three {
 	height: 160px;
-	color: white;
+	color: $dark-gray;
 	text-align: center;
 	line-height: 160px;
-	background: $dark-gray;
+	background: white;
     font-family: $proxima,sans-serif;
     font-size: $h2;
-    font-weight: 700;
-    letter-spacing: 2px;
+    font-weight: 300;
+    clear: both;
 }
 
 .landing-section.four {
@@ -171,12 +170,21 @@
 	position: relative;
 	background-size: cover;
     font-family: $proxima,sans-serif;
+    margin-top: 160px;
 	.people-image {
 		height: 100%;
 		width: 100%;
 		position: absolute;
 		z-index: -1;
 	}
+}
+
+.landing-section.fourpointfive {
+	height: 300px;
+	position: relative;
+	background-size: cover;
+    font-family: $proxima,sans-serif;
+    border-bottom: 1px solid #e0e0e0;
 	.section-block:nth-child(2n) {
 		margin-left: 60px;
 		margin-right: 60px;
@@ -184,7 +192,7 @@
 	.section-block {
 		color: black;
 		font-size: 20px;
-		margin-top: 60px;
+		margin-top: 40px;
 		font-weight: 300;
 	}
 	.block-text {
@@ -193,8 +201,7 @@
 }
 
 .landing-section.five {
-	height: 400px;
-	margin-top: -40px;
+	height: 390px;
 	background: white;
     font-family: $proxima,sans-serif;
 	.team-container {
@@ -212,18 +219,18 @@
 			border-radius: 200px;
 			margin: 0 auto;
 			display: block;
-			margin-top: 40px;
 			margin-bottom: 20px;
 		}
 		.member-name {
 			width: 100%;
 			text-align: center;
-            font-weight: 600;
+            font-weight: 300;
 		}
 		.member-title {
 			width: 100%;
 			text-align: center;
 			color: $gray;
+            font-weight: 300;
 		}
 
 	}
@@ -294,6 +301,7 @@
 		font-size: 20px;
 		clear: right;
 		cursor: pointer;
+        font-weight: 300;
 	}
 }
 
@@ -339,6 +347,12 @@
 
 		}
 		.landing-section.four {
+			background: $light-green;
+			color: white;
+			background-size: 100px 100%; 
+		}
+        
+        .landing-section.fourpointfive {
 			background: $light-green;
 			color: white;
 			background-size: 100px 100%;
