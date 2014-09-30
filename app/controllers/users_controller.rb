@@ -21,7 +21,7 @@ class UsersController < ApplicationController
 
 	def onboarding_skills
 		@user = current_user
-		@skills = Skill.all
+		@skills = Skill.all.order(:name)
 	end
 
 	def onboarding_availability

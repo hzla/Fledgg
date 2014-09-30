@@ -11,4 +11,9 @@ class CommentsController < ApplicationController
 		status.update_attributes comment_count: new_count
 		render layout: false
 	end
+
+	def destroy
+		Comment.find(params[:id]).destroy
+		render nothing: true
+	end
 end

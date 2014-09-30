@@ -13,7 +13,6 @@ Search =
 			$(@).find('div').text('UNFOLLOW')
 			$(@).removeClass().addClass('follow-link unfollow')
 
-
 	doNothing: -> 
 		return
 

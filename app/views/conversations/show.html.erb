@@ -9,7 +9,7 @@
 				<div class="message-tagline">
 					<%= message.user.tagline %>
 				</div>
-				<%= link_to user_path(user) do %>
+				<%= link_to user_path(message.user) do %>
 					<%= image_tag message.user.profile_pic_url, :class => "message-pic" %>
 				<% end %>
 				<div class="message-actions">

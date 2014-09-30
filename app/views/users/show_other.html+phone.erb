@@ -9,6 +9,55 @@
 				<div id="location" class="profile-text"><%= @user.location || "User has not added anything here yet" %></div>
 			</div>
 		</div>
+		
+		<div id="helpfulness-label">HELPFULNESS RATING</div>
+		<div id="star-container">
+			<% if @user.rate_count > 3 %>
+				<% @user.rating.times do %>
+					<%= image_tag 'stargreen.svg', :class => "star" %> 
+				<% end %>
+				<% (5 - @user.rating).times do %>
+					<%= image_tag 'stargray.svg', :class => "star" %> 
+				<% end %>
+			<% else %>
+				<% 5.times do %>
+					<%= image_tag 'stargray.svg', :class => "star" %> 
+				<% end %>
+			<% end %>
+			</div>
+
+		<% if @user.followed_by current_user %>
+			<%= link_to follow_path(@user), :class => "follow-link unfollow", remote: true do %>
+				<div class="user-action">UNFOLLOW</div>
+			<% end %>
+		<% else %>
+			<%= link_to follow_path(@user), :class => "follow-link follow", remote: true do %>
+			<div class="user-action">+ FOLLOW</div>
+			<% end %>
+		<% end %>
+		
+		<%= link_to conversations_path(send_to: @user.id ) do %>
+			<div class="user-action">
+				MESSAGE
+			</div>
+		<% end %>
+
+
+		<div id="meetings-count-box" class="meeting-request">
+			Request a Meeting
+		</div>
+		<div class="field-header availability">
+			Availability
+		</div>
+		
+		<div class="field-row availability">
+			<% ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"].each do |day| %>
+				<div class="time-block">
+					<div class="day"><%= day %></div>
+					<div class="time-value"><%= @user.send(day[0..2].downcase.to_sym) || "Unknown" %></div>
+				</div>
+			<% end %>
+		</div>
 		<div class="field-header">
 			Expertise
 		</div>
@@ -69,7 +118,7 @@
 		</div>
 
 	</div>
-	<div id="content-right">
+
 		<div id="helpfulness-label">HELPFULNESS RATING</div>
 		<div id="star-container">
 			<% if @user.rate_count > 3 %>
@@ -118,15 +167,10 @@
 				</div>
 			<% end %>
 		</div>
-	</div>
+
 </div>
 
 <%= render partial: "meetings/meetings_modal.html.erb", locals: {user: @user, meeting: @meeting} %>
 
-<% if @mobile %>
-	<script>
-		$('#content-left').prepend($('#content-right'))
-		$('#content-right').css('marginTop', '150px')
-	</script>
-<% end %>
+
 

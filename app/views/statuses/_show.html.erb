@@ -30,6 +30,13 @@
 		<% end %>
 		<%= image_tag "commentbubble.svg", :class =>"status-action-svg" %>
 		<div class="action-stat comment_count"><%= status.comment_count %></div>
+		<div class="delete-text">
+			<% if status.user_id == current_user.id %>
+				<%= link_to status_path(status), method: 'delete', :class => "status-delete-link", remote: true do %>
+					Delete
+				<% end %>
+			<% end %>
+		</div>
 	</div>
 	<div class="comments">
 		<% status.comments.each do |comment| %>
@@ -50,6 +57,15 @@
 					<div class="status-body linkify">
 						<%= comment.body %>
 					</div>
+					<% if comment.user_id == current_user.id %>
+						<div class="status-actions">
+							<div class="delete-text">
+								<%= link_to comment_path(comment), method: 'delete', :class => "comment-delete-link", remote: true do %>
+									Delete
+								<% end %>
+							</div>
+						</div>
+					<% end %>
 				</div>
 		<% end %>
 		<div class="comment comment-form-box">

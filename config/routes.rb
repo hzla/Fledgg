@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   get '/conversations/trashed', to: 'conversations#trashed', as: 'trashed'
   resources :conversations 
   get '/conversations/:id/trash', to: 'conversations#trash', as: 'trash'
+  get '/conversations/:id/read', to: 'conversations#read', as: 'read'
   resources :messages
   get '/meetings/check', to: 'meetings#check', as: 'check'
   get '/meetings/:id/join', to: 'meetings#join', as: 'join'

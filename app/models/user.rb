@@ -20,10 +20,6 @@ class User < ActiveRecord::Base
 	def self.create_with_linkedin auth_hash
 		profile = auth_hash['info']
 		extra_info = auth_hash.extra.raw_info
-		p auth_hash.extra.raw_info.educations
-		p auth_hash.extra.raw_info.threeCurrentPositions
-		puts "\n" * 30
-
 
 		li_token = auth_hash.credentials.token
 		skill_list =  extra_info.skills.values[1].map(&:skill).map(&:name)
@@ -48,7 +44,6 @@ class User < ActiveRecord::Base
 			exp = Experience.create company: exp.company['name'], is_current: exp['isCurrent'], summary: exp['summary'], title: exp['title'], start_date: start_date, user_id: user.id
 			exp.update_attributes end_date: end_date if exp['endDate']
 		end
-
     user
 	end
 
@@ -88,7 +83,6 @@ class User < ActiveRecord::Base
 		end
 	end
 
-
 	def create_permalink
 		permalink = name.gsub(" ","").downcase + id.to_s
 	end
@@ -96,6 +90,7 @@ class User < ActiveRecord::Base
 	def to_param
 		permalink
 	end
+	
 	# returns a list of users based on an array of names, and array of skill names
 	#first get user_ids of name matches if there's a name list
 	#then get the user skill hash of there's a skill list

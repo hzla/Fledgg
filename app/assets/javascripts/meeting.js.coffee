@@ -14,6 +14,7 @@ Meeting =
 		$('body').on 'click', '.star-rating-container .star', @rate
 		$('body').on 'ajax:success', '#rating-form', @thankUser
 		$('body').on 'click', '#meeting-cancel', @hideMeetingForm
+		$('.xdsoft_scroller_box').unbind()
 		Meeting.canRate = true
 		@checkMeetings();
 
@@ -27,7 +28,16 @@ Meeting =
 			step: 30
 			formatTime:'g:i a'
 			onChangeDateTime: Meeting.dateLogic
-			onShow: Meeting.dateLogic
+			onShow: Meeting.dateLogicScroll
+		$('#meeting_start_time').click ->
+			setTimeout ->
+				$('.xdsoft_time_variant').parent().scrollTo($('.xdsoft_time:not(.xdsoft_disabled)').last())
+			, 100
+			setTimeout -> 
+				console.log "hi"
+				a = $('.xdsoft_time_variant').parent().scrollTop()
+				$('.xdsoft_time_variant').parent().scrollTop(a - 125)
+			, 700
 				
 	dateLogic: (dateTime) ->
 		console.log dateTime
@@ -40,11 +50,21 @@ Meeting =
 			@.setOptions
 				minTime: "12:00 am"
 
+	dateLogicScroll: (dateTime) ->
+		if dateTime.getDate() == (new Date().getDate())
+			console.log "this"
+			@.setOptions
+				minTime: 0
+		else
+			console.log "that"
+			@.setOptions
+				minTime: "12:00 am"
+		
 	showSending: ->
 		$('#send-meeting').val('Sending...')
 
 	thankUser: ->
-		$('.message-body').html "<h1>Thank You for Rating!</h1>"
+		$('.message-body').html "<h4>Thank You for Rating!</h4>"
 
 	rate: ->
 		rating = $(@).attr('id')

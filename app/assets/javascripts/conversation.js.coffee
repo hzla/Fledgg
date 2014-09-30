@@ -13,6 +13,7 @@ Conversation =
 	showMeetings: (event, data) ->
 		$('#content').html(data) 
 		$('.conversation').first().click() if $('body.mobile').length < 1
+		$('#conversations').prepend($('.meeting-link.unaccepted'))
 
 
 	changeTab: ->
@@ -44,6 +45,7 @@ Conversation =
 			$('#meetings-section').click()
 		else
 			$('.convo-link').first().click() if $('body.mobile').length < 1
+		$('#conversations').prepend($('.conversation.unread'))
 
 	showMessages: ->
 		if $('#send-to').length > 0
@@ -75,6 +77,8 @@ Conversation =
 		$('#content-left-small').hide() if $('body.mobile').length > 0
 		$('#content-right-large').show().append(data)
 		$('.message').addClass('animated fadeIn')
+		url = $(@).attr('href') + "/read"
+		$.get(url)
 
 
 

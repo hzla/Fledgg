@@ -32,8 +32,15 @@ class StatusesController < ApplicationController
 		render json: {dont_like: false}
 	end
 
+	def destroy
+		Status.find(params[:id]).destroy
+		render nothing: true
+	end
 
-
-
-
+	
 end
+
+
+
+
+

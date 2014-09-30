@@ -2,7 +2,7 @@
 	<div class="bar-content">
 		<div class="onboarding-header">One more thing. When are you free?</div>
 		<div class="onboarding-text">
-			<span class="no-mobile">With fledgg, you can schedule and enter calls right in your browser.<br></span>
+			<span class="no-mobile">With Fledgg you can schedule and enter calls right in your browser.<br></span>
 			Put down some times you'll be available to meet with.
 		</div>
 		<%= link_to statuses_path do %>
@@ -24,7 +24,7 @@
 				<div class="time-block">
 					<div class="day"><%= day %> <%= image_tag 'edit.svg', :class => "edit-svg" %> </div>
 					<div class="time-value">
-						<%= best_in_place @user, day[0..2].downcase.to_sym, type: :input, place_holder: "What times are you free to meet?", classes: "misc-field" %>
+						<%= best_in_place @user, day[0..2].downcase.to_sym, type: :input, place_holder: "What times are you available to meet?", classes: "misc-field" %>
 					</div>
 				</div>
 			<% end %>

@@ -2,7 +2,7 @@ class Message < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :conversation, touch: true
 
-	attr_accessible :body, :user_id, :conversation_id, :subject
+	attr_accessible :body, :user_id, :conversation_id, :subject, :read
 
 	def short_body
 		body.length > 30 ? body[0..29] + "..." : body

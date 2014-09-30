@@ -27,7 +27,7 @@
 		<div id="conversations">
 			<% @conversations.each do |convo| %>
 				<% user = convo.other_user(current_user.id) %>
-					<div class="conversation" id='<%= "u-#{user.id}" %>'>
+					<div class="conversation <%= 'unread' if !convo.read?(current_user) %>" id='<%= "u-#{user.id}" %>'>
 						<div class="border-hider"></div>
 						<%= image_tag "conversearrow.svg", :class => "convoarrow-svg" %>
 						<%= link_to user_path(user) do %>
@@ -38,7 +38,7 @@
 								<div class="convo-name"><%= user.name %></div>
 								<div class="convo-date"><%= convo.last_message.date %></div>
 								<div class="convo-subject"><%= convo.last_message.subject %></div>
-								<div class="convo-last-message"><%= convo.last_message.short_body %></div>
+								<div class="convo-last-message <%= 'unread' if !convo.read?(current_user) %>"><%= convo.last_message.short_body %></div>
 							</div>
 						<% end %>
 					</div>

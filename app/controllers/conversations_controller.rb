@@ -29,4 +29,10 @@ class ConversationsController < ApplicationController
 		@conversations = current_user.ordered_conversations.where(trashed: true)
 	end
 
+	def read
+		convo = Conversation.find(params[:id])
+		convo.read_by current_user
+		render nothing: true
+	end
+
 end

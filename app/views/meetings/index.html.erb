@@ -1,14 +1,15 @@
 <div id="content-left-small">
-	<div id="conversation-title">Meetings</div>
+	<div id="conversation-title">CURRENT MEETINGS</div>
 	<div id="conversations">
 		<% @meetings.each do |meeting| %>
+			<% status = meeting.status(current_user) %>
 			<% user = meeting.other_user(current_user.id) %>
-			<%= link_to meeting_path(meeting), remote: true, :class => "meeting-link" do %>
+			<%= link_to meeting_path(meeting), remote: true, :class => "meeting-link #{'unaccepted' if status == 'unaccepted'}" do %>
 				<div class="conversation" id='<%= "u-#{user.id}" %>'>
 					<div class="border-hider"></div>
 					<%= image_tag "conversearrow.svg", :class => "convoarrow-svg" %>
 					<%= image_tag user.profile_pic_url, :class => "convo-pic" %>
-					<% status = meeting.status(current_user) %>
+					
 					<div class="convo-details">
 						<% if status == "unaccepted" %>
 							<div class="meeting-text">Meeting request from</div>
@@ -44,7 +45,7 @@
 				</div>
 			<% end %>
 		<% end %>
-		<div id="conversation-title">Past Meetings</div>
+		<div id="conversation-title">PAST MEETINGS</div>
 		<% @past_meetings.each do |meeting| %>
 			<% user = meeting.other_user(current_user.id) %>
 			<%= link_to meeting_path(meeting), remote: true, :class => "meeting-link" do %>

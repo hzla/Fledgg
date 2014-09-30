@@ -6,6 +6,17 @@ Status =
 		$('body').on 'ajax:beforeSend', '#new_comment', @checkBody
 		@scrollMeetings()
 		$('.like-link').on 'ajax:success', @like
+		$('body').on 'ajax:success', '.status-delete-link', @deleteStatus
+		$('body').on 'ajax:success', '.comment-delete-link', @deleteComment
+
+	deleteStatus: ->
+		$(@).parents('.status').removeClass('animated fadeIn').addClass('animated fadeOut').one 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', ->
+			$(@).remove()
+
+	deleteComment: ->
+
+		$(@).parents('.comment').removeClass('animated fadeIn').addClass('animated fadeOut').one 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', ->
+			$(@).remove()
 
 	scrollMeetings: ->
 		$(window).scroll ->

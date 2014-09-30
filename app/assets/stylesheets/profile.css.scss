@@ -43,8 +43,8 @@ $top-bar-element-spacing: 15px;
     color: white;
     width: 18px;
     height: 18px;
-    font-size: 12px;
-    line-height: 1.7;
+    font-size: 10px;
+    line-height: 1.8;
     text-align: center;
     left: 205px;
     top: 12px;
@@ -146,6 +146,7 @@ $profile-left-margin: 0px;
 		padding-top: 40px;
 		border-top: 1px solid $light-gray;
 		margin-top: 20px;
+		padding-bottom: 20px;
 	}
 	.misc-field {
 		width: 45%;
@@ -179,11 +180,11 @@ $profile-left-margin: 0px;
 		font-size: $h4;
 		border: 1px solid $light-gray;
 		border-radius: 5px;
-        font-family: $proxima;
-        padding: 0px 15px;
-        box-sizing: border-box;
+    font-family: $proxima;
+    padding: 5px 15px;
 	}
 }
+
 
 .misc .form_in_place {
 	input {
@@ -217,7 +218,7 @@ $profile-left-margin: 0px;
 	left: calc(50% - 480px);
 	width: 620px;
 	top: 0;
-	min-height: 100vh;
+    height: auto;
 }
 .edit-svg {
 		height: 16px;
@@ -237,9 +238,12 @@ $profile-left-margin: 0px;
 		width: 100%;
 		height: 40px;
 		border: 1px solid $light-gray;
-		border-radius: 10px;
+		border-radius: 5px;
 		margin-bottom: 20px;
 		font-size: 16px;
+        font-family: $proxima;
+        padding: 10px 15px;
+        box-sizing: border-box;
 	}
 
 #content-right {
@@ -249,6 +253,7 @@ $profile-left-margin: 0px;
 	width: 320px;
 	top: 0;
 	min-height: 100vh;
+}
 	.user-action {
 		width: 50%;
 		float: left;
@@ -301,7 +306,7 @@ $profile-left-margin: 0px;
 		margin-bottom: 20px;
 	}
 	
-}
+
 
 @media(max-width: 1023px) {
 	body {
@@ -313,9 +318,11 @@ $profile-left-margin: 0px;
 			#content-left {
 				float: left;
 				position: static; 
+				padding-left: 10px;
+				width: calc(100% - 20px);
 				.field-header, .field-row {
-					width: calc(100% - 20px);
-					margin-left: 10px;
+					//width: calc(100% - 20px);
+					//margin-left: 10px;
 				}
 			}
 			#content-right {
@@ -337,12 +344,21 @@ $profile-left-margin: 0px;
 				.profile-text-box {
 					left: 145px;
 					width: calc(100% - 155px);
+                    #tagline{
+                        margin-top: 0px; 
+                        font-weight: 400;
+                        font-size: 15px;
+                    }
+                    #location{
+                        font-size: 15px;
+                    }
 				}
 			} 
 			
 			.misc-field {
 				clear: left;
-				width: calc(100% - 0px);
+				width: 100%;
+				margin-left: 0px;
 			}
 			.misc-field:nth-child(2n) {
 				margin-left: 0px;

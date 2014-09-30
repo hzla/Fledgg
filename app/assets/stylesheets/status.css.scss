@@ -58,6 +58,7 @@
 .status-section {
 	#content-left {
 		top: 180px;
+		overflow-x: hidden;
 	}
 	#content-right {
 		top: 180px;
@@ -129,9 +130,10 @@
     padding-left: 15px;
 }
 
-.like-text {
+.like-text, .status-delete-link, .comment-delete-link {
 	color: $gray;
 	text-decoration: underline;
+	cursor: pointer;
 }
 
 .comment-submit {
@@ -177,6 +179,39 @@
 	}
 }
 
+#feedback-container {
+	background: $light-gray;
+	width: 320px;
+	border-radius: 5px;
+	position: fixed;
+	right: 229px;
+	bottom: 40px;
+	z-index: 10000;
+	padding-bottom: 20px;
+	height: 40px;
+	input, textarea {
+		opacity: 0;
+	}
+	#feedback-form {
+		width: 280px;
+		position: relative;
+		margin: 0;
+		padding-left: 20px;
+		height: 100%;
+	}
+	#feedback-body {
+		height: calc(100% - 200px);
+	}
+	#send-feedback {
+		background: $light-green;
+	}
+	#send-feedback:hover {
+		color: $light-green;
+		border: 1px solid $light-green;
+		background: white;
+	}
+}
+
 #feedback {
 	height: 40px;
 	width: 320px;
@@ -188,6 +223,11 @@
 	line-height: 40px;
 	position: absolute;
 	bottom: 40px;
+	cursor: pointer;
+}
+
+#feedback:hover {
+	background: $super-light-gray;
 }
 
 #site-info-box {

@@ -19,5 +19,13 @@ class Conversation < ActiveRecord::Base
 		messages.order(:created_at).reverse
 	end
 
+	def read_by user
+		sender = other_user(user.id)
+		messages.where(user_id: sender.id).update_all read: true
+	end
 
+	def read? user
+		sender = other_user(user.id)
+		messages.where(user_id: sender.id, read: false).empty?
+	end
 end

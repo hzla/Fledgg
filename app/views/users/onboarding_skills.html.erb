@@ -1,8 +1,8 @@
 <div class="onboarding-bar">
 	<div class="bar-content">
-		<div class="onboarding-header">Looking for Mentorships?</div>
+		<div class="onboarding-header">Looking for Mentorship?</div>
 		<div class="onboarding-text">
-			Let people know what you need help with. This helps us find people who can help you search by name.
+			Let us know what you need help with. We'll be able to better find people who can help when you search by name.
 		</div>
 		<%= link_to onboarding_availability_path do %>
 			<div class="next-button">
@@ -16,11 +16,11 @@
 	<div id="content-left">
 		<div class="field-row">
 			<%= form_tag needed_skills_path, id: "needed-skill-form", remote: true do %>
-				<%= text_field_tag :needed_skill_name, nil, :class => "skill-name input-row", placeholder: "Type what you need help with here, press enter to add" %>
+				<%= text_field_tag :needed_skill_name, nil, :class => "skill-name input-row", placeholder: "Type and press enter to add" %>
 			<% end %>
 		</div>
 		<div class="field-row">
-			or choose from the list below, click to add
+			or you can choose from the list below and click to add
 		</div>
 		<div class="field-row">
 			<div class="skill-box input-row">
@@ -32,15 +32,12 @@
 		<div class="field-header">
 			Looking for help with
 		</div>
-
-
 		<div class="field-row" id="skill-row">
-
 		</div>
 		<div class="field-row">
 			<%= link_to onboarding_availability_path do %>
 				<div class="mobile-next">
-					Skip
+					Next
 				</div>
 			<% end %>
 		</div>

@@ -304,3 +304,9 @@
 .xdsoft_scroller_box{
 position:relative;
 }
+
+.xdsoft_datetimepicker .xdsoft_timepicker .xdsoft_time_box {
+height: 151px;
+overflow: scroll;
+border-bottom: 1px solid #DDDDDD;
+}

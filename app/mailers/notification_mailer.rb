@@ -30,6 +30,6 @@ class NotificationMailer < ActionMailer::Base
 
   def feedback title, email, body
     @body = body
-    mail(to: 'andylee.hzl@gmail.com', 'vicky@fledgg.com', subject: "Feedback from #{email} about #{title}")
+    mail(to: ['andylee.hzl@gmail.com', 'vicky@fledgg.com'], subject: "Feedback from #{email} about #{title}")
   end
 end

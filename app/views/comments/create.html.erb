@@ -12,4 +12,13 @@
 	<div class="status-body">
 		<%= @comment.body %>
 	</div>
+	<% if @comment.user_id == current_user.id %>
+		<div class="status-actions">
+			<div class="delete-text">
+				<%= link_to comment_path(@comment), method: 'delete', :class => "comment-delete-link", remote: true do %>
+					Delete
+				<% end %>
+			</div>
+		</div>
+	<% end %>
 </div>

@@ -18,8 +18,8 @@ private
 	end
 
   def set_device_type
-  	@mobile = browser.mobile?
+  	request.variant = :phone if browser.mobile?
+    @mobile = browser.mobile?
 	end
-
 
 end

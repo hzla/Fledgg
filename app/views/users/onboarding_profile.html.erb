@@ -1,6 +1,6 @@
 <div class="onboarding-bar">
 	<div class="bar-content">
-		<div class="onboarding-header">Setup your profile.</div>
+		<div class="onboarding-header">Welcome to Fledgg! Set up your profile.</div>
 		<div class="onboarding-text">
 			We've populated your profile based on info from your Linkedin profile. Feel free to make any changes or click next if everything looks okay.
 		</div>
@@ -18,7 +18,7 @@
 			<div class="profile-text-box">
 				<div id="name" class="profile-text"><%= @user.name %></div>
 				<div id="tagline" class="profile-text"><%= best_in_place @user, :tagline, type: :input, place_holder: "" %> </div>
-				<div id="location" class="profile-text"><%= best_in_place @user, :location, type: :input, place_holder: "" %> </div>
+				<div id="location" class="profile-text"><%= best_in_place @user, :location, type: :input, place_holder: "No Location" %> </div>
 			</div>
 		</div>
 		<div class="field-header">
