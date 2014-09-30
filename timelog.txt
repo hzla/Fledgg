@@ -1,21 +1,17 @@
-DONE: 340min
+DONE: 360min
 
 Time Estimates
 
 Follow list page (2hr)
 
-feedback on activity feed (20min)
-
 SSL security (2hr)
-
+Placeholder graying
 include zoom link (10min)
 
 ________________________________________________
 
-
 Total: 5hr 
 W/O SSL: 3hr
-
 ______________________________
 
 More than trivial things
