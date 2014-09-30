@@ -88,6 +88,7 @@
 		margin-top: 20px;
 		overflow-y: scroll;
 		overflow-x: hidden; 
+        box-sizing: border-box;
 		.skill-input {
 			width: 100%;
 			float: left; 
@@ -110,16 +111,21 @@
 @media (max-width: 1023px) {
 	body {
 		.onboarding-bar {
-			height: 120px;
+            padding: 10px;
+            position: static;
+            height: auto;
+            box-sizing: border-box;
 			.bar-content {
-				width: calc(100% - 20px);
-				padding-left: 10px;
+				width: 100%;
 			}
 			.onboarding-header {
 				font-size: 24px;
+                float: none;
+                margin-top: 0;
 			}
 			.onboarding-text, .onboarding-header {
 				width: 100%;
+                float: none;
 			}
 			.next-button {
 				display: none;
@@ -128,6 +134,9 @@
 				display: none;
 			}
 		}
+        #profile-content.onboarding {
+            margin-top: 0px;
+        }
 		.mobile-next {
 			height: 40px;
 			width: 100px;
@@ -145,9 +154,10 @@
 		}
 		.skill-input {
 			height: 30px;
-			font-size: 24px;
 			line-height: 30px;
 			margin-top: 5px;
+            margin: 5px 0;
+            font-size: 17px;
 		}
 	}
 }
