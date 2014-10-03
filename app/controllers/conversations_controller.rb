@@ -1,6 +1,8 @@
 class ConversationsController < ApplicationController
 	include SessionsHelper
 
+	before_filter :get_convo, only: [:show, :trash, :read]
+
 	def index
 		@conversations = current_user.ordered_conversations.where(trashed: false)
 		@send_to = params[:send_to]
@@ -11,16 +13,15 @@ class ConversationsController < ApplicationController
 	end
 
 	def show
-		@conversation = Conversation.find(params[:id])
-		@counter = 0
-		@counter = 1 if @conversation.trashed == true
+		@counter = @conversation.trashed == true ? 1 : 0
 		render layout: false
 	end
 
 	def trash
-		conversation = Conversation.find(params[:id])
-		if conversation.name.include?(current_user.id.to_s)
-			conversation.update_attributes trashed: true
+		if @conversation.belongs_to? current_user
+			@conversation.update_attributes trashed: true
+		else
+			redirect_to conversations_path and return
 		end
 		render nothing: true
 	end
@@ -30,9 +31,13 @@ class ConversationsController < ApplicationController
 	end
 
 	def read
-		convo = Conversation.find(params[:id])
-		convo.read_by current_user
+		@conversation.read_by current_user
 		render nothing: true
 	end
 
+	private
+
+	def get_convo
+		@conversation = Conversation.find params[:id]
+	end
 end

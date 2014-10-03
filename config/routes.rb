@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root to: 'pages#home'
 
+  get '/terms', to: 'pages#terms', as: 'terms'
+
   get '/logout', to: 'pages#logout', as: 'logout'
   get '/auth/linkedin/callback', to: "sessions#create"
 

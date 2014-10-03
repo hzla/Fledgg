@@ -4,29 +4,28 @@
 		<div class="green-bar-content">
 			<%= link_to users_path do %>
 				<div class="bar-section <%= 'active' if @index %>" id="messages-section">
-					All Professionals
+					All <span class="no-mobile">Professionals</span>
 					<%= "(#{current_user.message_count})" if current_user.message_count > 0 %>
 				</div>
 			<% end %>
 			<%= link_to following_users_path, id: "meetings-link" do %>
 				<div class="bar-section <%= 'active' if @following %>" id="meetings-section">
-					Who you're following
+					 <span class="no-mobile">Who You're </span>Following
 					<%= "(#{current_user.meeting_count})" if current_user.meeting_count > 0 %>
 				</div>
 			<% end %>
 			<%= link_to linkedin_users_path, id: 'trashed-link' do %>
 				<div class="bar-section <%= 'active' if @linkedin %>" id="trash-section">
-					Linkedin Connections
+					Linkedin  <span class="no-mobile">Connections</span>
 				</div>
 			<% end %>
 		</div>
 	<% else %>
 		<div id="results-text"><%= @users.length %> results for <%= @searched_terms %></div>
 	<% end %>
-	
 </div>
-<div id="content" class="results-section">
 
+<div id="content" class="results-section <%= 'no-search' if @filter_bar %>">
 	<div id="content-left" class="results">
 		<% @users.each do |user| %>
 	 		<div class="result" id="<%= "u-#{user.id}"%>">
@@ -80,11 +79,9 @@
 	 			<div class="result-meeting-request meeting-request" id="<%= user.id %>">
 	 				REQUEST MEETING
 	 			</div>
-	 			
 	 		</div>
 	 	<% end %>
 	</div>
-
 	<div id="content-right" class="result-details">
 	</div>
 </div>

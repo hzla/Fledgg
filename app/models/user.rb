@@ -1,19 +1,19 @@
 class User < ActiveRecord::Base
 	has_many :authorizations, dependent: :destroy
 	has_many :skills, through: :expertises
-	has_many :expertises
+	has_many :expertises, dependent: :destroy
 	has_many :needed_skills, through: :wants
-	has_many :wants
+	has_many :wants, dependent: :destroy
 	has_many :conversations, through: :connections
 	has_many :connections
 	has_many :meetings, through: :appointments
 	has_many :appointments
 	has_many :messages
-	has_many :statuses
-	has_many :comments
+	has_many :statuses, dependent: :destroy
+	has_many :comments, dependent: :destroy
 	has_many :likes
-	has_many :experiences
-	has_many :educations
+	has_many :experiences, dependent: :destroy
+	has_many :educations, dependent: :destroy
 	after_create :create_permalink
 	attr_accessible :permalink, :role, :rate_count, :notify_messages, :notify_meetings, :message_count, :meeting_count, :education, :interests, :name, :email, :profile_pic_url, :li_token, :birthday, :star_sign, :personality, :favorite_book, :favorite_movie, :mon, :tues, :wed, :thurs, :fri, :sat, :sun, :bio, :info, :helpfulness, :location, :tagline, :follow_list
 
@@ -96,7 +96,7 @@ class User < ActiveRecord::Base
 	
 	# returns a list of users based on an array of names, and array of skill names
 	#first get user_ids of name matches if there's a name list
-	#then get the user skill hash of there's a skill list
+	#then get the user skill hash if there's a skill list
 	#merge the two lists
 	#if skills were specified, sort by number of skill matches
 	# if no skills specified, search by number of looking for skill matches
@@ -119,7 +119,6 @@ class User < ActiveRecord::Base
 					end
 				end.reverse.select {|match| skills[match.id]}
 				if name_list
-					p name_list
 					matches = matches.select do |match| 
 						!(name_list.map(&:downcase) & (match.name.downcase.split)).empty?
 					end
@@ -151,6 +150,17 @@ class User < ActiveRecord::Base
 
 	def upcoming_meetings
 		meetings.where('start_time > (?)', Time.now).order(:start_time).select {|m| m.accepted? }
+	end
+
+	def possible_conversation other_user
+		name1 = "#{id}-#{other_user.id}"
+		name2 = "#{other_user.id}-#{id}"
+		conversations.where(trashed: false).where('name = ? or name = ?', name1, name2)
+	end
+
+	def notify_message
+		new_count = message_count + 1
+		update_attributes message_count: new_count
 	end
 
 

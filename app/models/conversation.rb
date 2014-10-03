@@ -28,4 +28,9 @@ class Conversation < ActiveRecord::Base
 		sender = other_user(user.id)
 		messages.where(user_id: sender.id, read: false).empty?
 	end
+
+	def belongs_to? user
+		name.include? user.id.to_s
+	end
+
 end

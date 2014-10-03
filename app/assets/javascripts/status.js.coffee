@@ -31,6 +31,7 @@ Status =
 	like: (event, data) ->
 		like = $(@).children('.like')
 		newCount = parseInt(like.next().text()) + 1
+		console.log data
 		if data.dont_like == false 
 			like.next().text newCount 
 			$(@).children('.like-text').text 'Unlike' 

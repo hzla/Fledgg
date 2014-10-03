@@ -1,14 +1,11 @@
 class CommentsController < ApplicationController
 	include SessionsHelper
+	include ApplicationHelper
 
 	def create
-		p params[:comment]
-		sanitized = CGI::unescapeHTML(params[:comment][:body].gsub(/<\/?[^>]*>/,"")) 
-		@comment = Comment.create(body: sanitized, status_id: params[:comment][:status_id])
-		current_user.comments << @comment
-		status = @comment.status
-		new_count = status.comment_count + 1
-		status.update_attributes comment_count: new_count
+		sanitized = sanitize params[:comment][:body]
+		@comment = Comment.create(body: sanitized, status_id: params[:comment][:status_id], user_id: current_user.id)
+		@comment.status.increment_comment_count
 		render layout: false
 	end
 

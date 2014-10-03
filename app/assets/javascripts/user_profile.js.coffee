@@ -20,6 +20,7 @@ UserProfile =
 		$('.linkify').each ->
 			linkifiedText = UserProfile.linkify $(@).text()
 			$(@).html linkifiedText
+		# $('.linkify').removeClass('linkify')
 
 
 	linkify: (inputText) ->

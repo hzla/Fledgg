@@ -45,3 +45,9 @@ a {
 .white {
 	color: white;
 }
+
+@media(max-width: 1023px) {
+	.no-mobile {
+		display: none;
+	}
+}

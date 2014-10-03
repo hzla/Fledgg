@@ -207,6 +207,9 @@
 				font-size: 12px;
                 margin: 2px 0px;
 			}
+		#content.no-search #content-left {
+			top: 120px;
+		}
 		#content.results-section {
 			#content-right {
 				display: none;
@@ -224,9 +227,10 @@
 					.result-info {
 						width: auto;
 						margin-left: 10px;
-                        .result-name {
-                            margin-top: 0px;   
-                        }
+						max-width: calc(100% - 50px);
+            .result-name {
+                margin-top: 0px;   
+            }
 					}
 					.result-pic {
 						clear: left;
@@ -236,12 +240,12 @@
 						float: right;
 						margin-left: 0px;
 						margin-top: 0px;
-                        .result-star {
-                            height: 10px;
-                            width: 10px;
-                            float: left;
-                            margin-left: 0px;
-                        }
+            .result-star {
+                height: 10px;
+                width: 10px;
+                float: left;
+                margin-left: 0px;
+            }
 					}
 				}
 			}

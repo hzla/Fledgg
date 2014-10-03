@@ -11,6 +11,9 @@ class PagesController < ApplicationController
 		redirect_to root_path
 	end
 
+	def terms
+	end
+
 	def feedback
 		NotificationMailer.feedback(params[:title],params[:email],params[:body]).deliver
 		render nothing: true

@@ -1,5 +1,6 @@
 class StatusesController < ApplicationController
 	include SessionsHelper
+	include ApplicationHelper
 
 	def index
 		@status = Status.new
@@ -9,27 +10,20 @@ class StatusesController < ApplicationController
 	end
 
 	def create
-		sanitized = CGI::unescapeHTML(params[:status][:body].gsub(/<\/?[^>]*>/,"")) 
-		status = Status.create(body: sanitized)
-		current_user.statuses << status
+		sanitized = sanitize params[:status][:body] 
+		status = Status.create(body: sanitized, user_id: current_user.id)
 		comment = Comment.new
 		render partial: 'show', locals: {status: status, comment: comment}
 	end
 
 	def like
 		status = Status.find(params[:id])
-		possible_like = Like.where(user_id: current_user.id, status_id: status.id)
-		if possible_like.empty?
-			Like.create(user_id: current_user.id, status_id: params[:id])
-			new_count = status.like_count + 1
-			status.update_attributes like_count: new_count
+		action = status.like_and_return_action current_user
+		if action == "liked"
+			render json: {dont_like: false} and return
 		else
-			possible_like.first.destroy
-			new_count = status.like_count - 1
-			status.update_attributes like_count: new_count
 			render json: {dont_like: true} and return
 		end
-		render json: {dont_like: false}
 	end
 
 	def destroy
@@ -37,7 +31,6 @@ class StatusesController < ApplicationController
 		render nothing: true
 	end
 
-	
 end
 
 

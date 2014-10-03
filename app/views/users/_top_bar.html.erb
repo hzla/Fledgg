@@ -8,7 +8,7 @@
 			<%= image_tag 'mobile-menu.svg', :class => "mobile-menu-icon svg" %>
 			<% if current_user.message_count + current_user.meeting_count > 0 %>
 				<div class="mobile counter">
-					
+					<%= current_user.message_count + current_user.meeting_count %>
 				</div>
 			<% end %>
 			<%= text_field_tag :name_search, nil, :id => "name-search", placeholder: "Search by name" %>
@@ -63,10 +63,10 @@
 			<div class="mob-nav messages side-icon">
 				<%= image_tag "messagesdarkgreen.svg", :class => "nav-icon svg" %>
 				<div class="icon-label main">
-					Messages (
+					Messages 
 					<% if current_user.message_count + current_user.meeting_count > 0 %>
-							<%= current_user.message_count + current_user.meeting_count%>
-					<% end %>)
+							(<%= current_user.message_count + current_user.meeting_count%>)
+					<% end %>
 				</div>
 			</div>
 		<% end %>
@@ -75,6 +75,13 @@
 			<div class="mob-nav side-icon " >
 				<%= image_tag current_user.profile_pic_url, :class => "profile-icon nav-icon svg" %>
 				<div class="icon-label main">Profile</div>
+			</div>
+		<% end %>
+
+		<%= link_to users_path, :class => 'tab' do %>
+			<div class="mob-nav side-icon " >
+				<%= image_tag 'peopledarkgreen.svg', :class => "profile-icon nav-icon svg" %>
+				<div class="icon-label main">Users</div>
 			</div>
 		<% end %>
 
