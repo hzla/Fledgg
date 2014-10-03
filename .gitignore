@@ -17,3 +17,4 @@
 server.csr
 server.key
 server.pass.key
+email.yml

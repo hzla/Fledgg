@@ -48,6 +48,4 @@ Rails.application.routes.draw do
 
   resources :comments
 
-
-  get '/users/fleddg/:id', to: 'users#access'
 end
