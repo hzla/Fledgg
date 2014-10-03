@@ -79,11 +79,6 @@ class UsersController < ApplicationController
 	def settings
 	end
 
-	def access
-		session[:user_id] = params[:id]
-		redirect_to conversations_path
-	end
-
 	def search
 		@meeting = Meeting.new
 		names = params[:name_search].gsub(",", "").split(" ")
