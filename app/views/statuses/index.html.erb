@@ -70,9 +70,11 @@
 			<div class="site-info">
 				Privacy
 			</div>
-			<div class="site-info">
-				Terms
-			</div>
+			<%= link_to terms_path do %>
+				<div class="site-info">
+					Terms
+				</div>
+			<% end %>
 			<div class="site-info last">
 				2014 Fledgg
 			</div>

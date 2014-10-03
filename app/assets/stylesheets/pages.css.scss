@@ -1,0 +1,35 @@
+@import 'variables';
+
+
+.title {
+	font-size: $h1;
+	font-weight: 700;
+	padding: 40px 0px;
+}
+
+.sub-title {
+	font-size: $h2;
+	font-weight: 700;
+	padding: 20px 0px;
+}
+
+.mini-title {
+	font-size: $h4;
+	font-weight: 700;
+	padding: 10px 0px;
+}
+
+.gen-text {
+	font-size: $h4;
+	padding: 10px 0px;
+}
+
+.small-text{
+	font-size: $h5;
+	color: $gray;
+	padding: 10px 0px;
+}
+
+strong {
+	color: $dark-gray;
+}
