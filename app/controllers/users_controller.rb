@@ -111,8 +111,8 @@ class UsersController < ApplicationController
   end
 
   def follow
-  	other_user = User.find params[:id]
-  	other_user.followed_by(current_user) ? current_user.unfollow(params[:id]) : current_user.follow(params[:id]) 
+  	other_user = User.find_by_permalink params[:id]
+  	other_user.followed_by(current_user) ? current_user.unfollow(other_user) : current_user.follow(other_user) 
   	render nothing: true
   end
 

@@ -69,13 +69,14 @@ class User < ActiveRecord::Base
 		user.follow_list.split(",").include? id.to_s
 	end
 
-	def follow user_id
-		new_list = follow_list + "#{user_id},"
+	def follow user
+
+		new_list = follow_list + "#{user.id},"
 	  update_attributes follow_list: new_list
 	end
 
-	def unfollow user_id
-		new_list = follow_list.gsub("#{user_id},", "")
+	def unfollow user
+		new_list = follow_list.gsub("#{user.id},", "")
 		update_attributes follow_list: new_list
 	end
 
