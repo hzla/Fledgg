@@ -67,9 +67,11 @@
 			<div class="site-info">
 				Support
 			</div>
-			<div class="site-info">
-				Privacy
-			</div>
+			<%= link_to privacy_path do %>
+				<div class="site-info">
+					Privacy
+				</div>
+			<% end %>
 			<%= link_to terms_path do %>
 				<div class="site-info">
 					Terms

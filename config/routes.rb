@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   get '/terms', to: 'pages#terms', as: 'terms'
+  get '/privacy', to: 'pages#privacy', as: 'privacy'
 
   get '/logout', to: 'pages#logout', as: 'logout'
   get '/auth/linkedin/callback', to: "sessions#create"
