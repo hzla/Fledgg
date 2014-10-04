@@ -180,9 +180,10 @@
 .landing-section.four {
 	height: 540px;
 	position: relative;
+
 	background-size: cover;
     font-family: $proxima,sans-serif;
-    margin-top: 160px;
+    margin-top: 0px;
 	.people-image {
 		height: 100%;
 		width: 100%;
@@ -195,10 +196,11 @@
 	height: 300px;
 	position: relative;
 	background-size: cover;
+	height: auto;
     font-family: $proxima,sans-serif;
     border-bottom: 1px solid #e0e0e0;
 	.section-block:nth-child(2n) {
-		margin-left: 60px;
+		margin-left: 20px;
 		margin-right: 60px;
 	}
 	.section-block {

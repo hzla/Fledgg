@@ -49,10 +49,9 @@ class User < ActiveRecord::Base
     user
 	end
 
-	def follow_self
-		update_attributes follow_list: "#{id},"
-	end
 
+	#################### ATTRIBUTES ACCESSORS ###########################
+	
 	def rating
 		(helpfulness / rate_count).round
 	end
@@ -65,12 +64,56 @@ class User < ActiveRecord::Base
 		tues
 	end
 
+	def to_param
+		permalink
+	end
+
+
+	########################## MEETINGS/CONVERSATIONS #########################
+
+	def ordered_conversations
+		conversations.order('updated_at desc').uniq
+	end
+
+	def upcoming_meetings
+		meetings.where('start_time > (?)', Time.now).order(:start_time).select {|m| m.accepted? }
+	end
+
+	def possible_conversation other_user
+		name1 = "#{id}-#{other_user.id}"
+		name2 = "#{other_user.id}-#{id}"
+		conversations.where(trashed: false).where('name = ? or name = ?', name1, name2)
+	end
+
+	def notify_message
+		new_count = message_count + 1
+		update_attributes message_count: new_count
+	end
+
+	#######################  FOLLOWING ##########################
+
+
+
+	# need to changed the follow_list to a following table in the future that stores both user_ids
+
+	def follow_self
+		update_attributes follow_list: "#{id},"
+	end
+
 	def followed_by user
 		user.follow_list.split(",").include? id.to_s
 	end
 
-	def follow user
+	def following
+		Status.where('user_id in (?)', follow_list.split(",")).order('created_at desc')
+	end
 
+	def following_users
+		User.find follow_list.split(",")
+	end
+
+
+	def follow user
 		new_list = follow_list + "#{user.id},"
 	  update_attributes follow_list: new_list
 	end
@@ -79,6 +122,9 @@ class User < ActiveRecord::Base
 		new_list = follow_list.gsub("#{user.id},", "")
 		update_attributes follow_list: new_list
 	end
+
+
+	######################## PERMALINKS #################################
 
 	def self.update_permalinks
 		all.each do |user|
@@ -91,9 +137,9 @@ class User < ActiveRecord::Base
 		update_attributes permalink: link
 	end
 
-	def to_param
-		permalink
-	end
+
+	######################### SEARCHING ###############################
+	
 	
 	# returns a list of users based on an array of names, and array of skill names
 	#first get user_ids of name matches if there's a name list
@@ -101,9 +147,13 @@ class User < ActiveRecord::Base
 	#merge the two lists
 	#if skills were specified, sort by number of skill matches
 	# if no skills specified, search by number of looking for skill matches
+	# returns only full matches of both name and skill 
 
+
+	# can probably optimize to use joins instead of rewrite in SQL
 	def search name_list=nil, skill_list=nil 		
 			name_matches =  name_list ? User.name_search(name_list) : []
+			
 			if skill_list
 				skills = User.skill_search(skill_list)
 				skill_matches = skills.keys
@@ -114,6 +164,7 @@ class User < ActiveRecord::Base
 			if skill_list
 				matches = matches.sort_by do |match|
 					if skills[match.id]
+						# += 1?
 						skills[match.id]
 					else
 						0
@@ -136,35 +187,6 @@ class User < ActiveRecord::Base
 				other_skills.map {|user_skill| user_skill[0]}.flatten.reverse
 			end			
 	end
-
-	def ordered_conversations
-		conversations.order('updated_at desc').uniq
-	end
-
-	def following
-		Status.where('user_id in (?)', follow_list.split(",")).order('created_at desc')
-	end
-
-	def following_users
-		User.find follow_list.split(",")
-	end
-
-	def upcoming_meetings
-		meetings.where('start_time > (?)', Time.now).order(:start_time).select {|m| m.accepted? }
-	end
-
-	def possible_conversation other_user
-		name1 = "#{id}-#{other_user.id}"
-		name2 = "#{other_user.id}-#{id}"
-		conversations.where(trashed: false).where('name = ? or name = ?', name1, name2)
-	end
-
-	def notify_message
-		new_count = message_count + 1
-		update_attributes message_count: new_count
-	end
-
-
 
 	private
 

@@ -12,7 +12,7 @@ class Conversation < ActiveRecord::Base
 	end
 
 	def last_message
-		last = messages.last
+		last = messages.last 
 	end
 
 	def ordered_messages
