@@ -180,10 +180,9 @@
 .landing-section.four {
 	height: 540px;
 	position: relative;
-
 	background-size: cover;
     font-family: $proxima,sans-serif;
-    margin-top: 0px;
+    margin-top: 160px;
 	.people-image {
 		height: 100%;
 		width: 100%;
@@ -200,7 +199,7 @@
     font-family: $proxima,sans-serif;
     border-bottom: 1px solid #e0e0e0;
 	.section-block:nth-child(2n) {
-		margin-left: 20px;
+		margin-left: 60px;
 		margin-right: 60px;
 	}
 	.section-block {
@@ -369,12 +368,15 @@
 			background: $light-green;
 			color: white;
 			background-size: 100px 100%; 
+			height: auto;
+			margin-top: 0px;
 		}
         
         .landing-section.fourpointfive {
 			background: $light-green;
 			color: white;
 			background-size: 100px 100%;
+			height: auto;
             .section-header {
                 padding: 40px 0px;
             }
@@ -384,6 +386,10 @@
                     margin-top: 0px;
                     margin-bottom: 40px;
                 }
+                .section-block:nth-child(2n) {
+									margin-left: 20px;
+									margin-right: 60px;
+								}
                 .section-block {
                     margin-top: 0px;   
                 }
