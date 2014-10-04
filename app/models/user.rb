@@ -39,12 +39,14 @@ class User < ActiveRecord::Base
 
 		exp_list = auth_hash.extra.raw_info.threeCurrentPositions.values[1]
 		exp_list.each do |exp|
-			start_date = Date.new exp['startDate']['year'], exp['startDate']['month']
-			if exp['endDate']
-				end_date = Date.new exp['endDate']['year'], exp['endDate']['month']
+			if exp['start_date']['year'] && exp['start_date']['month']
+				start_date = Date.new exp['startDate']['year'], exp['startDate']['month']
+				if exp['endDate']
+					end_date = Date.new exp['endDate']['year'], exp['endDate']['month']
+				end
+				exp = Experience.create company: exp.company['name'], is_current: exp['isCurrent'], summary: exp['summary'], title: exp['title'], start_date: start_date, user_id: user.id
+				exp.update_attributes end_date: end_date if exp['endDate']
 			end
-			exp = Experience.create company: exp.company['name'], is_current: exp['isCurrent'], summary: exp['summary'], title: exp['title'], start_date: start_date, user_id: user.id
-			exp.update_attributes end_date: end_date if exp['endDate']
 		end
     user
 	end
