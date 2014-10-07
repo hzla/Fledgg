@@ -62,7 +62,7 @@ class UsersController < ApplicationController
 	end
 
 	def rate
-		user = User.find params[:id]
+		user = User.find_by_permalink params[:id]
 		rating = params[:rating]
 		new_rate_count = user.rate_count + 1
 		new_rating = user.helpfulness + rating.to_i
