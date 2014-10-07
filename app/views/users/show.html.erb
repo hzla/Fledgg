@@ -84,11 +84,17 @@
 	<div id="content-right">
 		<div id="helpfulness-label">HELPFULNESS RATING</div>
 		<div id="star-container">
-			<% @user.rating.times do %>
-				<%= image_tag 'stargreen.svg', :class => "star" %> 
-			<% end %>
-			<% (5 - @user.rating).times do %>
-				<%= image_tag 'stargray.svg', :class => "star" %> 
+			<% if @user.rate_count > 3 %>
+				<% @user.rating.times do %>
+					<%= image_tag 'stargreen.svg', :class => "star" %> 
+				<% end %>
+				<% (5 - @user.rating).times do %>
+					<%= image_tag 'stargray.svg', :class => "star" %> 
+				<% end %>
+			<% else %>
+				<% 5.times do %>
+					<%= image_tag 'stargray.svg', :class => "star" %> 
+				<% end %>
 			<% end %>
 		</div>
 

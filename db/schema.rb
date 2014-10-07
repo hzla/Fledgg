@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140930230354) do
+ActiveRecord::Schema.define(version: 20141007063953) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -147,7 +147,7 @@ ActiveRecord::Schema.define(version: 20140930230354) do
     t.string   "name"
     t.string   "location"
     t.string   "tagline"
-    t.float    "helpfulness",     default: 3.0
+    t.float    "helpfulness",     default: 0.0
     t.string   "email"
     t.string   "interests"
     t.string   "profile_pic_url"
@@ -174,7 +174,7 @@ ActiveRecord::Schema.define(version: 20140930230354) do
     t.integer  "meeting_count",   default: 0
     t.boolean  "notify_messages", default: true
     t.boolean  "notify_meetings", default: true
-    t.integer  "rate_count",      default: 1
+    t.integer  "rate_count",      default: 0
     t.string   "role"
     t.string   "permalink"
   end
