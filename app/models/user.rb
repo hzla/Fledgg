@@ -23,11 +23,16 @@ class User < ActiveRecord::Base
 
 		li_token = auth_hash.credentials.token
 		secret = auth_hash.credentials.secret
-		skill_list =  extra_info.skills.values[1].map(&:skill).map(&:name)
+		if extra_info && extra_info.skills && extra_info.skills.values && extra_info.skills.values[1]
+			skill_list =  extra_info.skills.values[1].map(&:skill).map(&:name)
+		else
+			skill_list = nil
+		end
+		
 		user = User.new name: profile["name"], profile_pic_url: profile['image'], li_token: li_token, email: profile['email'], tagline: profile['headline'], location: profile['location']
     user.authorizations.build :uid => auth_hash["uid"], token: li_token , secret: secret
     user if user.save
-    Skill.add skill_list, user
+    Skill.add(skill_list, user) if skill_list
     user.follow_self
 
 	   #   begin 
