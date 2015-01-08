@@ -35,30 +35,30 @@ class User < ActiveRecord::Base
     Skill.add(skill_list, user) if skill_list
     user.follow_self
 
-	   #   begin 
-		 #    ed_list = auth_hash.extra.raw_info.educations.values[1]
-		# 	ed_list.each do |ed|
-		# 		if ed.startDate['year'] && ed.endDate['year']
-		# 			Education.create name: ed['schoolName'], start_year: ed.startDate['year'].to_i, end_year: ed.endDate['year'].to_i, user_id: user.id
-		# 		end
-		# 	end
+	    begin 
+		    ed_list = auth_hash.extra.raw_info.educations.values[1]
+			ed_list.each do |ed|
+				if ed.startDate['year'] && ed.endDate['year']
+					Education.create name: ed['schoolName'], start_year: ed.startDate['year'].to_i, end_year: ed.endDate['year'].to_i, user_id: user.id
+				end
+			end
 
-		# 	exp_list = auth_hash.extra.raw_info.threeCurrentPositions.values[1]
-		# 	exp_list.each do |exp|
-		# 		if exp['start_date']['year'] && exp['start_date']['month']
-		# 			start_date = Date.new exp['startDate']['year'], exp['startDate']['month']
-		# 			if exp['endDate']
-		# 				end_date = Date.new exp['endDate']['year'], exp['endDate']['month']
-		# 			end
-		# 			exp = Experience.create company: exp.company['name'], is_current: exp['isCurrent'], summary: exp['summary'], title: exp['title'], start_date: start_date, user_id: user.id
-		# 			exp.update_attributes end_date: end_date if exp['endDate']
-		# 		end
-		# 	end
-		# rescue #should log this info 
-		# 	p ed_list
-		# 	p exp_list
-		# 	p "This User's skills/experience could not be saved"
-		# end
+			exp_list = auth_hash.extra.raw_info.threeCurrentPositions.values[1]
+			exp_list.each do |exp|
+				if exp['start_date']['year'] && exp['start_date']['month']
+					start_date = Date.new exp['startDate']['year'], exp['startDate']['month']
+					if exp['endDate']
+						end_date = Date.new exp['endDate']['year'], exp['endDate']['month']
+					end
+					exp = Experience.create company: exp.company['name'], is_current: exp['isCurrent'], summary: exp['summary'], title: exp['title'], start_date: start_date, user_id: user.id
+					exp.update_attributes end_date: end_date if exp['endDate']
+				end
+			end
+		rescue #should log this info 
+			p ed_list
+			p exp_list
+			p "This User's skills/experience could not be saved"
+		end
     user
 	end
 

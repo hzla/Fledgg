@@ -3,14 +3,14 @@ development:
   :port: 587
   :authentication: plain
   :user_name: vicky@fledgg.com
-  :password: Fledgg.983052
+  :password: REDACTED
   :enable_starttls_auto: true
 production:
   :address: smtp.gmail.com
   :port: 587
   :authentication: plain
   :user_name: vicky@fledgg.com
-  :password: Fledgg.983052
+  :password: REDACTED
   :enable_starttls_auto: true
 
 
